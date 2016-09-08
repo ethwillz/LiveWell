@@ -21,9 +21,9 @@ namespace Hello
             Navigation.PushModalAsync(new Audio());
         }
 
-        public void texttospeech(Object sender, EventArgs e)
+        public void textspeech(Object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new TTS());
+            Navigation.PushModalAsync(new TextSpeech());
         }
 
         public void youtube(Object sender, EventArgs e)

@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
 namespace Hello
 {
-    public partial class TTS : ContentPage
+    public partial class TextSpeech : ContentPage
     {
-        public TTS()
+        public TextSpeech()
         {
             InitializeComponent();
         }
 
-        public void convert()
+        public void speak(Object sender, EventArgs e)
         {
             String words = sentence.Text;
             DependencyService.Get<TextToSpeechInterface>().toSpeech(words);

@@ -51,8 +51,8 @@
     </Compile>
     <Compile Include="Page1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TTS.xaml.cs">
-      <DependentUpon>TTS.xaml</DependentUpon>
+    <Compile Include="TextSpeech.xaml.cs">
+      <DependentUpon>TextSpeech.xaml</DependentUpon>
     </Compile>
     <Compile Include="Youtube.xaml.cs">
       <DependentUpon>Youtube.xaml</DependentUpon>
@@ -106,7 +106,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TTS.xaml">
+    <EmbeddedResource Include="TextSpeech.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -5,7 +5,7 @@
   <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
     <Button Text="Calculator" Clicked="calculator"/>
     <Button Text="Speech Recorder" Clicked="audio"/>
-    <Button Text ="Text to Speech" Clicked="texttospeech"/>
-    <Button Text="Youtube" Clicked="Youtube"/>
+    <Button Text ="Text to Speech" Clicked="textspeech"/>
+    <Button Text="Youtube" Clicked="youtube"/>
   </StackLayout>
 </ContentPage>
