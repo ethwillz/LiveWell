@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
 namespace Hello
 {
-    public partial class TextToSpeech : ContentPage
+    public partial class TTS : ContentPage
     {
-        public TextToSpeech()
+        public TTS()
         {
             InitializeComponent();
         }

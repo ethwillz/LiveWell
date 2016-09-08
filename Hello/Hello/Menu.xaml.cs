@@ -23,7 +23,7 @@ namespace Hello
 
         public void texttospeech(Object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new TextToSpeech());
+            Navigation.PushModalAsync(new TTS());
         }
 
         public void youtube(Object sender, EventArgs e)
