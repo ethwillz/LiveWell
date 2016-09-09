@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hello.Calculator">
+  <StackLayout VerticalOptions="Center">
+    <Editor IsEnabled="False" x:Name="Edit" HeightRequest="50"/>
+    <StackLayout Orientation="Horizontal">
+      <Button Text ="C" Clicked="C"/>
+      <Button Text ="AC" Clicked="AC" WidthRequest="182.5"/>
+      <Button Text ="/" Clicked="Divide"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Button Text ="7" Clicked="Seven"/>
+      <Button Text ="8" Clicked="Eight"/>
+      <Button Text ="9" Clicked="Nine"/>
+      <Button Text ="*" Clicked="Multiply"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Button Text ="4" Clicked="Four"/>
+      <Button Text ="5" Clicked="Five"/>
+      <Button Text ="6" Clicked="Six"/>
+      <Button Text ="-" Clicked="Subtract"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Button Text ="1" Clicked="One"/>
+      <Button Text ="2" Clicked="Two"/>
+      <Button Text ="3" Clicked="Three"/>
+      <Button Text ="+" Clicked="Add"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Button Text ="0" Clicked="Zero" WidthRequest="182.5"/>
+      <Button Text ="." Clicked="Point"/>
+      <Button Text ="=" Clicked="Equals"/>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>
