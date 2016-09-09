@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="Phoneword_iOS/Phoneword.csproj">
+  <MonoDevelop.Ide.ItemProperties.Phoneword AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Phoneword_iOS/MainActivity.cs">
+    <Files>
+      <File FileName="Phoneword_iOS/PhoneTranslator.cs" Line="54" Column="2" />
+      <File FileName="Phoneword_iOS/MainActivity.cs" Line="19" Column="27" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
