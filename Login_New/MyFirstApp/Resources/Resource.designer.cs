@@ -26,6 +26,7 @@ namespace MyFirstApp
 		
 		public static void UpdateIdValues()
 		{
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::MyFirstApp.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

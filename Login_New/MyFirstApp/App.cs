@@ -4,12 +4,12 @@ using Xamarin.Forms;
 
 namespace MyFirstApp
 {
-		public class App
+	public class App: Application
 		{
 		public App()
 		{
-			// The root page of your application
-			NavigatioinPage page = new NavigationPage();
+			MainPage = new NavigationPage(new MainView());
 		}
 		}
 }
+ 
