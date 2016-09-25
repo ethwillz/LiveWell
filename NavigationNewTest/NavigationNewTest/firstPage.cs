@@ -38,7 +38,7 @@ namespace NavigationNewTest
 			};
 			employmentButton.Clicked += async (object sender, EventArgs e) =>
 			{
-				await this.Navigation.PushAsync(new LoginPageTest());
+				await this.Navigation.PushAsync(new EmployeeLogin());
 			};
 
 			Content = new StackLayout()

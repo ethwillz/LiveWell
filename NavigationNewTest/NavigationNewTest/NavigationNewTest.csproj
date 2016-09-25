@@ -43,6 +43,8 @@
     <Compile Include="LoginPage.cs" />
     <Compile Include="LoginPageTest.cs" />
     <Compile Include="firstPage.cs" />
+    <Compile Include="EmployeeLogin.cs" />
+    <Compile Include="MainOrSearchHouse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

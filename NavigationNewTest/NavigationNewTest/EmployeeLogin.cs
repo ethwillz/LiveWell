@@ -4,14 +4,15 @@ using Xamarin.Forms;
 
 namespace NavigationNewTest
 {
-	public class LoginPageTest : ContentPage
+	public class EmployeeLogin : ContentPage
 	{
 		private StackLayout _pages;
 
-		public LoginPageTest()
+		public EmployeeLogin()
 		{
 			_pages = new StackLayout();
 
+			var label_EmployeeLogin = new Label { Text = "Zi is working on this", TextColor = Color.FromHex("#fff"), FontSize = 30, HorizontalOptions = LayoutOptions.Center };
 			var usernameEntry = new Entry { Placeholder = "Username" };
 			var passwordEntry = new Entry
 			{
@@ -23,12 +24,13 @@ namespace NavigationNewTest
 			var loginButton = new Button() { Text = "Login" };
 			loginButton.Clicked += async (object sender, EventArgs e) =>
 			{
-				await this.Navigation.PushAsync(new MainOrSearchHouse());
+				await this.Navigation.PushAsync(new firstPage());
 			};
 
 			Content = new StackLayout()
 			{
 				Children = {
+					label_EmployeeLogin,
 					usernameEntry,
 					passwordEntry,
 					loginButton,
