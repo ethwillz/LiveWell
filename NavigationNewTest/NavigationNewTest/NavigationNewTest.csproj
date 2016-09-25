@@ -40,6 +40,9 @@
     <Compile Include="NavPage.cs" />
     <Compile Include="NavigationNewTest.cs" />
     <Compile Include="RedPage.cs" />
+    <Compile Include="LoginPage.cs" />
+    <Compile Include="LoginPageTest.cs" />
+    <Compile Include="firstPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

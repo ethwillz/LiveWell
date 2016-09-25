@@ -5,7 +5,11 @@ namespace NavigationNewTest
 {
 	public class NavPage : NavigationPage
 	{
+		/*
 		public NavPage() : base(new BluePage())
+		{
+		}*/
+		public NavPage() : base(new firstPage())
 		{
 		}
 	}
