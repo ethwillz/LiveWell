@@ -13,6 +13,25 @@ namespace LiveWell
         public More()
         {
             InitializeComponent();
+
+            List<Page> pages = new List<Page>()
+            {
+                new Page("Property"),
+                new Page("Maintenance")
+            };
+
+            otherPages.ItemsSource = pages;
+            otherPages.RowHeight = 60;
+        }
+
+        public class Page
+        {
+            public Page(String page)
+            {
+                this.PageName = page;
+            }
+
+            public string PageName { get; set; }
         }
     }
 }
