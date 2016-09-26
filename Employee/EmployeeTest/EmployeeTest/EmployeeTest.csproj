@@ -48,6 +48,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CreateAccount.cs" />
+    <Compile Include="Resources\MyHome.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -63,6 +64,11 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\layout\CreateAccount.axml" />
+    <AndroidResource Include="Resources\layout\MyHome.axml" />
+    <AndroidResource Include="Resources\layout\History.axml" />
+    <AndroidResource Include="Resources\layout\Maintenance.axml" />
+    <AndroidResource Include="Resources\layout\EmptyRoom.axml" />
+    <AndroidResource Include="Resources\layout\RoomCondition.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

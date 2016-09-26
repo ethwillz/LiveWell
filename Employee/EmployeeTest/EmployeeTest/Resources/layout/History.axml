@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="                            History"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="55.0dp"
+            android:id="@+id/History" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="55.0dp"
+            android:id="@+id/linearLayout2">
+            <TextView
+                android:text="What are you looking for"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="38.5dp"
+                android:id="@+id/searchLabel" />
+            <EditText
+                android:id="@+id/searchText"
+                android:layout_width="99.0dp"
+                android:layout_height="43.0dp" />
+            <Button
+                android:text="Go"
+                android:id="@+id/searchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38.5dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:text="                Maintenance History"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="80.0dp"
+        android:id="@+id/MaintenanceHistory" />
+    <TextView
+        android:text="                        Fine History"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="80.0dp"
+        android:id="@+id/FineHistory" />
+    <TextView
+        android:text="                Message from Owner"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="80.0dp"
+        android:id="@+id/MessageFromOwner" />
+    <TextView
+        android:text="                      Residents' List"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="80.0dp"
+        android:id="@+id/Residents'List" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3">
+        <ImageButton
+            android:src="@android:drawable/arrow_up_float"
+            android:layout_width="76.0dp"
+            android:layout_height="76.0dp"
+            android:id="@+id/imageButton1" />
+        <ImageButton
+            android:src="@android:drawable/ic_menu_recent_history"
+            android:layout_width="76.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageButton2" />
+        <ImageButton
+            android:src="@android:drawable/ic_menu_manage"
+            android:layout_width="76.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageButton3" />
+        <ImageButton
+            android:src="@android:drawable/sym_action_email"
+            android:layout_width="76.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageButton4" />
+        <Button
+            android:text="   。。。"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/button1" />
+    </LinearLayout>
+</LinearLayout>
