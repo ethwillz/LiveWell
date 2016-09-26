@@ -19,25 +19,30 @@ namespace NavigationNewTest
 				Text = "Have a house",
 				Font = Font.SystemFontOfSize(NamedSize.Large),
 				BorderWidth = 1,
+				WidthRequest = 250,
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.CenterAndExpand
 			};
 
+			var image_withRoommates = new Image { Aspect = Aspect.AspectFit };
+			image_withRoommates.Source = ImageSource.FromFile("havehouse.jpg");
+
 			btn1.Clicked += async (object sender, EventArgs e) =>
 			{
-				await this.Navigation.PushAsync(new firstPage());
+				await this.Navigation.PushAsync(new MainPageDemo());
 			};
 
 			var btn2 = new Button() { 
 				Text = "Look for a house",
 				Font = Font.SystemFontOfSize(NamedSize.Large),
 				BorderWidth = 1,
+				WidthRequest = 250,
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.CenterAndExpand};
 			
 			btn2.Clicked += async (object sender, EventArgs e) =>
 			{
-				await this.Navigation.PushAsync(new firstPage());
+				await this.Navigation.PushAsync(new TabbedPageTest());
 			};
 
 
@@ -45,6 +50,7 @@ namespace NavigationNewTest
 			{
 				Children = {
 					label_afterlogin,
+					image_withRoommates,
 					btn1,
 					btn2,
 					_pages

@@ -20,6 +20,8 @@ namespace NavigationNewTest
 				Text = "LOGIN AS A RESIDENT", 
 				Font = Font.SystemFontOfSize(NamedSize.Large),
 				BorderWidth = 1,
+				WidthRequest = 300,
+				HeightRequest = 70,
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.CenterAndExpand
 
@@ -33,6 +35,8 @@ namespace NavigationNewTest
 				Text = "LOGIN AS AN EMPLOYEE",
 				Font = Font.SystemFontOfSize(NamedSize.Large),
 				BorderWidth = 1,
+				WidthRequest = 300,
+				HeightRequest = 70,
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.CenterAndExpand
 			};

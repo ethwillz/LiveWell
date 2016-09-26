@@ -45,6 +45,8 @@
     <Compile Include="firstPage.cs" />
     <Compile Include="EmployeeLogin.cs" />
     <Compile Include="MainOrSearchHouse.cs" />
+    <Compile Include="TabbedPageTest.cs" />
+    <Compile Include="MainPageDemo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
