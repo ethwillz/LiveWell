@@ -5,7 +5,7 @@
   <ListView x:Name="otherPages">
     <ListView.ItemTemplate>
       <DataTemplate>
-        <TextCell Text="{Binding Path = PageName}"/>
+        <TextCell TextColor="Black" Text="{Binding Path = PageName}"/>
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>

@@ -9,7 +9,7 @@
         <Label Text="Building bill" FontSize="20"/>
         <Label Text="$692.37" FontSize="20"/>
       </StackLayout>
-      <Button Text="Pay"/>
+      <Button Text="Pay" Clicked="payBuilding"/>
     </StackLayout>
     
     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
