@@ -35,37 +35,39 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AddProduct.xaml.cs">
+    <Compile Include="ResidentMain\AddProduct.xaml.cs">
       <DependentUpon>AddProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.cs" />
-    <Compile Include="Chat.xaml.cs">
+    <Compile Include="ResidentMain\Chat.xaml.cs">
       <DependentUpon>Chat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CustomGroceryCell.cs" />
-    <Compile Include="GroceryLists.xaml.cs">
+    <Compile Include="ResidentMain\GroceryLists.xaml.cs">
       <DependentUpon>GroceryLists.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListDetails.xaml.cs">
+    <Compile Include="ResidentMain\ListDetails.xaml.cs">
       <DependentUpon>ListDetails.xaml</DependentUpon>
     </Compile>
-    <Compile Include="More.xaml.cs">
+    <Compile Include="ResidentMain\Maintenance.xaml.cs">
+      <DependentUpon>Maintenance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentMain\More.xaml.cs">
       <DependentUpon>More.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyHome.xaml.cs">
+    <Compile Include="ResidentMain\MyHome.xaml.cs">
       <DependentUpon>MyHome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Payment.xaml.cs">
+    <Compile Include="ResidentMain\Payment.xaml.cs">
       <DependentUpon>Payment.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resident.xaml.cs">
+    <Compile Include="ResidentMain\Resident.xaml.cs">
       <DependentUpon>Resident.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -98,52 +100,59 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resident.xaml">
+    <EmbeddedResource Include="ResidentMain\Resident.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddProduct.xaml">
+    <EmbeddedResource Include="ResidentMain\AddProduct.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Chat.xaml">
+    <EmbeddedResource Include="ResidentMain\Chat.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GroceryLists.xaml">
+    <EmbeddedResource Include="ResidentMain\GroceryLists.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="More.xaml">
+    <EmbeddedResource Include="ResidentMain\More.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyHome.xaml">
+    <EmbeddedResource Include="ResidentMain\MyHome.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Payment.xaml">
+    <EmbeddedResource Include="ResidentMain\Payment.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ListDetails.xaml">
+    <EmbeddedResource Include="ResidentMain\ListDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ResidentMain\Maintenance.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
