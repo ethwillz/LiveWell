@@ -29,24 +29,51 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="NavigationNewTestPage.xaml" />
+    <EmbeddedResource Include="Properties\firstPageNew.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\LoginPageNew.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeLoginNew.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPageDemo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSearchHouseNew.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NavigationNewTestPage.xaml.cs">
       <DependentUpon>NavigationNewTestPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BluePage.cs" />
-    <Compile Include="ColorPage.cs" />
     <Compile Include="NavPage.cs" />
     <Compile Include="NavigationNewTest.cs" />
-    <Compile Include="RedPage.cs" />
-    <Compile Include="LoginPage.cs" />
-    <Compile Include="LoginPageTest.cs" />
-    <Compile Include="firstPage.cs" />
-    <Compile Include="EmployeeLogin.cs" />
-    <Compile Include="MainOrSearchHouse.cs" />
     <Compile Include="TabbedPageTest.cs" />
-    <Compile Include="MainPageDemo.cs" />
+    <Compile Include="Properties\firstPageNew.xaml.cs">
+      <DependentUpon>firstPageNew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\LoginPageNew.xaml.cs">
+      <DependentUpon>LoginPageNew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeLoginNew.xaml.cs">
+      <DependentUpon>EmployeeLoginNew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPageDemo.xaml.cs">
+      <DependentUpon>MainPageDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainSearchHouseNew.xaml.cs">
+      <DependentUpon>MainSearchHouseNew.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

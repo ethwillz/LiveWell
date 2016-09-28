@@ -24,7 +24,7 @@ namespace NavigationNewTest
 			var loginButton = new Button() { Text = "Login" };
 			loginButton.Clicked += async (object sender, EventArgs e) =>
 			{
-				await this.Navigation.PushAsync(new firstPage());
+				await this.Navigation.PushAsync(new firstPageNew());
 			};
 
 			Content = new StackLayout()

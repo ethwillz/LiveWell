@@ -7,7 +7,7 @@ namespace NavigationNewTest
 	public class firstPage : ContentPage
 	{
 		private StackLayout _pages;
-
+	
 		public firstPage()
 		{
 			_pages = new StackLayout();

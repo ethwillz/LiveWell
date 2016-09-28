@@ -1,17 +1,12 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace NavigationNewTest
+namespace NavigationTest
 {
 	public class NavPage : NavigationPage
 	{
-		/*
 		public NavPage() : base(new BluePage())
-		{
-		}*/
-		public NavPage() : base(new firstPageNew())
 		{
 		}
 	}
 }
-

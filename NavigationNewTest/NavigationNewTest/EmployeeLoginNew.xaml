@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NavigationNewTest.EmployeeLoginNew">
+	<ContentPage.Content>
+		<StackLayout>
+			<Label Text="Zi is working on this" TextColor="#fff" FontSize="30" HorizontalOptions="Center"/>
+			<Entry Placeholder="Username"/>
+			<Entry Placeholder="Password" IsPassword="true"/>
+			<Button Text="Login" Clicked="OnLoginButtonClicked"/>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
