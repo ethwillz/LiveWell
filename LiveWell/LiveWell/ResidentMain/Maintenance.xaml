@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LiveWell.Maintenance">
+  <StackLayout Orientation="Vertical">
+    <Label Text="Submit new maintenance request" FontSize="20" HorizontalOptions="Center"/>
+    <Label Text="Summary of issue" FontSize="15"/>
+    <Editor HeightRequest="100"/>
+    <Label Text="Summary of issue" FontSize="15"/>
+    <Editor HeightRequest="320"/>
+    <Button Clicked="submitClick" Text="Submit request"/>
+  </StackLayout>
+  
+</ContentPage>
