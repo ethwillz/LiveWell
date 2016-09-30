@@ -30,6 +30,24 @@
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="EmployeePage.xaml" />
+    <EmbeddedResource Include="EmployeeSignupPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeHomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeHistoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeMaintenancePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeEmptyRoomPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeePasswordResetPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -39,6 +57,24 @@
       <DependentUpon>EmployeePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EmployeeSignupPage.xaml.cs">
+      <DependentUpon>EmployeeSignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeHomePage.xaml.cs">
+      <DependentUpon>EmployeeHomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeHistoryPage.xaml.cs">
+      <DependentUpon>EmployeeHistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeMaintenancePage.xaml.cs">
+      <DependentUpon>EmployeeMaintenancePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeEmptyRoomPage.xaml.cs">
+      <DependentUpon>EmployeeEmptyRoomPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeePasswordResetPage.xaml.cs">
+      <DependentUpon>EmployeePasswordResetPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
