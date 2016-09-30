@@ -11,6 +11,8 @@ namespace LiveWell
         {
             InitializeComponent();
 
+            logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
+
             List<Notification> notifications = new List<Notification>()
             {
                 new Notification("Chris W. bought groceries and you owe $23.72", "Groceries"),
@@ -34,22 +36,22 @@ namespace LiveWell
             //Handles payment through bank account
             if (action.Equals("Bank Account"))
             {
-
+                new ResidentMain.HandlePayment().bankAccount();
             }
             //Handles payment through credit card
             if (action.Equals("Credit Card"))
             {
-
+                new ResidentMain.HandlePayment().creditCard();
             }
             //Handles payment through PayPal
             if (action.Equals("PayPal"))
             {
-
+                new ResidentMain.HandlePayment().payPal();
             }
             //Handles payment through Venmo
             if (action.Equals("Venmo"))
             {
-
+                new ResidentMain.HandlePayment().venmo();
             }
         }
     }

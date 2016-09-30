@@ -2153,7 +2153,7 @@ namespace LiveWell.Droid
 			public const int ic_tv_light = 2130837648;
 			
 			// aapt resource value: 0x7f020091
-			public const int icon = 2130837649;
+			public const int livewelllogo = 2130837649;
 			
 			// aapt resource value: 0x7f020092
 			public const int mr_dialog_material_background_dark = 2130837650;

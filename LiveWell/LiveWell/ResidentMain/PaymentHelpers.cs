@@ -66,4 +66,32 @@ namespace LiveWell.ResidentMain
         public String total { get; set; }
         public String currency { get; set; }
     }
+
+    public class OAuthDetails
+    {
+        public OAuthDetails(String client_credentials)
+        {
+            this.client_credentials = client_credentials;
+        }
+
+        public String client_credentials { get; set; }
+    }
+
+    public class AccessResponse
+    {
+        public AccessResponse(String scope, String access_token, String token_type, String app_id, String expires_in)
+        {
+            this.scope = scope;
+            this.access_token = access_token;
+            this.token_type = token_type;
+            this.app_id = app_id;
+            this.expires_in = expires_in;
+        }
+
+        public String scope { get; set; }
+        public String access_token { get; set; }
+        public String token_type { get; set; }
+        public String app_id { get; set; }
+        public String expires_in { get; set; }
+    }
 }
