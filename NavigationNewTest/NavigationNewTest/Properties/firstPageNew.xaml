@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NavigationNewTest.firstPageNew">
+	<ContentPage.Content>
+	<StackLayout>
+	  <Label Text="LiveWell" TextColor="#fff" FontSize="30" HorizontalOptions="Center"/>
+      <Label Text="__________LOG IN__________" TextColor="#fff" FontSize="30" HorizontalOptions="Center"/>
+
+      <Button Text="LOGIN AS A RESIDENT" VerticalOptions="CenterAndExpand"
+        HorizontalOptions="Center" HeightRequest="70" WidthRequest="300" BorderWidth="1" FontSize="Large"
+		Clicked="OnResidentButtonClicked"/>
+
+      <Button Text="LOGIN AS A EMPLOYEE" VerticalOptions="CenterAndExpand"
+        HorizontalOptions="Center" HeightRequest="70" WidthRequest="300" BorderWidth="1" FontSize="Large"
+		Clicked="OnEmployeeButtonClicked"/>
+
+      
+    </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
