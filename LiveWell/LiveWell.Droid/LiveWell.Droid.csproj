@@ -126,6 +126,10 @@
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\drawable\havehouse.jpg" />
+    <AndroidResource Include="Resources\drawable\apartment2.jpg" />
+    <AndroidResource Include="Resources\drawable\apartment1.jpg" />
+    <AndroidResource Include="Resources\drawable\apartment3.jpg" />
+    <AndroidResource Include="Resources\drawable\apartment4.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LiveWell\LiveWell.csproj">
