@@ -125,6 +125,7 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable\havehouse.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LiveWell\LiveWell.csproj">

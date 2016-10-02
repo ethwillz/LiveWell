@@ -11,8 +11,8 @@ namespace LiveWell
     {
         public App()
         {
-            MainPage = new Resident();
-        }
+			MainPage = new FirstPage();
+		}
 
         protected override void OnStart()
         {

@@ -66,6 +66,36 @@
     <Compile Include="ResidentMain\Resident.xaml.cs">
       <DependentUpon>Resident.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Login+LookForHouse\FirstPage.xaml.cs">
+      <DependentUpon>FirstPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login+LookForHouse\EmployeeLoginPage.xaml.cs">
+      <DependentUpon>EmployeeLoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login+LookForHouse\ResidentLoginPage.xaml.cs">
+      <DependentUpon>ResidentLoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login+LookForHouse\MainOrSearchHouse.xaml.cs">
+      <DependentUpon>MainOrSearchHouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login+LookForHouse\HouseSearchTabbedPage.xaml.cs">
+      <DependentUpon>HouseSearchTabbedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login+LookForHouse\HomeTab.xaml.cs">
+      <DependentUpon>HomeTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login+LookForHouse\ChatTab.xaml.cs">
+      <DependentUpon>ChatTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login+LookForHouse\FavoriteTab.xaml.cs">
+      <DependentUpon>FavoriteTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login+LookForHouse\MapTab.xaml.cs">
+      <DependentUpon>MapTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login+LookForHouse\MoreTab.xaml.cs">
+      <DependentUpon>MoreTab.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -111,6 +141,36 @@
     <EmbeddedResource Include="ResidentMain\Resident.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login+LookForHouse\FirstPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login+LookForHouse\EmployeeLoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login+LookForHouse\ResidentLoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login+LookForHouse\MainOrSearchHouse.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login+LookForHouse\HouseSearchTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login+LookForHouse\HomeTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login+LookForHouse\ChatTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login+LookForHouse\FavoriteTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login+LookForHouse\MapTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login+LookForHouse\MoreTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +220,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Login+LookForHouse\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
