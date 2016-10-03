@@ -48,6 +48,9 @@
     <EmbeddedResource Include="EmployeePasswordResetPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tabbed.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -74,6 +77,9 @@
     </Compile>
     <Compile Include="EmployeePasswordResetPage.xaml.cs">
       <DependentUpon>EmployeePasswordResetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabbed.xaml.cs">
+      <DependentUpon>Tabbed.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
