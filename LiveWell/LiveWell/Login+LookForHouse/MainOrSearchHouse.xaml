@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.MainOrSearchHouse">
+	<ContentPage.Content>
+		<StackLayout>
+			<Label Text="Hi USERNAME!" TextColor="#000" FontSize="30" HorizontalOptions="Center"/>
+			<Image Source="havehouse.jpg"/>
+			<Button Text="Have a house" VerticalOptions="CenterAndExpand"
+        	HorizontalOptions="Center" WidthRequest="250" BorderWidth="1" FontSize="Large"
+			Clicked="OnMainButtonClicked"/>
+
+      		<Button Text="Look for a house" VerticalOptions="CenterAndExpand"
+        	HorizontalOptions="Center" WidthRequest="250" BorderWidth="1" FontSize="Large"
+			Clicked="OnSearchButtonClicked"/>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
