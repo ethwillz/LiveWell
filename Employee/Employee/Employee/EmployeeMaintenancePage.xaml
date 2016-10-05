@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Employee.EmployeeMaintenancePage" Padding="10, 40, 10, 40">
+	<StackLayout>
+		<Label 
+        Text="Maintenance"
+        Font="Large"
+        HorizontalOptions="Center"
+        VerticalOptions="Start"
+		FontAttributes="Bold"/>
+			<StackLayout Orientation = "Horizontal">
+				<Entry Placeholder="What are you looking for" 
+					VerticalOptions="FillAndExpand" 
+					HorizontalOptions="FillAndExpand" />
+				<Button Text="Search"
+					HorizontalOptions="FillAndExpand" 
+					VerticalOptions="CenterAndExpand" />
+			</StackLayout>
+		<Label 
+        Text="Announcement:"
+        Font="Large"
+        HorizontalOptions="StartAndExpand"
+        VerticalOptions="StartAndExpand"
+		FontAttributes="Bold"/>
+		<Editor
+		FontSize="Large" />
+		<Button Text="Post"
+					HorizontalOptions="EndAndExpand" 
+					VerticalOptions="Start" />
+		<Button Text="View Announcement History"
+					HorizontalOptions="CenterAndExpand" 
+					VerticalOptions="Start" />
+			<StackLayout Orientation = "Horizontal">
+				<Button Text="Home"
+					HorizontalOptions="FillAndExpand" 
+					VerticalOptions="FillAndExpand"
+					Clicked="HomeButtonClicked" />
+				<Button Text="History"
+					HorizontalOptions="FillAndExpand" 
+					VerticalOptions="FillAndExpand"
+					Clicked="HistoryButtonClicked" />
+				<Button Text="Maintenance"
+					HorizontalOptions="FillAndExpand" 
+					VerticalOptions="FillAndExpand"
+					Clicked="MaintenanceButtonClicked" />
+				<Button Text="EmptyRoom"
+					HorizontalOptions="FillAndExpand" 
+					VerticalOptions="FillAndExpand"
+					Clicked="EmptyRoomButtonClicked"/>
+				<Button Text="..."
+					HorizontalOptions="FillAndExpand" 
+					VerticalOptions="FillAndExpand" />
+			</StackLayout>
+	</StackLayout>
+</ContentPage>
