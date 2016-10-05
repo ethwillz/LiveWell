@@ -20,5 +20,9 @@ namespace LiveWell
 		{
 			Navigation.PushModalAsync(new EmployeeLoginPage());
 		}
+		public void OnOwnerButtonClicked(object sender, EventArgs args)
+		{
+			Navigation.PushModalAsync(new OwnerLoginPage());
+		}
 	}
 }
