@@ -6,19 +6,34 @@ namespace LiveWell.ResidentMain
     {
         public String intent { get; set; }
         public Payer payer { get; set; }
-        public Transactions transactions { get; set; }
+        public Transactions[] transactions { get; set; }
     }
 
     public class Payer
     {
-        public Payer(String payment_method, CreditCard funding_instruments)
+        public Payer(String payment_method,FundingInstrument[] funding_instruments)
         {
             this.payment_method = payment_method;
             this.funding_instruments = funding_instruments;
         }
 
+        public Payer(String payment_method)
+        {
+            this.payment_method = payment_method;
+        }
+
         public String payment_method { get; set; }
-        public CreditCard funding_instruments { get; set; }
+        public FundingInstrument[] funding_instruments { get; set; }
+    }
+
+    public class FundingInstrument
+    {
+        public FundingInstrument(CreditCard credit_card)
+        {
+            this.credit_card = credit_card;
+        }
+
+        public CreditCard credit_card { get; set; }
     }
 
     public class CreditCard
@@ -69,12 +84,12 @@ namespace LiveWell.ResidentMain
 
     public class OAuthDetails
     {
-        public OAuthDetails(String client_credentials)
+        public OAuthDetails(String grant_type)
         {
-            this.client_credentials = client_credentials;
+            this.grant_type = grant_type;
         }
 
-        public String client_credentials { get; set; }
+        public String grant_type { get; set; }
     }
 
     public class AccessResponse
