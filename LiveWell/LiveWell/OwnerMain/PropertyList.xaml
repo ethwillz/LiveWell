@@ -1,5 +1,13 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.PropertyList">
-	<ContentPage.Content>
-	</ContentPage.Content>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:LiveWell;assembly=LiveWell"
+			 x:Class="LiveWell.PropertyList">
+	<ListView x:Name="allLists" ItemTapped="onTap">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <TextCell x:Name="listCell" TextColor="Black" Text="{Binding Path = ListName}" Detail="{Binding Path = Users}"/>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
 </ContentPage>

@@ -10,6 +10,34 @@ namespace LiveWell
 		public PropertyList()
 		{
 			InitializeComponent();
+
+			List<ListInfo> lists = new List<ListInfo>()
+			{
+				new ListInfo("PLACEHOLDER", "TEST"),
+			};
+
+			allLists.ItemsSource = lists;
+			allLists.RowHeight = 60;
+
+
+		}
+
+		void onTap(object sender, ItemTappedEventArgs e)
+		{
+			((ListView)sender).SelectedItem = null;
+			Navigation.PushModalAsync(new ListDetails());
+		}
+
+		public class ListInfo
+		{
+			public ListInfo(String listName, String users)
+			{
+				this.ListName = listName;
+				this.Users = users; ;
+			}
+
+			public String ListName { get; set; }
+			public String Users { get; set; }
 		}
 	}
 }

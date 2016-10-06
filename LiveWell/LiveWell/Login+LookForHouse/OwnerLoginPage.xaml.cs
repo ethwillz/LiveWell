@@ -13,7 +13,7 @@ namespace LiveWell
 		}
 		public void OnLoginButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new OwnerHome());
+			Navigation.PushModalAsync(new Owner());
 		}
 	}
 }
