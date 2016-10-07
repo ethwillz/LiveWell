@@ -41,7 +41,7 @@ namespace LiveWell.ResidentMain
             getToken.BaseAddress = new Uri("https://api.sandbox.paypal.com/v1/oauth2/token");
             getToken.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             getToken.DefaultRequestHeaders.AcceptLanguage.Add(new StringWithQualityHeaderValue("en_US"));
-            getToken.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("E0J2s", "AZO0N5GJVZDE0Ubt417QqdeG22iEFFhO-uMjhJcSPKK6qUfoQ2yG5LCzw-JnsZ0waDT3o2iAGlUCzvoh:EKLht0duhg4jH78ndGHHyAkjb0yt457GguhTLkMQtJoqLJBf4aqdogGW53hRdbuas8TCrqOxpYSPpVEv");
+            getToken.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("EOJ2S", "AZO0N5GJVZDE0Ubt417QqdeG22iEFFhO-uMjhJcSPKK6qUfoQ2yG5LCzw-JnsZ0waDT3o2iAGlUCzvoh:EKLht0duhg4jH78ndGHHyAkjb0yt457GguhTLkMQtJoqLJBf4aqdogGW53hRdbuas8TCrqOxpYSPpVEv");
             getToken.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
 
             string json = JsonConvert.SerializeObject(new OAuthDetails("clientcredentials"));
