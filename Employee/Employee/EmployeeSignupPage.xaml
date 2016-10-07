@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Employee.EmployeeSignupPage" Title="Sign up" Padding="10, 40, 10, 10">
+	<StackLayout>
+		<Label Text="Welcome to Live Well!" VerticalOptions="Start" HorizontalOptions="Center" Font="Large" FontAttributes="Bold" />
+		<Label Text="Employee Sign Up" VerticalOptions="Fill" HorizontalOptions="Center" />
+		<Label Text="First name" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" Font="Large" FontAttributes="Bold" />
+		<Entry Placeholder="Enter first name" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" />
+		<Label Text="Last name" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" Font="Large" FontAttributes="Bold" />
+		<Entry Placeholder="Enter Last name" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" />
+		<Label Text="Email Address" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" Font="Large" FontAttributes="Bold" />
+		<Entry Placeholder="Enter email address" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" />
+		<Label Text="Password" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" Font="Large" FontAttributes="Bold" />
+		<Entry Placeholder="Enter password" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" IsPassword="true" />
+		<Label Text="Confirm password" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" Font="Large" FontAttributes="Bold" />
+		<Entry Placeholder="Enter password" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" IsPassword="true" />
+		<StackLayout Orientation="Horizontal">
+			<Button Text="Go back" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Clicked="BackButtonClicked" />
+			<Button Text="Create" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+		</StackLayout>
+	</StackLayout>
+</ContentPage>
