@@ -1,5 +1,14 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.ChatTab">
 	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" Padding="5, 20, 5, 0">
+			<Entry Text="{Binding Name}" Placeholder="Name">
+			</Entry>
+			<Entry Text="{Binding Message}" Placeholder="Message">
+			</Entry>
+			<Button Text="Send Message" Command="{Binding SendMessageCommand}"></Button>
+			<ListView x:Name="MessagesList">
+			</ListView>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
