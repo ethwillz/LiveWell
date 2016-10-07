@@ -8,6 +8,6 @@
         <mypages:ChatTab Title="Chat"/>
 		<mypages:MapTab Title="Map"/>
 		<mypages:FavoriteTab Title="Favorite"/>
-	    <mypages:MoreTab Title="More"/>
+	    <mypages:FilterTab Title="Filter"/>
     </TabbedPage.Children>
 </TabbedPage>
