@@ -96,6 +96,30 @@
     <Compile Include="Login+LookForHouse\MoreTab.xaml.cs">
       <DependentUpon>MoreTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Employee\EmployeePage.xaml.cs">
+      <DependentUpon>EmployeePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeSignupPage.xaml.cs">
+      <DependentUpon>EmployeeSignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeHomePage.xaml.cs">
+      <DependentUpon>EmployeeHomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeePasswordResetPage.xaml.cs">
+      <DependentUpon>EmployeePasswordResetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeHistoryPage.xaml.cs">
+      <DependentUpon>EmployeeHistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeMaintenancePage.xaml.cs">
+      <DependentUpon>EmployeeMaintenancePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeEmptyRoomPage.xaml.cs">
+      <DependentUpon>EmployeeEmptyRoomPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Tabbed.xaml.cs">
+      <DependentUpon>Tabbed.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -172,6 +196,30 @@
     <EmbeddedResource Include="Login+LookForHouse\MoreTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeeSignupPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeeHomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeePasswordResetPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeeHistoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeeMaintenancePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeeEmptyRoomPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Tabbed.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ResidentMain\AddProduct.xaml">
@@ -223,6 +271,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Login+LookForHouse\" />
+    <Folder Include="Employee\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

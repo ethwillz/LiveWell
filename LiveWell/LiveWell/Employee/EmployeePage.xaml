@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.EmployeePage">
+	<ContentPage.Content>
+		<StackLayout>
+	<Label Text="Welcome to Live Well!" 
+			VerticalOptions="Start" 
+			HorizontalOptions="Center" 
+			Font="Large" 
+			FontAttributes="Bold" />
+	<Label Text="Employee Login" 
+			VerticalOptions="Fill" 
+			HorizontalOptions="Center" />
+	<Label Text="Username / Email Address"
+			VerticalOptions="Fill" 
+			HorizontalOptions="StartAndExpand" 
+			Font="Large"
+			FontAttributes="Bold"/>
+	<Entry Placeholder="Enter username" 
+			VerticalOptions="Fill" 
+			HorizontalOptions="StartAndExpand"/>
+	<Label Text="Username / Email Address" 
+			VerticalOptions="Fill" 
+			HorizontalOptions="StartAndExpand" 
+			Font="Large" FontAttributes="Bold"/>
+	<Entry Placeholder="Enter password" 
+			VerticalOptions="Fill" 
+			HorizontalOptions="StartAndExpand"
+			IsPassword="true" />
+		<StackLayout Orientation = "Horizontal">
+			<Button Text="Forget your password ?" 
+				HorizontalOptions="FillAndExpand" 
+				VerticalOptions="CenterAndExpand"
+				Clicked="PasswordButtonClicked"/>
+			<Button Text="Login"
+				HorizontalOptions="FillAndExpand" 
+				VerticalOptions="CenterAndExpand" 
+				Clicked="LoginButtonClicked"/>
+		</StackLayout>
+		<StackLayout Orientation = "Horizontal">
+			<Button Text="Create an account"
+				HorizontalOptions="FillAndExpand" 
+				VerticalOptions="CenterAndExpand" 
+				Clicked="CreateButtonClicked" />
+			<Button Text="Help"
+				HorizontalOptions="FillAndExpand" 
+				VerticalOptions="CenterAndExpand"
+				Clicked="HelpButtonClicked" />
+		</StackLayout>
+	</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
