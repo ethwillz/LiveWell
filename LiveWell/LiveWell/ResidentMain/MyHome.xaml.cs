@@ -1,7 +1,9 @@
-﻿using System;
+﻿using ModernHttpClient;
+using System;
 using System.Collections.Generic;
-
+using System.Net.Http;
 using Xamarin.Forms;
+using static LiveWell.ConnectHelpers;
 
 namespace LiveWell
 {
@@ -13,25 +15,34 @@ namespace LiveWell
 
             logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
 
-            List<Notification> notifications = new List<Notification>()
+            //populateList();
+        }
+
+        async void populateList()
+        {
+            DatabaseConnect conn = new DatabaseConnect();
+            List<Notification> notifications = await conn.getNotifications(1);
+
+            List<QuickViewNotif> notifs = new List<QuickViewNotif>();
+            for(int i = 0; i < notifications.Count; i++)
             {
-                new Notification("Chris W. bought groceries and you owe $23.72", "Groceries"),
-                new Notification("Campustown fined your room for a noise violation", "Fine"),
-                new Notification("Maintenance scheduled for October 2nd at 2:00pm", "Maintenance"),
-                new Notification("Chris W. bought groceries and you owe $23.72", "Groceries"),
-                new Notification("Campustown fined your room for a noise violation", "Fine"),
-                new Notification("Maintenance scheduled for October 2nd at 2:00pm", "Maintenance"),
-                new Notification("Chris W. bought groceries and you owe $23.72", "Groceries"),
-                new Notification("Campustown fined your room for a noise violation", "Fine"),
-                new Notification("Maintenance scheduled for October 2nd at 2:00pm", "Maintenance")
-            };
-            
-            quickview.ItemsSource = notifications;
+                if(notifications[i].type == "groceries")
+                {
+                    notifs.Add(new QuickViewNotif(notifications[i].sender + " bought '" + notifications[i].details + "' and you owe " + notifications[i].amount, "Groceries"));
+                }
+                if(notifications[i].type == "fine")
+                {
+                    notifs.Add(new QuickViewNotif("Your room was fined " + notifications[i].amount + " for '" + notifications[i].details + "'", "Fine"));
+                }
+            }
+
+            quickview.ItemsSource = notifs;
             quickview.RowHeight = 60;
         }
 
         async void payment(Object sender, EventArgs e)
         {
+            populateList();
             var action = await DisplayActionSheet("Submit payment", "Cancel", null, "Bank Account", "Credit Card", "PayPal", "Venmo");
             //Handles payment through bank account
             if (action.Equals("Bank Account"))
@@ -56,9 +67,9 @@ namespace LiveWell
         }
     }
 
-    public class Notification
+    public class QuickViewNotif
     {
-        public Notification(String summary, String details)
+        public QuickViewNotif(String summary, String details)
         {
             this.Summary = summary;
             this.Details = details;
