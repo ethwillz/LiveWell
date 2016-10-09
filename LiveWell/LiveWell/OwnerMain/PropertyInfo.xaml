@@ -1,5 +1,17 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.PropertyInfo">
-	<ContentPage.Content>
-	</ContentPage.Content>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LiveWell;assembly=LiveWell"
+			 x:Class="LiveWell.PropertyInfo">
+<StackLayout Orientation="Vertical">
+    <Label x:Name="listName" TextColor="Black" Text="List's name" FontSize="20"/>
+    <Label x:Name="users" TextColor="Black" Text="Users who have list" FontSize="17"/>
+    <ListView x:Name = "products">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ImageCell x:Name="productCell" ImageSource="{Binding Path = ProductImageUrl}" Text="{Binding Path = ProductName}" TextColor="Black" Detail="Cheapest at _________"/>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
 </ContentPage>
