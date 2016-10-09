@@ -119,6 +119,8 @@
     </Compile>
     <Compile Include="Employee\Tabbed.xaml.cs">
       <DependentUpon>Tabbed.xaml</DependentUpon>
+    <Compile Include="Login+LookForHouse\FilterTab.xaml.cs">
+      <DependentUpon>FilterTab.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +220,7 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\Tabbed.xaml">
+    <EmbeddedResource Include="Login+LookForHouse\FilterTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

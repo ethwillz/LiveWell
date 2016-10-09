@@ -130,6 +130,7 @@
     <AndroidResource Include="Resources\drawable\apartment1.jpg" />
     <AndroidResource Include="Resources\drawable\apartment3.jpg" />
     <AndroidResource Include="Resources\drawable\apartment4.jpg" />
+    <AndroidResource Include="Resources\drawable\mapdemo.JPG" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LiveWell\LiveWell.csproj">
