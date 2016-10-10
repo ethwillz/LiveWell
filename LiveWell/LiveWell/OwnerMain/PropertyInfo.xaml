@@ -4,12 +4,12 @@
              xmlns:local="clr-namespace:LiveWell;assembly=LiveWell"
 			 x:Class="LiveWell.PropertyInfo">
 <StackLayout Orientation="Vertical">
-    <Label x:Name="listName" TextColor="Black" Text="List's name" FontSize="20"/>
-    <Label x:Name="users" TextColor="Black" Text="Users who have list" FontSize="17"/>
-    <ListView x:Name = "products">
+    <Label x:Name="listName" TextColor="Black" Text="Property" FontSize="20"/>
+    <Label x:Name="users" TextColor="Black" Text="Rooms" FontSize="17"/>
+    <ListView x:Name = "rooms" ItemTapped = "onTap">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <ImageCell x:Name="productCell" ImageSource="{Binding Path = ProductImageUrl}" Text="{Binding Path = ProductName}" TextColor="Black" Detail="Cheapest at _________"/>
+          <ImageCell x:Name="productCell" Text="{Binding Path = RoomNumber}" TextColor="Black" Detail = "{Binding Path = Residents}"/>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

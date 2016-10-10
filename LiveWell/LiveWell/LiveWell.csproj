@@ -120,6 +120,9 @@
     <Compile Include="OwnerMain\RoomInfo.xaml.cs">
       <DependentUpon>RoomInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OwnerMain\AddProperty.xaml.cs">
+      <DependentUpon>AddProperty.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -218,6 +221,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="OwnerMain\RoomInfo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnerMain\AddProperty.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

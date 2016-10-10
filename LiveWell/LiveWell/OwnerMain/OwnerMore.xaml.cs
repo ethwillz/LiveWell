@@ -24,7 +24,7 @@ namespace LiveWell
 		public void onTap(object sender, EventArgs e)
 		{
 			((ListView)sender).SelectedItem = null;
-			Navigation.PushModalAsync(new Maintenance());
+			Navigation.PushModalAsync(new AddProperty());
 		}
 
 		public class Page
