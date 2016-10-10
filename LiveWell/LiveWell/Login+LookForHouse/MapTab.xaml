@@ -20,10 +20,7 @@
 
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="StartAndExpand" Padding="30">
-        <!--<maps:MapTab WidthRequest="320" HeightRequest="200"
-            x:Name="MyMap"
-            IsShowingUser="true"
-            MapType="Street"/>-->
+        <maps:CustomMap x:Name="MyMap" MapType="Street" WidthRequest="320" HeightRequest="600"/>
     	</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

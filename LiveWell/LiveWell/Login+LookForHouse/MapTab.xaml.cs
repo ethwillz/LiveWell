@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Net.Http;
 using Xamarin.Forms;
 using static LiveWell.ConnectHelpers;
+using Xamarin.Forms.Maps;
+
 
 namespace LiveWell
 {
