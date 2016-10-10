@@ -3,6 +3,13 @@
 	<ContentPage.Content>
 		<StackLayout>
 		<Image Source="mapdemo.jpg"/>
+		<ListView x:Name="quickview">
+      	<ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell TextColor="#8F1616" DetailColor="#8F1616" Text="{Binding Path = Summary}" Detail="{Binding Path = Details}"/>
+        </DataTemplate>
+      	</ListView.ItemTemplate>
+   	    </ListView>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
