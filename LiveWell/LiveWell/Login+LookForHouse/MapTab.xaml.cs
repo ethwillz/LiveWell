@@ -12,32 +12,32 @@ namespace LiveWell
 		public MapTab()
 		{
 			InitializeComponent();
-			populateList();
+			//populateList();
 		}
 
-		async void populateList()
-		{
-			DatabaseConnect conn = new DatabaseConnect();
-			List<Address> addresses = await conn.getAddress(1);
+	//	async void populateList()
+	//	{
+	//		DatabaseConnect conn = new DatabaseConnect();
+	//		List<Address> addresses = await conn.getAddress(1);
 
-			List<QuickViewAddress> address = new List<QuickViewAddress>();
+	//		List<QuickViewAddress> address = new List<QuickViewAddress>();
 
-			address.Add(new QuickViewAddress(addresses[0].address, "test"));
+	//		address.Add(new QuickViewAddress(addresses[0].address, "test"));
 
-			quickview.ItemsSource = address;
-			quickview.RowHeight = 60;
-		}
-	}
+	//		quickview.ItemsSource = address;
+	//		quickview.RowHeight = 60;
+	//	}
+	//}
 
-	public class QuickViewAddress
-	{
-		public QuickViewAddress(String summary, String details)
-		{
-			this.Summary = summary;
-			this.Details = details;
-		}
+	//public class QuickViewAddress
+	//{
+	//	public QuickViewAddress(String summary, String details)
+	//	{
+	//		this.Summary = summary;
+	//		this.Details = details;
+	//	}
 
-		public String Summary { get; set; }
-		public String Details { get; set; }
-	}
+	//	public String Summary { get; set; }
+	//	public String Details { get; set; }
+	  }
 }

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.MapTab">
-	<ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="LiveWell.MapTab"
+		xmlns:maps="clr-namespace:LiveWell;assembly=LiveWell">
+	
+	<!--<ContentPage.Content>
 		<StackLayout>
 		<Image Source="mapdemo.jpg"/>
+
 		<ListView x:Name="quickview">
       	<ListView.ItemTemplate>
         <DataTemplate>
@@ -11,5 +16,14 @@
       	</ListView.ItemTemplate>
    	    </ListView>
 		</StackLayout>
+	</ContentPage.Content>-->
+
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="StartAndExpand" Padding="30">
+        <!--<maps:MapTab WidthRequest="320" HeightRequest="200"
+            x:Name="MyMap"
+            IsShowingUser="true"
+            MapType="Street"/>-->
+    	</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
