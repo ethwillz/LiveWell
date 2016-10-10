@@ -1,7 +1,5 @@
-﻿using ModernHttpClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using Xamarin.Forms;
 using static LiveWell.ConnectHelpers;
 
@@ -15,14 +13,17 @@ namespace LiveWell
 
             logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
 
-            //populateList();
+            //Runs async operation to populate listview with data from MySQL database
+            populateList();
         }
 
         async void populateList()
         {
+            //Instantiates conenction object and calls method which gets notifications given a residentID
             DatabaseConnect conn = new DatabaseConnect();
             List<Notification> notifications = await conn.getNotifications(1);
 
+            //Creates list of notifications for use in UI
             List<QuickViewNotif> notifs = new List<QuickViewNotif>();
             for(int i = 0; i < notifications.Count; i++)
             {
@@ -36,13 +37,13 @@ namespace LiveWell
                 }
             }
 
+            //Sets the source of the listview and the row height
             quickview.ItemsSource = notifs;
             quickview.RowHeight = 60;
         }
 
         async void payment(Object sender, EventArgs e)
         {
-            populateList();
             var action = await DisplayActionSheet("Submit payment", "Cancel", null, "Bank Account", "Credit Card", "PayPal", "Venmo");
             //Handles payment through bank account
             if (action.Equals("Bank Account"))

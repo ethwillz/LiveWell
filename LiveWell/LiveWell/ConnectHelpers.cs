@@ -5,6 +5,7 @@ namespace LiveWell
     class ConnectHelpers
     {
 
+        //Notification object which stores all necessary data returned by the HTTP request
         public class Notification
         {
             public Notification(String notificationID, String residentID, String type, String amount, String sender, String details)
