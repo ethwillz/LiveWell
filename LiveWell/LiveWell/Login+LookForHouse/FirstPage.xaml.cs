@@ -18,7 +18,7 @@ namespace LiveWell
 		}
 		public void OnEmployeeButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new EmployeeLoginPage());
+			Navigation.PushModalAsync(new EmployeePage());
 		}
 	}
 }

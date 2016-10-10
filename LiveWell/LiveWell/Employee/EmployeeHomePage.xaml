@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Employee.EmployeeHomePage" Padding="10, 40, 10, 40">
-	<StackLayout>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.EmployeeHomePage">
+	<ContentPage.Content>
+		<StackLayout>
 		<Label 
         Text="My Home"
         Font="Large"
@@ -55,4 +56,6 @@
 					VerticalOptions="FillAndExpand" />
 			</StackLayout>
 	</StackLayout>
+
+	</ContentPage.Content>
 </ContentPage>

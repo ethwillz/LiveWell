@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace Employee
+namespace LiveWell
 {
 	public partial class EmployeePage : ContentPage
 	{
@@ -29,7 +30,7 @@ namespace Employee
 		async void HelpButtonClicked(object sender, EventArgs args)
 		{
 			await DisplayAlert("Contact Information",
-				"Our Email Address: LiveWell@iastate.edu" +'\n'+"Our Phone Number: 515-555-5555",
+				"Our Email Address: LiveWell@iastate.edu" + '\n' + "Our Phone Number: 515-555-5555",
 				"Go Back");
 		}
 	}

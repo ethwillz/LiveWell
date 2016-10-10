@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Employee" x:Class="Employee.EmployeePage" Title="Employee Login" Padding="10, 80, 10, 40" > 
-	<StackLayout>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.EmployeePage">
+	<ContentPage.Content>
+		<StackLayout>
 	<Label Text="Welcome to Live Well!" 
 			VerticalOptions="Start" 
 			HorizontalOptions="Center" 
@@ -46,4 +47,5 @@
 				Clicked="HelpButtonClicked" />
 		</StackLayout>
 	</StackLayout>
+	</ContentPage.Content>
 </ContentPage>

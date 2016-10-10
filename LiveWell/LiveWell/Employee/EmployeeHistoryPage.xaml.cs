@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace Employee
+namespace LiveWell
 {
 	public partial class EmployeeHistoryPage : ContentPage
 	{

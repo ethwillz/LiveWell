@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace Employee
+namespace LiveWell
 {
 	public partial class EmployeeHomePage : ContentPage
 	{
@@ -31,6 +31,5 @@ namespace Employee
 		{
 			Navigation.PushModalAsync(new EmployeeEmptyRoomPage());
 		}
-
 	}
 }
