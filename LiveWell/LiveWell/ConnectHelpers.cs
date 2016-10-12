@@ -25,5 +25,17 @@ namespace LiveWell
             public String sender { get; set; }
             public String details { get; set; }
         }
+
+		public class Address
+		{
+			public Address(String buildingID, String address)
+			{
+				this.buildingID = buildingID;
+				this.address = address;
+			}
+
+			public String buildingID { get; set; }
+			public String address { get; set; }
+		}
     }
 }
