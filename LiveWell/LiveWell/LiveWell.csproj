@@ -98,34 +98,33 @@
     <Compile Include="Login+LookForHouse\MoreTab.xaml.cs">
       <DependentUpon>MoreTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Employee\EmployeePage.xaml.cs">
-      <DependentUpon>EmployeePage.xaml</DependentUpon>
+    <Compile Include="Login+LookForHouse\OwnerLoginPage.xaml.cs">
+      <DependentUpon>OwnerLoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Employee\EmployeeSignupPage.xaml.cs">
-      <DependentUpon>EmployeeSignupPage.xaml</DependentUpon>
+    <Compile Include="OwnerMain\OwnerHome.xaml.cs">
+      <DependentUpon>OwnerHome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Employee\EmployeeHomePage.xaml.cs">
-      <DependentUpon>EmployeeHomePage.xaml</DependentUpon>
+    <Compile Include="OwnerMain\Owner.xaml.cs">
+      <DependentUpon>Owner.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Employee\EmployeePasswordResetPage.xaml.cs">
-      <DependentUpon>EmployeePasswordResetPage.xaml</DependentUpon>
+    <Compile Include="OwnerMain\PropertyList.xaml.cs">
+      <DependentUpon>PropertyList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Employee\EmployeeHistoryPage.xaml.cs">
-      <DependentUpon>EmployeeHistoryPage.xaml</DependentUpon>
+    <Compile Include="OwnerMain\Important.xaml.cs">
+      <DependentUpon>Important.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Employee\EmployeeMaintenancePage.xaml.cs">
-      <DependentUpon>EmployeeMaintenancePage.xaml</DependentUpon>
+    <Compile Include="OwnerMain\OwnerMore.xaml.cs">
+      <DependentUpon>OwnerMore.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Employee\EmployeeEmptyRoomPage.xaml.cs">
-      <DependentUpon>EmployeeEmptyRoomPage.xaml</DependentUpon>
+    <Compile Include="OwnerMain\PropertyInfo.xaml.cs">
+      <DependentUpon>PropertyInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Employee\Tabbed.xaml.cs">
-      <DependentUpon>Tabbed.xaml</DependentUpon>
+    <Compile Include="OwnerMain\RoomInfo.xaml.cs">
+      <DependentUpon>RoomInfo.xaml</DependentUpon>
     </Compile>
-	<Compile Include="Login+LookForHouse\FilterTab.xaml.cs">
-      <DependentUpon>FilterTab.xaml</DependentUpon>
+    <Compile Include="OwnerMain\AddProperty.xaml.cs">
+      <DependentUpon>AddProperty.xaml</DependentUpon>
     </Compile>
-	<Compile Include="Login+LookForHouse\CustomMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -224,31 +223,31 @@
     <EmbeddedResource Include="Login+LookForHouse\MoreTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee\EmployeePage.xaml">
+    <EmbeddedResource Include="Login+LookForHouse\OwnerLoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee\EmployeeSignupPage.xaml">
+    <EmbeddedResource Include="OwnerMain\OwnerHome.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee\EmployeeHomePage.xaml">
+    <EmbeddedResource Include="OwnerMain\Owner.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee\EmployeePasswordResetPage.xaml">
+    <EmbeddedResource Include="OwnerMain\PropertyList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee\EmployeeHistoryPage.xaml">
+    <EmbeddedResource Include="OwnerMain\Important.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee\EmployeeMaintenancePage.xaml">
+    <EmbeddedResource Include="OwnerMain\OwnerMore.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee\EmployeeEmptyRoomPage.xaml">
+    <EmbeddedResource Include="OwnerMain\PropertyInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Tabbed.xaml">
+    <EmbeddedResource Include="OwnerMain\RoomInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-	</EmbeddedResource>
-	<EmbeddedResource Include="Login+LookForHouse\FilterTab.xaml">
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnerMain\AddProperty.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -302,7 +301,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Login+LookForHouse\" />
-    <Folder Include="Employee\" />
+    <Folder Include="OwnerMain\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

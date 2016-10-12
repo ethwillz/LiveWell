@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LiveWell;assembly=LiveWell"
+             x:Class="LiveWell.Owner"
+            BarBackgroundColor="#8F1616">
+  
+  <local:OwnerHome Title="Home"/>
+  <local:PropertyList Title="Properties"/>
+  <local:Chat Title="Chat"/>
+  <local:Important Title="Important"/>
+  <local:OwnerMore Title="More"/>
+  
+</TabbedPage>
