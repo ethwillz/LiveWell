@@ -36,7 +36,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ConnectHelpers.cs" />
-    <Compile Include="DatabaseConnect.cs" />
+    <Compile Include="DatabaseGET.cs" />
+    <Compile Include="DatabasePOST.cs" />
     <Compile Include="ResidentMain\AddProduct.xaml.cs">
       <DependentUpon>AddProduct.xaml</DependentUpon>
     </Compile>
@@ -122,7 +123,7 @@
     <Compile Include="Employee\Tabbed.xaml.cs">
       <DependentUpon>Tabbed.xaml</DependentUpon>
     </Compile>
-	<Compile Include="Login+LookForHouse\FilterTab.xaml.cs">
+    <Compile Include="Login+LookForHouse\FilterTab.xaml.cs">
       <DependentUpon>FilterTab.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -179,8 +180,10 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="LiveWellLogo.png" />
-    <None Include="LiveWellFullLogo.png" />
+    <EmbeddedResource Include="LiveWellLogo.png" />
+    <EmbeddedResource Include="LiveWellFullLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ResidentMain\Resident.xaml">
@@ -240,8 +243,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\Tabbed.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-	</EmbeddedResource>
-	<EmbeddedResource Include="Login+LookForHouse\FilterTab.xaml">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login+LookForHouse\FilterTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -293,10 +296,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Login+LookForHouse\" />
-    <Folder Include="Employee\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

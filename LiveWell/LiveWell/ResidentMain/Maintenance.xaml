@@ -5,9 +5,9 @@
   <StackLayout Orientation="Vertical">
     <Label Text="Submit new maintenance request" FontSize="20" HorizontalOptions="Center"/>
     <Label Text="Summary of issue" FontSize="15"/>
-    <Editor HeightRequest="100"/>
-    <Label Text="Summary of issue" FontSize="15"/>
-    <Editor HeightRequest="320"/>
+    <Editor x:Name="summary" HeightRequest="100"/>
+    <Label Text="Explanation" FontSize="15"/>
+    <Editor x:Name="explanation" HeightRequest="320"/>
     <Button Clicked="submitClick" Text="Submit request"/>
   </StackLayout>
   

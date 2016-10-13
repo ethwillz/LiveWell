@@ -8,13 +8,14 @@ namespace LiveWell
         //Notification object which stores all necessary data returned by the HTTP request
         public class Notification
         {
-            public Notification(String notificationID, String residentID, String type, String amount, String sender, String details)
+            public Notification(String notificationID, String residentID, String type, String amount, String firstName, String lastName, String details)
             {
                 this.notificationID = notificationID;
                 this.residentID = residentID;
                 this.type = type;
                 this.amount = amount;
-                this.sender = sender;
+                this.firstName = firstName;
+                this.lastName = lastName;
                 this.details = details;
             }
 
@@ -22,8 +23,45 @@ namespace LiveWell
             public String residentID { get; set; }
             public String type { get; set; }
             public String amount { get; set; }
-            public String sender { get; set; }
+            public String firstName { get; set; }
+            public String lastName { get; set; }
             public String details { get; set; }
+        }
+
+        public class ResidentInfo
+        {
+            public ResidentInfo(String address, String number, String residentID, String firstName, String lastName)
+            {
+                this.address = address;
+                this.number = number;
+                this.residentID = residentID;
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
+            public String address { get; set; }
+            public String number { get; set; }
+            public String residentID { get; set; }
+            public String firstName { get; set; }
+            public String lastName { get; set; }
+        }
+
+        public class MaintenanceRequest
+        {
+            public MaintenanceRequest(String roomID, String residentID, String employeeID, String summary, String date)
+            {
+                this.roomID = roomID;
+                this.residentID = residentID;
+                this.employeeID = employeeID;
+                this.summary = summary;
+                this.date = date;
+            }
+
+            public String roomID { get; set; }
+            public String residentID { get; set; }
+            public String employeeID { get; set; }
+            public String summary { get; set; }
+            public String date { get; set; }
         }
     }
 }

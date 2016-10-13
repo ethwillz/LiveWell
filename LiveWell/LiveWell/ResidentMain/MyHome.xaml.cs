@@ -14,14 +14,30 @@ namespace LiveWell
             logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
 
             //Runs async operation to populate listview with data from MySQL database
-            populateList();
+            populatePage();
         }
 
-        async void populateList()
+        async void populatePage()
         {
             //Instantiates conenction object and calls method which gets notifications given a residentID
-            DatabaseConnect conn = new DatabaseConnect();
+            DatabaseGET conn = new DatabaseGET();
             List<Notification> notifications = await conn.getNotifications(1);
+            List<ResidentInfo> resident = await (conn.getResidentInfo(1));
+
+            //Sets text for room information at top of screen
+            address.Text = resident[0].address;
+            room.Text = resident[0].number;
+            String roommates = "";
+            for(int i = 0; i < resident.Count; i++)
+            {
+                if (i == resident.Count - 2)
+                    roommates += resident[i].firstName + " " + resident[i].lastName + ", & ";
+                else if (i == resident.Count - 1)
+                    roommates += resident[i].firstName + " " + resident[i].lastName;
+                else
+                    roommates += resident[i].firstName + " " + resident[i].lastName + ", ";
+            }
+            residents.Text = roommates;
 
             //Creates list of notifications for use in UI
             List<QuickViewNotif> notifs = new List<QuickViewNotif>();
@@ -29,11 +45,11 @@ namespace LiveWell
             {
                 if(notifications[i].type == "groceries")
                 {
-                    notifs.Add(new QuickViewNotif(notifications[i].sender + " bought '" + notifications[i].details + "' and you owe " + notifications[i].amount, "Groceries"));
+                    notifs.Add(new QuickViewNotif(notifications[i].firstName + " " + notifications[i].lastName + " bought '" + notifications[i].details + "' and you owe $" + notifications[i].amount + ".", "Groceries"));
                 }
                 if(notifications[i].type == "fine")
                 {
-                    notifs.Add(new QuickViewNotif("Your room was fined " + notifications[i].amount + " for '" + notifications[i].details + "'", "Fine"));
+                    notifs.Add(new QuickViewNotif("Your room was fined $" + notifications[i].amount + " for '" + notifications[i].details + "'.", "Fine"));
                 }
             }
 

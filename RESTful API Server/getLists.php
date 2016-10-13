@@ -1,41 +1,54 @@
 <?php
-	$response = array;
+	//Set up for connection to database
+	$db = new mysqli('mysql.cs.iastate.edu', 'dbu309la04', 'YTGUxudv7py', 'db309la04');
 	
-	require_once __dir__.'/connect.php';
+	//Attempts to connect to database which returns an error if unsuccessful
+	if($db->connect_errno > 0 ){
+		die('Unable to connect to database [' . $db->connect_error . ']');
+	}
 	
-	$db = new DB_CONNECT;
-	
-	if(isset($_GET['listID'])){
-		$paymentID = $_GET('listID');
-		$result = mysql_query("SELECT * FROM tblList WHERE listID = $listID");
+	//If statement checks that HTTP request URI contains residentID parameter
+	if(isset($_GET["buildingID"])){
+		$buildingID = $_GET['buildingID'];
 		
-		if(emptyempty($result)){
-			
-			if(mysql_num_rows($result) > 0){
-				$result = mysql_fetch_array($result);
-				$list = array();
-				$list["listID"] = $result["listID"];
-				$list["roomID"] = $result["roomID"];
-				$list["name"] = $result["name"];
-				$list["users"] = $result["users"];
-				
-				$response["success"] = 1;
-				
-				$response["list"] = array();
-				array_push($response["list"], $list);
-				
-				echo json_encode($response);
-			}
-			else{
-				$response["success"] = 0;
-				$response["message"] = "No list found";
-				
-				echo json_encode($response);
-			}
+		//Sets value of $result to SQL query and returns an error otherwise
+		if(!$result = $db->query("SELECT buildingID, firstName, lastName, address, numRooms, bankNum, RoutingNum, imageUrl FROM tblBuilding INNER JOIN tblOwner ON tblBuilding.ownerID = tblOwner.ownerID WHERE buildingID = $buildingID")){
+			die('There was an error running the query [' . $db->error . ']');
 		}
-		else{
-			$response["success"] = 0;
-			$respnonse["message"] = "No list found";
+		
+		//Goes through all rows returned by query and sets the notification array to the data
+		$building = array();
+		while($row = $result->fetch_assoc()){
+				$building[] = $row;
 		}
+		
+		//Encodes the array to json and returns it as an HTTP response
+		echo json_encode($building);
+		
+		//Closes the SQL connection
+		$result->close();
+		$db->close();
+	}
+	
+	if(isset($_GET["ownerID"])){
+		$ownerID = $_GET['ownerID'];
+		
+		//Sets value of $result to SQL query and returns an error otherwise
+		if(!$result = $db->query("SELECT buildingID, firstName, lastName, address, numRooms, bankNum, RoutingNum, imageUrl FROM tblBuilding INNER JOIN tblOwner ON tblBuilding.ownerID = tblOwner.ownerID WHERE tblBuilding.ownerID = $ownerID")){
+			die('There was an error running the query [' . $db->error . ']');
+		}
+		
+		//Goes through all rows returned by query and sets the building array to the data
+		$building = array();
+		while($row = $result->fetch_assoc()){
+				$building[] = $row;
+		}
+		
+		//Encodes the array to json and returns it as an HTTP response
+		echo json_encode($building);
+		
+		//Closes the SQL connection
+		$result->close();
+		$db->close();
 	}
 ?>
