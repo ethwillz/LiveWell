@@ -6,7 +6,7 @@
 	
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="StartAndExpand" Padding="30">
-        <maps:CustomMap x:Name="MyMap" MapType="Street" WidthRequest="320" HeightRequest="600"/>
+        <maps:CustomMap x:Name="MyMap" MapType="Street" IsShowingUser="true" WidthRequest="320" HeightRequest="600"/>
 
 		<ListView x:Name="quickview">
       	<ListView.ItemTemplate>
@@ -15,12 +15,9 @@
         </DataTemplate>
       	</ListView.ItemTemplate>
    	    </ListView>
+
 		</StackLayout>
 	</ContentPage.Content>
 
-	<!--<ContentPage.Content>
-		<StackLayout VerticalOptions="StartAndExpand" Padding="30">
-        <maps:CustomMap x:Name="MyMap" MapType="Street" IsShowingUser="true" WidthRequest="320" HeightRequest="600"/>
-    	</StackLayout>
-	</ContentPage.Content>-->
+
 </ContentPage>
