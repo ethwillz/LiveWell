@@ -2,33 +2,31 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using static LiveWell.ConnectHelpers;
 
 namespace LiveWell
 {
     public partial class ListDetails : ContentPage
     {
-        public ListDetails()
+        List<Product> productList;
+
+        public ListDetails(List<ListInformation> lists, String name, String user)
         {
             InitializeComponent();
 
-            List<Product> productList = new List<Product>()
+            listName.Text = name;
+            users.Text = user;
+
+            populatePage(lists);
+        }
+
+        async void populatePage(List<ListInformation> lists)
+        {
+            productList = new List<Product>();
+            for(int i = 0; i < lists.Count; i++)
             {
-                new Product("http://canigivemybaby.com/wp-content/uploads/2011/11/can-i-give-my-baby-skim-milk.jpg", "Skim milk"),
-                new Product("https://thumbs.dreamstime.com/x/hamburger-patty-6817492.jpg", "Burgers"),
-                new Product("http://img1.nymag.com/imgs/daily/grub/2013/08/07/07-hamburger-bun.w529.h352.2x.jpg", "Burger buns"),
-                new Product("http://www.heinzketchup.com/-/media/heinzna/images/heinzketchup/products/hzk_3d_32oz_ketchup-small.ashx?as=0&.jpg&hash=9516F8B71BEAC8D65F95FA07445D7C0C64C6C04D", "Ketchup"),
-                new Product("http://juliandance.org/wp-content/uploads/2016/01/RedApple.jpg", "Apples"),
-                new Product("http://canigivemybaby.com/wp-content/uploads/2011/11/can-i-give-my-baby-skim-milk.jpg", "Skim milk"),
-                new Product("https://thumbs.dreamstime.com/x/hamburger-patty-6817492.jpg", "Burgers"),
-                new Product("http://img1.nymag.com/imgs/daily/grub/2013/08/07/07-hamburger-bun.w529.h352.2x.jpg", "Burger buns"),
-                new Product("http://www.heinzketchup.com/-/media/heinzna/images/heinzketchup/products/hzk_3d_32oz_ketchup-small.ashx?as=0&.jpg&hash=9516F8B71BEAC8D65F95FA07445D7C0C64C6C04D", "Ketchup"),
-                new Product("http://juliandance.org/wp-content/uploads/2016/01/RedApple.jpg", "Apples"),
-                new Product("http://canigivemybaby.com/wp-content/uploads/2011/11/can-i-give-my-baby-skim-milk.jpg", "Skim milk"),
-                new Product("https://thumbs.dreamstime.com/x/hamburger-patty-6817492.jpg", "Burgers"),
-                new Product("http://img1.nymag.com/imgs/daily/grub/2013/08/07/07-hamburger-bun.w529.h352.2x.jpg", "Burger buns"),
-                new Product("http://www.heinzketchup.com/-/media/heinzna/images/heinzketchup/products/hzk_3d_32oz_ketchup-small.ashx?as=0&.jpg&hash=9516F8B71BEAC8D65F95FA07445D7C0C64C6C04D", "Ketchup"),
-                new Product("http://juliandance.org/wp-content/uploads/2016/01/RedApple.jpg", "Apples"),
-            };
+                productList.Add(new Product(lists[i].itemName, lists[i].imageUrl));
+            }
 
             products.ItemsSource = productList;
             products.RowHeight = 60;

@@ -2,7 +2,7 @@
 
 namespace LiveWell
 {
-    class ConnectHelpers
+    public class ConnectHelpers
     {
 
         //Notification object which stores all necessary data returned by the HTTP request
@@ -62,6 +62,26 @@ namespace LiveWell
             public String employeeID { get; set; }
             public String summary { get; set; }
             public String date { get; set; }
+        }
+
+        public class ListInformation
+        {
+            public ListInformation(String listID, String listName, String residentID1, String residentID2, String residentID3, String residentID4, String itemID)
+            {
+                this.listID = listID;
+                this.listName = listName;
+                this.residentID1 = residentID1;
+                this.residentID2 = residentID2;
+                this.residentID3 = residentID3;
+                this.residentID4 = residentID4;
+            }
+
+            public String listID { get; set; }
+            public String listName { get; set; }
+            public String residentID1 { get; set; }
+            public String residentID2 { get; set; }
+            public String residentID3 { get; set; }
+            public String residentID4 { get; set; }
         }
     }
 }
