@@ -8,47 +8,26 @@
 	}
 	
 	//If statement checks that HTTP request URI contains residentID parameter
-	if(isset($_GET["buildingID"])){
-		$buildingID = $_GET['buildingID'];
+	if(isset($_GET["residentID"])){
+		$residentID = $_GET['residentID'];
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("SELECT buildingID, firstName, lastName, address, numRooms, bankNum, RoutingNum, imageUrl FROM tblBuilding INNER JOIN tblOwner ON tblBuilding.ownerID = tblOwner.ownerID WHERE buildingID = $buildingID")){
+		if(!$result = $db->query("SELECT * FROM tblList WHERE residentID1 = $residentID OR residentID2 = $residentID OR residentID3 = $residentID OR residentID4 = $residentID")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
 		
-		//Goes through all rows returned by query and sets the notification array to the data
-		$building = array();
+		//Goes through all rows returned by query and sets the list array to the data
+		$list = array();
 		while($row = $result->fetch_assoc()){
-				$building[] = $row;
+				$list[] = $row;
 		}
 		
 		//Encodes the array to json and returns it as an HTTP response
-		echo json_encode($building);
+		echo json_encode($list);
 		
 		//Closes the SQL connection
 		$result->close();
 		$db->close();
 	}
 	
-	if(isset($_GET["ownerID"])){
-		$ownerID = $_GET['ownerID'];
-		
-		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("SELECT buildingID, firstName, lastName, address, numRooms, bankNum, RoutingNum, imageUrl FROM tblBuilding INNER JOIN tblOwner ON tblBuilding.ownerID = tblOwner.ownerID WHERE tblBuilding.ownerID = $ownerID")){
-			die('There was an error running the query [' . $db->error . ']');
-		}
-		
-		//Goes through all rows returned by query and sets the building array to the data
-		$building = array();
-		while($row = $result->fetch_assoc()){
-				$building[] = $row;
-		}
-		
-		//Encodes the array to json and returns it as an HTTP response
-		echo json_encode($building);
-		
-		//Closes the SQL connection
-		$result->close();
-		$db->close();
-	}
 ?>
