@@ -7,7 +7,7 @@ using static LiveWell.ConnectHelpers;
 using Xamarin.Forms.Maps;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
-
+using System.Threading.Tasks;
 
 namespace LiveWell
 {
@@ -18,12 +18,10 @@ namespace LiveWell
 
 		public MapTab()
 		{
+			geoCoder = new Geocoder();
 			InitializeComponent();
 			populateList();
-			setLocation();
-			geoCoder = new Geocoder();
-
-
+			initializeMap();
 		}
 
 		async void addPins(String xamarinAddress)
@@ -32,7 +30,7 @@ namespace LiveWell
 
 			foreach (var position in approximateLocation)
 			{
-				geocodedOutputLabel.Text += position.Latitude + ", " + position.Longitude + "\n";
+				geocodedOutputLabel.Text = position.Latitude + ", " + position.Longitude + "\n";
 
 				var pin = new CustomPin
 				{
@@ -55,7 +53,7 @@ namespace LiveWell
 			addPins(xamarinAddress);
 		}
 
-		async void setLocation()
+		async void initializeMap()
 		{
 			
 			var locator = CrossGeolocator.Current;
@@ -72,11 +70,13 @@ namespace LiveWell
 			List<Address> addresses = await conn.getAddress();
 
 			List<QuickViewAddress> address = new List<QuickViewAddress>();
-			for (int i = 0; i < 2; i++)
+			for (int i = 0; i < addresses.Count; i++)
 			{
 				address.Add(new QuickViewAddress(addresses[i].address));
 				addPins(addresses[i].address);
+				await Task.Delay(1000);
 			}
+
 			quickview.ItemsSource = address;
 			quickview.RowHeight = 30;
 
