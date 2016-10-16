@@ -6,7 +6,7 @@
 	
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="StartAndExpand" Padding="30">
-        <maps:CustomMap x:Name="MyMap" MapType="Street" IsShowingUser="true" WidthRequest="320" HeightRequest="600"/>
+        <maps:CustomMap x:Name="MyMap" MapType="Street" IsShowingUser="true" WidthRequest="320" HeightRequest="500"/>
 
 		<ListView x:Name="quickview">
       	<ListView.ItemTemplate>
@@ -16,6 +16,14 @@
       	</ListView.ItemTemplate>
    	    </ListView>
 
+			
+
+			<Label Text="Geocode:" />
+			<Entry x:Name="inputEntry" Text="Pacific Ave, San Francisco, California" />
+			<Button Text="Get position" VerticalOptions="CenterAndExpand"
+        	HorizontalOptions="Center" HeightRequest="50" WidthRequest="300" BorderWidth="1" FontSize="Small"
+			Clicked="OnTestButtonClicked"/>			
+			<Label x:Name="geocodedOutputLabel" />
 		</StackLayout>
 	</ContentPage.Content>
 

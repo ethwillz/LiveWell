@@ -14,21 +14,51 @@ namespace LiveWell
 
 	public partial class MapTab : ContentPage
 	{
+		Geocoder geoCoder;
+
 		public MapTab()
 		{
 			InitializeComponent();
 			populateList();
 			setLocation();
+			geoCoder = new Geocoder();
+
+
+		}
+
+		async void OnTestButtonClicked(object sender, EventArgs args)
+		{
+			var xamarinAddress = inputEntry.Text;
+			var approximateLocation = await geoCoder.GetPositionsForAddressAsync(xamarinAddress);
+
+			foreach (var position in approximateLocation)
+			{
+				geocodedOutputLabel.Text += position.Latitude + ", " + position.Longitude + "\n";
+
+				var pin = new CustomPin
+				{
+					Pin = new Pin
+					{
+						Type = PinType.Place,
+						Position = new Xamarin.Forms.Maps.Position(position.Latitude, position.Longitude),
+						Label = "LiveWell house",
+						Address = "1108 South 4th street"
+					}
+				};
+				MyMap.CustomPins = new List<CustomPin> { pin };
+				MyMap.Pins.Add(pin.Pin);
+			}
 		}
 
 		async void setLocation()
 		{
+			
 			var locator = CrossGeolocator.Current;
-			var position = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
+			var userPosition = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
 
 			MyMap.MoveToRegion(
 			MapSpan.FromCenterAndRadius(
-					new Xamarin.Forms.Maps.Position(position.Latitude,position.Longitude), Distance.FromMiles(1)));
+					new Xamarin.Forms.Maps.Position(userPosition.Latitude,userPosition.Longitude), Distance.FromMiles(1)));
 		}
 
 		async void populateList()
@@ -43,6 +73,15 @@ namespace LiveWell
 			}
 			quickview.ItemsSource = address;
 			quickview.RowHeight = 60;
+
+			//geoCoder = new Geocoder();
+			//var xamarinAddress = "394 Pacific Ave, San Francisco, California";
+			//var approximateLocation = await geoCoder.GetPositionsForAddressAsync(xamarinAddress);
+			//System.Diagnostics.Debug.WriteLine("TEST TEST");
+			//foreach (var p in approximateLocation)
+			//{
+			//	System.Diagnostics.Debug.WriteLine("It works!! " + p.Latitude + " " + p.Longitude);
+			//}
 
 		}
 
@@ -59,5 +98,12 @@ namespace LiveWell
 
 		public String Summary { get; set; }
 		public String Details { get; set; }
-	  }
+	}
+
+	public class CustomPin
+	{
+		public Pin Pin { get; set; }
+		public string Id { get; set; }
+		public string Url { get; set; }
+	}
 }
