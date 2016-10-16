@@ -20,7 +20,7 @@
 
 			<Label Text="Geocode:" />
 			<Entry x:Name="inputEntry" Text="Pacific Ave, San Francisco, California" />
-			<Button Text="Get position" VerticalOptions="CenterAndExpand"
+			<Button Text="Add Pin (TEST)" VerticalOptions="CenterAndExpand"
         	HorizontalOptions="Center" HeightRequest="50" WidthRequest="300" BorderWidth="1" FontSize="Small"
 			Clicked="OnTestButtonClicked"/>			
 			<Label x:Name="geocodedOutputLabel" />

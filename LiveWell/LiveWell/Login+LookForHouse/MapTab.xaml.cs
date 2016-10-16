@@ -26,9 +26,8 @@ namespace LiveWell
 
 		}
 
-		async void OnTestButtonClicked(object sender, EventArgs args)
+		async void addPins(String xamarinAddress)
 		{
-			var xamarinAddress = inputEntry.Text;
 			var approximateLocation = await geoCoder.GetPositionsForAddressAsync(xamarinAddress);
 
 			foreach (var position in approximateLocation)
@@ -50,6 +49,12 @@ namespace LiveWell
 			}
 		}
 
+		async void OnTestButtonClicked(object sender, EventArgs args)
+		{
+			var xamarinAddress = inputEntry.Text;
+			addPins(xamarinAddress);
+		}
+
 		async void setLocation()
 		{
 			
@@ -58,7 +63,7 @@ namespace LiveWell
 
 			MyMap.MoveToRegion(
 			MapSpan.FromCenterAndRadius(
-					new Xamarin.Forms.Maps.Position(userPosition.Latitude,userPosition.Longitude), Distance.FromMiles(1)));
+					new Xamarin.Forms.Maps.Position(userPosition.Latitude,userPosition.Longitude), Distance.FromMiles(1.5)));
 		}
 
 		async void populateList()
@@ -67,21 +72,13 @@ namespace LiveWell
 			List<Address> addresses = await conn.getAddress();
 
 			List<QuickViewAddress> address = new List<QuickViewAddress>();
-			for (int i = 0; i < addresses.Count; i++)
+			for (int i = 0; i < 2; i++)
 			{
-				address.Add(new QuickViewAddress(addresses[i].address, "TEST: Data from database"));
+				address.Add(new QuickViewAddress(addresses[i].address));
+				addPins(addresses[i].address);
 			}
 			quickview.ItemsSource = address;
-			quickview.RowHeight = 60;
-
-			//geoCoder = new Geocoder();
-			//var xamarinAddress = "394 Pacific Ave, San Francisco, California";
-			//var approximateLocation = await geoCoder.GetPositionsForAddressAsync(xamarinAddress);
-			//System.Diagnostics.Debug.WriteLine("TEST TEST");
-			//foreach (var p in approximateLocation)
-			//{
-			//	System.Diagnostics.Debug.WriteLine("It works!! " + p.Latitude + " " + p.Longitude);
-			//}
+			quickview.RowHeight = 30;
 
 		}
 
@@ -90,14 +87,12 @@ namespace LiveWell
 
 	public class QuickViewAddress
 	{
-		public QuickViewAddress(String summary, String details)
+		public QuickViewAddress(String summary)
 		{
 			this.Summary = summary;
-			this.Details = details;
 		}
 
 		public String Summary { get; set; }
-		public String Details { get; set; }
 	}
 
 	public class CustomPin
