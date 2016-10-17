@@ -51,4 +51,24 @@
 		$result->close();
 		$db->close();
 	}
+	
+	else{
+				//Sets value of $result to SQL query and returns an error otherwise
+		if(!$result = $db->query("SELECT * FROM tblBuilding")){
+			die('There was an error running the query [' . $db->error . ']');
+		}
+		
+		//Goes through all rows returned by query and sets the building array to the data
+		$building = array();
+		while($row = $result->fetch_assoc()){
+				$building[] = $row;
+		}
+		
+		//Encodes the array to json and returns it as an HTTP response
+		echo json_encode($building);
+		
+		//Closes the SQL connection
+		$result->close();
+		$db->close();
+	}
 ?>

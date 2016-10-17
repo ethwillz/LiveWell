@@ -74,6 +74,9 @@ namespace LiveWell
                 this.residentID2 = residentID2;
                 this.residentID3 = residentID3;
                 this.residentID4 = residentID4;
+                this.itemID = itemID;
+                this.itemName = itemName;
+                this.imageUrl = imageUrl;
             }
 
             public String listID { get; set; }
@@ -82,6 +85,35 @@ namespace LiveWell
             public String residentID2 { get; set; }
             public String residentID3 { get; set; }
             public String residentID4 { get; set; }
+            public String itemID { get; set; }
+            public String itemName { get; set; }
+            public String imageUrl { get; set; }
+        }
+
+        public class Food
+        {
+            public Food(String name, String imageUrl)
+            {
+                this.name = name;
+                this.imageUrl = imageUrl;
+            }
+
+            public String name { get; set; }
+            public String imageUrl { get; set; }
+        }
+
+        public class Item
+        {
+            public Item(String listID, String itemName, String imageUrl)
+            {
+                this.listID = listID;
+                this.itemName = itemName;
+                this.imageUrl = imageUrl;
+            }
+
+            public String listID { get; set; }
+            public String itemName { get; set; }
+            public String imageUrl { get; set; }
         }
     }
 }

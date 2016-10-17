@@ -56,6 +56,7 @@ namespace LiveWell
             //Sets the source of the listview and the row height
             quickview.ItemsSource = notifs;
             quickview.RowHeight = 60;
+            quickview.IsEnabled = false;
         }
 
         async void payment(Object sender, EventArgs e)

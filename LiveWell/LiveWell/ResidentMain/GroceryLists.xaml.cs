@@ -8,6 +8,7 @@ namespace LiveWell
 {
     public partial class GroceryLists : ContentPage
     {
+        List<ListInfo> list = new List<ListInfo>();
         List<ListInformation> lists;
 
         public GroceryLists()
@@ -19,7 +20,8 @@ namespace LiveWell
 
         void onTap(object sender, ItemTappedEventArgs e)
         {
-            Navigation.PushModalAsync(new ListDetails(lists, ((TextCell)sender).Text, ((TextCell)sender).Detail));
+            var index = (allLists.ItemsSource as List<ListInfo>).IndexOf(((ListView)sender).SelectedItem as ListInfo);
+            Navigation.PushModalAsync(new ListDetails(lists, list[index].ListName, list[index].Users));
             ((ListView)sender).SelectedItem = null;
         }
 
@@ -29,17 +31,30 @@ namespace LiveWell
             lists = await conn.getLists(1);
 
             //List which will come from database with all the list items and information
-            List<ListInfo> list = new List<ListInfo>();
+            list = new List<ListInfo>();
+            List<int> added = new List<int>();
             for (int i = 0; i < lists.Count; i++)
             {
-                if (lists[i].residentID1 != null && lists[i].residentID2 != null && lists[i].residentID3 != null && lists[i].residentID4 != null)
+                if (lists[i].residentID1 != null && lists[i].residentID2 != null && lists[i].residentID3 != null && lists[i].residentID4 != null && !added.Contains(Convert.ToInt32(lists[i].listID)))
+                {
                     list.Add(new ListInfo(lists[i].listName, lists[i].residentID1 + ", " + lists[i].residentID2 + ", " + lists[i].residentID3 + ", & " + lists[i].residentID4));
-                else if (lists[i].residentID1 != null && lists[i].residentID2 != null && lists[i].residentID3 != null)
+                    added.Add(Convert.ToInt32(lists[i].listID));
+                }
+                else if (lists[i].residentID1 != null && lists[i].residentID2 != null && lists[i].residentID3 != null && !added.Contains(Convert.ToInt32(lists[i].listID)))
+                {
                     list.Add(new ListInfo(lists[i].listName, lists[i].residentID1 + ", " + lists[i].residentID2 + ", & " + lists[i].residentID3));
-                else if (lists[i].residentID1 != null && lists[i].residentID2 != null)
+                    added.Add(Convert.ToInt32(lists[i].listID));
+                }
+                else if (lists[i].residentID1 != null && lists[i].residentID2 != null && !added.Contains(Convert.ToInt32(lists[i].listID)))
+                {
                     list.Add(new ListInfo(lists[i].listName, lists[i].residentID1 + ", & " + lists[i].residentID2));
-                else
+                    added.Add(Convert.ToInt32(lists[i].listID));
+                }
+                else if (!added.Contains(Convert.ToInt32(lists[i].listID)))
+                {
                     list.Add(new ListInfo(lists[i].listName, lists[i].residentID1));
+                    added.Add(Convert.ToInt32(lists[i].listID));
+                }
             }
 
             allLists.ItemsSource = list;

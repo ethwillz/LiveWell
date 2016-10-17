@@ -9,10 +9,13 @@ namespace LiveWell
     public partial class ListDetails : ContentPage
     {
         List<Product> productList;
+        List<ListInformation> lists;
 
         public ListDetails(List<ListInformation> lists, String name, String user)
         {
             InitializeComponent();
+
+            this.lists = lists;
 
             listName.Text = name;
             users.Text = user;
@@ -25,16 +28,17 @@ namespace LiveWell
             productList = new List<Product>();
             for(int i = 0; i < lists.Count; i++)
             {
-                productList.Add(new Product(lists[i].itemName, lists[i].imageUrl));
+                productList.Add(new Product(lists[i].imageUrl, lists[i].itemName));
             }
 
             products.ItemsSource = productList;
             products.RowHeight = 60;
+            products.IsPullToRefreshEnabled = true;
         }
 
         public void addClick(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new AddProduct());
+            Navigation.PushModalAsync(new AddProduct(lists));
         }
 
         public void boughtClick(object sender, EventArgs e)
