@@ -24,9 +24,9 @@ namespace LiveWell
 			initializeMap();
 		}
 
-		async void addPins(String xamarinAddress)
+		async void addPins(String houseAddress)
 		{
-			var approximateLocation = await geoCoder.GetPositionsForAddressAsync(xamarinAddress);
+			var approximateLocation = await geoCoder.GetPositionsForAddressAsync(houseAddress);
 
 			foreach (var position in approximateLocation)
 			{
@@ -35,11 +35,11 @@ namespace LiveWell
 				var pin = new CustomPin
 				{
 					Pin = new Pin
-					{
+					{	
 						Type = PinType.Place,
 						Position = new Xamarin.Forms.Maps.Position(position.Latitude, position.Longitude),
 						Label = "LiveWell house",
-						Address = "1108 South 4th street"
+						Address = houseAddress
 					}
 				};
 				MyMap.CustomPins = new List<CustomPin> { pin };
