@@ -2,17 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.FilterTab">
 	<ContentPage.Content>
 		<StackLayout>
+		<Label/>
+		<Label Text="Discovery Settings" FontSize="50" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+		<Label Text="Location: My Current Location" FontSize="Large" HorizontalOptions="Center"/>
+			
+	    <Label BindingContext="{x:Reference slider}"
+           Text="{Binding Value, StringFormat='Maximum Distance: {0:F0} miles'}"
+           FontSize="Large"
+           HorizontalOptions="Center"/>		
+		<Slider x:Name="slider"
+            Maximum="10"
+			Value = "2" />
+       
 
-		<Button Text="Location" VerticalOptions="CenterAndExpand"
-        HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"/>
 		
-		<Button Text="Room Type" VerticalOptions="CenterAndExpand"
+			
+		<Button Text="Accommodation Type" VerticalOptions="CenterAndExpand"
         	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"/>
 
-		<Button Text="Price" VerticalOptions="CenterAndExpand"
-        HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"/>
 
-		<Button Text="Number of Residents" VerticalOptions="CenterAndExpand"
+		<Label BindingContext="{x:Reference price}"
+           Text="{Binding Value, StringFormat='Maximum Price: ${0:F0} per month'}"
+           FontSize="Large"
+           HorizontalOptions="Center"/>		
+		<Slider x:Name="price"
+			Maximum="1200"
+			Value = "500" />
+
+	 	<Label Text="Minimum # Of Rooms" FontSize="Large" HorizontalOptions="Center"/>
+		<StackLayout Orientation = "Horizontal" HorizontalOptions="Center">
+			<Label BindingContext="{x:Reference roomNumber}" 
+					Text="{Binding Value, StringFormat='{0:F0} Rooms'}" FontSize="Large"/>		
+		    <Stepper x:Name="roomNumber" Value = "2" Minimum = "1" Maximum = "10"/>
+		</StackLayout>
+
+		<Button Text="Search!" VerticalOptions="CenterAndExpand"
         HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"/>
 		</StackLayout>
 	</ContentPage.Content>

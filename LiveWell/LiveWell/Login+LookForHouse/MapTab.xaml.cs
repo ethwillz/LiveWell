@@ -74,7 +74,7 @@ namespace LiveWell
 			{
 				address.Add(new QuickViewAddress(addresses[i].address));
 				addPins(addresses[i].address);
-				await Task.Delay(1000);
+				await Task.Delay(600);
 			}
 
 			quickview.ItemsSource = address;

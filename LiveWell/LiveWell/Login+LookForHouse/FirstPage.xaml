@@ -3,8 +3,7 @@
 	<ContentPage.Content>
 		<StackLayout>
 			<Label />
-			<Label Text="LiveWell" TextColor="#000" FontSize="50" HorizontalOptions="Center"/>
-			<Label />
+
 			<Label Text="__________LOG IN__________" TextColor="#000" FontSize="40" HorizontalOptions="Center"/>
 
 			<Button Text="LOGIN AS A RESIDENT" VerticalOptions="CenterAndExpand"
