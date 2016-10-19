@@ -66,7 +66,7 @@ namespace LiveWell
 
 		async void populateList()
 		{
-			DatabaseConnect conn = new DatabaseConnect();
+			DatabaseGET conn = new DatabaseGET();
 			List<Address> addresses = await conn.getAddress();
 
 			List<QuickViewAddress> address = new List<QuickViewAddress>();
