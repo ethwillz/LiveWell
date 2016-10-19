@@ -12,16 +12,12 @@
 	if(isset($_POST)){
 		$input = json_decode(file_get_contents('php://input'), true);
 		
-		$roomID = $input['roomID'];
-		$residentID = $input['residentID'];
-		$employeeID = $input['employeeID'];
-		$summary = mysqli_real_escape_string($db, $input['summary']);
-		$description = mysqli_real_escape_string($db, $input['description']);
-		$date = mysqli_real_escape_string($db, $input['date']);
-		$resolved = $input['resolved'];
+		$listID = $input['listID'];
+		$itemName = mysqli_real_escape_string($db, $input['itemName']);
+		$imageUrl = mysqli_real_escape_string($db, $input['imageUrl']);
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("INSERT INTO tblMaintenance (roomID, residentID, employeeID, summary, description, date, resolved) VALUES($roomID, $residentID, $employeeID, '$summary', '$description', '$date', $resolved)")){
+		if(!$result = $db->query("INSERT INTO tblItem (listID, itemName, imageUrl) VALUES($listID, '$itemName', '$imageUrl')")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
 		

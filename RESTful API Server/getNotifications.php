@@ -12,7 +12,7 @@
 		$residentID = $_GET['residentID'];
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("SELECT notificationID, tblResident.residentID, type, amount, sender, details FROM tblNotification INNER JOIN tblResident ON tblNotification.residentID = tblResident.residentID WHERE tblResident.residentID = $residentID")){
+		if(!$result = $db->query("SELECT notificationID, tblNotification.residentID, type, amount, firstName, lastName, details FROM tblNotification INNER JOIN tblResident ON tblNotification.sender = tblResident.residentID WHERE tblNotification.residentID = $residentID LIMIT 50")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
 		

@@ -1,44 +1,32 @@
 <?php
-	$response = array;
+	//Set up for connection to database
+	$db = new mysqli('mysql.cs.iastate.edu', 'dbu309la04', 'YTGUxudv7py', 'db309la04');
 	
-	require_once __dir__.'/connect.php';
+	//Attempts to connect to database which returns an error if unsuccessful
+	if($db->connect_errno > 0 ){
+		die('Unable to connect to database [' . $db->connect_error . ']');
+	}
 	
-	$db = new DB_CONNECT;
-	
-	if(isset($_GET['maintenanceID')){
-		$paymentID = $_GET('maintenanceID');
-		$result = mysql_query("SELECT * FROM tblMaintenance WHERE maintenanceID = $maintenanceID");
+	//If statement checks that HTTP request URI contains residentID parameter
+	if(isset($_GET["maintenanceID"])){
+		$maintenanceID = $_GET['maintenanceID'];
 		
-		if(emptyempty($result)){
-			
-			if(mysql_num_rows($result) > 0){
-				$result = mysql_fetch_array($result);
-				$maintenance = array();
-				$maintenance["maintenanceID"] = $result["maintenanceID"];
-				$maintenance["roomID"] = $result["roomID"];
-				$maintenance["residentID"] = $result["residentID"];
-				$maintenance["employeeID"] = $result["employeeID"];
-				$maintenance["summary"] = $result["summary"];
-				$maintenance["description"] = $result["description"];
-				$maintenance["date"] = $result["date"];
-				
-				$response["success"] = 1;
-				
-				$response["maintenance"] = array();
-				array_push($response["maintenance"], $maintenance);
-				
-				echo json_encode($response);
-			}
-			else{
-				$response["success"] = 0;
-				$response["message"] = "No maintenance found";
-				
-				echo json_encode($response);
-			}
+		//Sets value of $result to SQL query and returns an error otherwise
+		if(!$result = $db->query("SELECT * FROM tblMaintenance WHERE maintenanceID = $maintenanceID")){
+			die('There was an error running the query [' . $db->error . ']');
 		}
-		else{
-			$response["success"] = 0;
-			$respnonse["message"] = "No maintenance found";
+		
+		//Goes through all rows returned by query and sets the maintenance array to the data
+		$maintenance = array();
+		while($row = $result->fetch_assoc()){
+				$maintenance[] = $row;
 		}
+		
+		//Encodes the array to json and returns it as an HTTP response
+		echo json_encode($maintenance);
+		
+		//Closes the SQL connection
+		$result->close();
+		$db->close();
 	}
 ?>
