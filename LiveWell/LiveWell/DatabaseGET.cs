@@ -107,6 +107,7 @@ namespace LiveWell
             List<Address> addresses = JsonConvert.DeserializeObject<List<Address>>(data);
             //Debug.WriteLine(@addresses);
             return addresses;
+        }
 
         public async Task<List<ListInformation>> getSuggestions(int residentID)
         {
