@@ -34,7 +34,7 @@
 		$ownerID = $_GET['ownerID'];
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("SELECT buildingID, firstName, lastName, address, numRooms, bankNum, RoutingNum, imageUrl FROM tblBuilding INNER JOIN tblOwner ON tblBuilding.ownerID = tblOwner.ownerID WHERE tblBuilding.ownerID = $ownerID")){
+		if(!$result = $db->query("SELECT buildingID, firstName, lastName, address, numRooms, bankNum, routingNum, imageUrl FROM tblBuilding INNER JOIN tblOwner ON tblBuilding.ownerID = tblOwner.ownerID WHERE tblBuilding.ownerID = $ownerID")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
 		

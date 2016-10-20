@@ -19,25 +19,22 @@ namespace LiveWell
 
             this.lists = lists;
 
-            List<Item> items = new List<Item>()
+            populateSuggestions();
+        }
+
+        async void populateSuggestions()
+        {
+            DatabaseGET conn = new DatabaseGET();
+            List<ListInformation> suggestions = await conn.getSuggestions(1);
+
+            List<Item> items = new List<Item>();
+            for(int i = 0; i < suggestions.Count; i++)
             {
-                new Item("Pears", "Bought approximately every two weeks"),
-                new Item("Chips", "Usually bought on weekly schedule"),
-                new Item("Granola bars", "Bought three times this month"),
-                new Item("Greek yogurt", "You haven't bought for awhile"),
-                new Item("Pears", "Bought approximately every two weeks"),
-                new Item("Chips", "Usually bought on weekly schedule"),
-                new Item("Granola bars", "Bought three times this month"),
-                new Item("Greek yogurt", "You haven't bought for awhile"),
-                new Item("Pears", "Bought approximately every two weeks"),
-                new Item("Chips", "Usually bought on weekly schedule"),
-                new Item("Granola bars", "Bought three times this month"),
-                new Item("Greek yogurt", "You haven't bought for awhile"),
-            };
+                items.Add(new Item(suggestions[i].itemName));
+            }
 
             suggestedItems.ItemsSource = items;
         }
-
         async void add(Object sender, EventArgs e)
         {
             DatabaseGET conn = new DatabaseGET();
@@ -57,13 +54,11 @@ namespace LiveWell
 
     public class Item
     {
-        public Item(String itemName, String reason)
+        public Item(String itemName)
         {
             this.ItemName = itemName;
-            this.Reason = reason;
         }
 
         public String ItemName { get; set; }
-        public String Reason { get; set; }
     }
 }

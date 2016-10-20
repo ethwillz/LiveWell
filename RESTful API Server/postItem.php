@@ -15,9 +15,10 @@
 		$listID = $input['listID'];
 		$itemName = mysqli_real_escape_string($db, $input['itemName']);
 		$imageUrl = mysqli_real_escape_string($db, $input['imageUrl']);
+		$addedBy = $input['addedBy'];
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("INSERT INTO tblItem (listID, itemName, imageUrl) VALUES($listID, '$itemName', '$imageUrl')")){
+		if(!$result = $db->query("INSERT INTO tblItem (listID, itemName, imageUrl, addedBy) VALUES($listID, '$itemName', '$imageUrl', $addedBy)")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
 		
