@@ -95,5 +95,22 @@ namespace LiveWell
             //Returns list for use in UI
             return foods;
         }
+
+        public async Task<List<ListInformation>> getSuggestions(int residentID)
+        {
+            //Instantiates new httpclient object with base address for http requests
+            var getFoods = new HttpClient(new NativeMessageHandler());
+            getFoods.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getSuggestions.php");
+
+            //Runs GET HTTP request to server and gets data back in JSON format
+            HttpResponseMessage gotLists = await getFoods.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getSuggestions.php?residentID=" + residentID));
+            String data = await gotLists.Content.ReadAsStringAsync();
+
+            //Data desrialized into list of notification objects (automatically handled by NewtonSoft.Json library)
+            List<ListInformation> foods = JsonConvert.DeserializeObject<List<ListInformation>>(data);
+
+            //Returns list for use in UI
+            return foods;
+        }
     }
 }

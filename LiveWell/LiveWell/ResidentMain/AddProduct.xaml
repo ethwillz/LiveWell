@@ -9,7 +9,7 @@
     <ListView x:Name="suggestedItems">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell Text="{Binding Path = ItemName}" Detail="{Binding Path = Reason}"/>
+          <TextCell Text="{Binding Path = ItemName}"/>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
