@@ -66,8 +66,11 @@ namespace LiveWell
 
 		async void populateList()
 		{
+			String accommodationType = "apartment";
+			int price = 1200;
+			int numRooms = 1000;
 			DatabaseGET conn = new DatabaseGET();
-			List<Address> addresses = await conn.getAddress();
+			List<Address> addresses = await conn.getAddress(price, accommodationType,numRooms);
 
 			List<QuickViewAddress> address = new List<QuickViewAddress>();
 			for (int i = 0; i < addresses.Count; i++)

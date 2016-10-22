@@ -30,13 +30,13 @@ namespace LiveWell
 
 		public class Address
 		{
-			public Address(String buildingID, String address)
+			public Address(String accommodationType, String address)
 			{
-				this.buildingID = buildingID;
+				this.accommodationType = accommodationType;
 				this.address = address;
 			}
 
-			public String buildingID { get; set; }
+			public String accommodationType { get; set; }
 			public String address { get; set; }
 		}
 
