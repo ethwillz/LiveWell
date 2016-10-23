@@ -9,7 +9,9 @@ namespace LiveWell
 	{
 		public HomeTab()
 		{
+			MapTab map = new MapTab();
 			InitializeComponent();
+			title.Text = "Explore " + map.getFilterResult() + " apartments";
 		}
 	}
 }

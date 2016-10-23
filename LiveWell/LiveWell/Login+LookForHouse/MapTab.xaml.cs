@@ -15,12 +15,13 @@ namespace LiveWell
 	public partial class MapTab : ContentPage
 	{
 		Geocoder geoCoder;
+		private int filterResult = 100;
 
 		public MapTab()
 		{
 			geoCoder = new Geocoder();
 			InitializeComponent();
-			populateList(0,"ALL",0);
+			populateList(0, "ALL", 0);
 			userLocation();
 		}
 
@@ -44,7 +45,7 @@ namespace LiveWell
 				var pin = new CustomPin
 				{
 					Pin = new Pin
-					{	
+					{
 						Type = PinType.Place,
 						Position = new Xamarin.Forms.Maps.Position(position.Latitude, position.Longitude),
 						Label = accommodationType,
@@ -64,13 +65,13 @@ namespace LiveWell
 
 		async void userLocation()
 		{
-			
+
 			var locator = CrossGeolocator.Current;
 			var userPosition = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
 
 			MyMap.MoveToRegion(
 			MapSpan.FromCenterAndRadius(
-					new Xamarin.Forms.Maps.Position(userPosition.Latitude,userPosition.Longitude), Distance.FromMiles(1.5)));
+					new Xamarin.Forms.Maps.Position(userPosition.Latitude, userPosition.Longitude), Distance.FromMiles(1.5)));
 		}
 
 		async void populateList(int price, String accommodationType, int numRooms)
@@ -81,7 +82,8 @@ namespace LiveWell
 
 			List<Address> addresses;
 			DatabaseGET conn = new DatabaseGET();
-			if (accommodationType == "ALL"){
+			if (accommodationType == "ALL")
+			{
 				addresses = await conn.getAddress();
 			}
 			else {
@@ -92,17 +94,23 @@ namespace LiveWell
 			for (int i = 0; i < addresses.Count; i++)
 			{
 				address.Add(new QuickViewAddress(addresses[i].address));
-				addPins(addresses[i].address,addresses[i].accommodationType);
+				addPins(addresses[i].address, addresses[i].accommodationType);
 				await Task.Delay(600);
 			}
 
 			quickview.ItemsSource = address;
 			quickview.RowHeight = 30;
+			filterResult = addresses.Count;
 
 		}
 
+		public int getFilterResult()
+		{
+			return filterResult;
+		}
 
 	}
+
 
 	public class QuickViewAddress
 	{
