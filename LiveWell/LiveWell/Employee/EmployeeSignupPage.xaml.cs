@@ -12,9 +12,15 @@ namespace LiveWell
 			InitializeComponent();
 		}
 
+		public EmployeeSignupPage(String user)
+		{
+			InitializeComponent();
+			userType.Text = user;
+		}
+
 		void BackButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new EmployeePage());
+			Navigation.PushModalAsync(new EmployeePage(userType.Text));
 		}
 	}
 }

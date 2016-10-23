@@ -7,9 +7,16 @@ namespace LiveWell
 {
 	public partial class EmployeePasswordResetPage : ContentPage
 	{
+		String userType = "";
 		public EmployeePasswordResetPage()
 		{
 			InitializeComponent();
+		}
+
+		public EmployeePasswordResetPage(String user)
+		{
+			InitializeComponent();
+			userType = user;
 		}
 
 		async void SendPasswordButtonClicked(object sender, EventArgs args)
@@ -21,7 +28,7 @@ namespace LiveWell
 
 		void BackButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new EmployeePage());
+			Navigation.PushModalAsync(new EmployeePage(userType));
 		}
 
 	}

@@ -12,19 +12,37 @@ namespace LiveWell
 			InitializeComponent();
 		}
 
+		public EmployeePage(String user)
+		{
+			InitializeComponent();
+			userType.Text = user;
+		}
+
 		void CreateButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new EmployeeSignupPage());
+			Navigation.PushModalAsync(new EmployeeSignupPage(userType.Text));
 		}
 
 		void LoginButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new EmployeeHomePage());
+			if (userType.Text == "Resident") 
+			{
+				Navigation.PushModalAsync(new MainOrSearchHouse());
+			}
+			else if (userType.Text == "Employee") 
+			{ 
+				Navigation.PushModalAsync(new EmployeeHomePage());
+			}	
+			else if (userType.Text == "Owner") 
+			{ 
+				Navigation.PushModalAsync(new Owner());
+			}
+
 		}
 
 		void PasswordButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new EmployeePasswordResetPage());
+			Navigation.PushModalAsync(new EmployeePasswordResetPage(userType.Text));
 		}
 
 		async void HelpButtonClicked(object sender, EventArgs args)

@@ -7,7 +7,7 @@
 			HorizontalOptions="Center" 
 			Font="Large" 
 			FontAttributes="Bold" />
-	<Label Text="Employee Login" 
+	<Label x:Name="userType" Text="Login" 
 			VerticalOptions="Fill" 
 			HorizontalOptions="Center" />
 	<Label Text="Username / Email Address"

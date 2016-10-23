@@ -14,15 +14,15 @@ namespace LiveWell
 
 		public void OnResidentButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new ResidentLoginPage());
+			Navigation.PushModalAsync(new EmployeePage("Resident"));
 		}
 		public void OnEmployeeButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new EmployeePage());
+			Navigation.PushModalAsync(new EmployeePage("Employee"));
 		}
 		public void OnOwnerButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new OwnerLoginPage());
+			Navigation.PushModalAsync(new EmployeePage("Owner"));
 		}
 	}
 }

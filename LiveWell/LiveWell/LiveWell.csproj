@@ -69,9 +69,6 @@
     <Compile Include="ResidentMain\Resident.xaml.cs">
       <DependentUpon>Resident.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Login+LookForHouse\EmployeeLoginPage.xaml.cs">
-      <DependentUpon>EmployeeLoginPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Login+LookForHouse\ResidentLoginPage.xaml.cs">
       <DependentUpon>ResidentLoginPage.xaml</DependentUpon>
     </Compile>
@@ -214,9 +211,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Login+LookForHouse\FirstPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login+LookForHouse\EmployeeLoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Login+LookForHouse\ResidentLoginPage.xaml">
