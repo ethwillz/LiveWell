@@ -66,18 +66,21 @@ namespace LiveWell
 
 		async void populateList()
 		{
-			String accommodationType = "apartment";
-			int price = 1200;
-			int numRooms = 1000;
+			int price = 700;
+			int numRooms = 3;
+			String accommodationType = "Apartment";
+
 			DatabaseGET conn = new DatabaseGET();
-			List<Address> addresses = await conn.getAddress(price, accommodationType,numRooms);
+			//List<Address> addresses = await conn.getAddress(price, accommodationType,numRooms);
+			//List<Address> addresses = await conn.getAddress();
+			List<Address> addresses = await conn.getAddress(price,accommodationType,numRooms);
 
 			List<QuickViewAddress> address = new List<QuickViewAddress>();
 			for (int i = 0; i < addresses.Count; i++)
 			{
 				address.Add(new QuickViewAddress(addresses[i].address));
 				addPins(addresses[i].address);
-				await Task.Delay(1000);
+				await Task.Delay(600);
 			}
 
 			quickview.ItemsSource = address;

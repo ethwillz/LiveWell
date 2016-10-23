@@ -109,6 +109,20 @@ namespace LiveWell
             return addresses;
         }
 
+		/*For Testing*/
+		//public async Task<List<Address>> getAddress(int price)
+		//{
+		//	var getAddress = new HttpClient(new NativeMessageHandler());
+		//	getAddress.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getBuilding.php");
+
+		//	HttpResponseMessage gotAddress = await getAddress.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getBuilding.php?price=" + price));
+		//	String data = await gotAddress.Content.ReadAsStringAsync();
+		//	//Debug.WriteLine(@data);
+		//	List<Address> addresses = JsonConvert.DeserializeObject<List<Address>>(data);
+		//	//Debug.WriteLine(@addresses);
+		//	return addresses;
+		//}
+
         public async Task<List<ListInformation>> getSuggestions(int residentID)
         {
             //Instantiates new httpclient object with base address for http requests
