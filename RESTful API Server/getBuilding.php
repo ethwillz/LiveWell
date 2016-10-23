@@ -52,36 +52,10 @@
 		$db->close();
 	}
 
-	// if(isset($_GET["price"]) && isset($_GET["accommodationType"]) && isset($_GET["numRooms"])){
-	// 	$price = $_GET['price'];
-	// 	$numRooms = $_GET['numRooms'];
-	// 	$accommodationType = $_GET['accommodationType'];
-	//
-	// 	//Sets value of $result to SQL query and returns an error otherwise
-	// 	if(!$result = $db->query("SELECT address, numRooms, price, accommodationType, imageUrl FROM tblBuilding INNER JOIN tblOwner ON tblBuilding.ownerID = tblOwner.ownerID
-	// 	WHERE tblBuilding.price <= $price AND tblBuilding.numRooms >= $numRooms AND tblBuilding.accommodationType = $accommodationType")){
-	// 		die('There was an error running the query [' . $db->error . ']');
-	// 	}
-	//
-	// 	//Goes through all rows returned by query and sets the building array to the data
-	// 	$building = array();
-	// 	while($row = $result->fetch_assoc()){
-	// 			$building[] = $row;
-	// 	}
-	//
-	// 	//Encodes the array to json and returns it as an HTTP response
-	// 	echo json_encode($building);
-	//
-	// 	//Closes the SQL connection
-	// 	$result->close();
-	// 	$db->close();
-	// }
-
 	if(isset($_GET["price"]) && isset($_GET["accommodationType"]) && isset($_GET["numRooms"])){
 		$price = $_GET['price'];
 		$numRooms = $_GET['numRooms'];
 		$accommodationType = $_GET['accommodationType'];
-		$test = "Apartment";
 
 		if(!$result = $db->query("SELECT address, numRooms, price, accommodationType, imageUrl FROM tblBuilding
 		WHERE tblBuilding.price <= $price AND tblBuilding.numRooms >= $numRooms AND tblBuilding.accommodationType = '$accommodationType'")){
@@ -102,23 +76,23 @@
 		$db->close();
 	}
 
-	// else{
-	// 			//Sets value of $result to SQL query and returns an error otherwise
-	// 	if(!$result = $db->query("SELECT * FROM tblBuilding")){
-	// 		die('There was an error running the query [' . $db->error . ']');
-	// 	}
-	//
-	// 	//Goes through all rows returned by query and sets the building array to the data
-	// 	$building = array();
-	// 	while($row = $result->fetch_assoc()){
-	// 			$building[] = $row;
-	// 	}
-	//
-	// 	//Encodes the array to json and returns it as an HTTP response
-	// 	echo json_encode($building);
-	//
-	// 	//Closes the SQL connection
-	// 	$result->close();
-	// 	$db->close();
-	// }
+	else{
+				//Sets value of $result to SQL query and returns an error otherwise
+		if(!$result = $db->query("SELECT * FROM tblBuilding")){
+			die('There was an error running the query [' . $db->error . ']');
+		}
+
+		//Goes through all rows returned by query and sets the building array to the data
+		$building = array();
+		while($row = $result->fetch_assoc()){
+				$building[] = $row;
+		}
+
+		//Encodes the array to json and returns it as an HTTP response
+		echo json_encode($building);
+
+		//Closes the SQL connection
+		$result->close();
+		$db->close();
+	}
 ?>

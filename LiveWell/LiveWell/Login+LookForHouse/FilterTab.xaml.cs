@@ -11,5 +11,13 @@ namespace LiveWell
 		{
 			InitializeComponent();
 		}
+
+		void OnSearchButtonClicked(object sender, EventArgs args)
+		{
+			int x = Int32.Parse(price.Text);
+			String y = accommodationType.Text;
+			int z = Int32.Parse(numRooms.Text);
+			Navigation.PushModalAsync(new MapTab(x,y,z));
+		}
 	}
 }

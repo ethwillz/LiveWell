@@ -3,17 +3,22 @@
 	<ContentPage.Content>
 		<StackLayout>
 
-		<Button Text="Location" VerticalOptions="CenterAndExpand"
-        HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"/>
-		
-		<Button Text="Room Type" VerticalOptions="CenterAndExpand"
-        	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"/>
+			<Entry x:Name="numRooms" Placeholder="Minimum Number of Rooms" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" 
+				HeightRequest="60" WidthRequest="300"  FontSize="Large"/>
 
-		<Button Text="Price" VerticalOptions="CenterAndExpand"
-        HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"/>
+			<Entry x:Name="accommodationType" Placeholder="Accommodation Type" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" 
+				HeightRequest="60" WidthRequest="300" FontSize="Large"/>
 
-		<Button Text="Number of Residents" VerticalOptions="CenterAndExpand"
-        HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"/>
+			<Entry x:Name="price" Placeholder="Maximum Price" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" 
+				HeightRequest="60" WidthRequest="300" FontSize="Large"/>
+
+			<Label x:Name="testLabel" Text="Default" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" 
+				HeightRequest="60" WidthRequest="300" FontSize="Large"/>
+
+		<Button Text="Search!" VerticalOptions="CenterAndExpand"
+        HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"
+		Clicked="OnSearchButtonClicked"/>
+			
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

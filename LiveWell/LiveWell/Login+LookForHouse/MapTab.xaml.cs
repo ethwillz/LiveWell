@@ -20,11 +20,20 @@ namespace LiveWell
 		{
 			geoCoder = new Geocoder();
 			InitializeComponent();
-			populateList();
-			initializeMap();
+			populateList(0,"ALL",0);
+			userLocation();
 		}
 
-		async void addPins(String houseAddress)
+		public MapTab(int price, String accommodationType, int numRooms)
+		{
+			geoCoder = new Geocoder();
+			InitializeComponent();
+			populateList(price, accommodationType, numRooms);
+			userLocation();
+		}
+
+
+		async void addPins(String houseAddress, String accommodationType)
 		{
 			var approximateLocation = await geoCoder.GetPositionsForAddressAsync(houseAddress);
 
@@ -38,7 +47,7 @@ namespace LiveWell
 					{	
 						Type = PinType.Place,
 						Position = new Xamarin.Forms.Maps.Position(position.Latitude, position.Longitude),
-						Label = "LiveWell house",
+						Label = accommodationType,
 						Address = houseAddress
 					}
 				};
@@ -50,10 +59,10 @@ namespace LiveWell
 		async void OnTestButtonClicked(object sender, EventArgs args)
 		{
 			var xamarinAddress = inputEntry.Text;
-			addPins(xamarinAddress);
+			addPins(xamarinAddress, "Apartment");
 		}
 
-		async void initializeMap()
+		async void userLocation()
 		{
 			
 			var locator = CrossGeolocator.Current;
@@ -64,22 +73,26 @@ namespace LiveWell
 					new Xamarin.Forms.Maps.Position(userPosition.Latitude,userPosition.Longitude), Distance.FromMiles(1.5)));
 		}
 
-		async void populateList()
+		async void populateList(int price, String accommodationType, int numRooms)
 		{
-			int price = 700;
-			int numRooms = 3;
-			String accommodationType = "Apartment";
+			//int price = 700;
+			//String accommodationType = "Apartment";
+			//int numRooms = 3;
 
+			List<Address> addresses;
 			DatabaseGET conn = new DatabaseGET();
-			//List<Address> addresses = await conn.getAddress(price, accommodationType,numRooms);
-			//List<Address> addresses = await conn.getAddress();
-			List<Address> addresses = await conn.getAddress(price,accommodationType,numRooms);
+			if (accommodationType == "ALL"){
+				addresses = await conn.getAddress();
+			}
+			else {
+				addresses = await conn.getAddress(price, accommodationType, numRooms);
+			}
 
 			List<QuickViewAddress> address = new List<QuickViewAddress>();
 			for (int i = 0; i < addresses.Count; i++)
 			{
 				address.Add(new QuickViewAddress(addresses[i].address));
-				addPins(addresses[i].address);
+				addPins(addresses[i].address,addresses[i].accommodationType);
 				await Task.Delay(600);
 			}
 
