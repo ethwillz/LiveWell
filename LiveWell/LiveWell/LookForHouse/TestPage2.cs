@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace LiveWell
 {
-	public partial class ResidentLoginPage : ContentPage
+	public partial class TestPage : ContentPage
 	{
-		public ResidentLoginPage()
+		public TestPage()
 		{
 			InitializeComponent();
 		}

@@ -5,14 +5,14 @@ using Xamarin.Forms;
 
 namespace LiveWell
 {
-	public partial class EmployeePage : ContentPage
+	public partial class LoginPage : ContentPage
 	{
-		public EmployeePage()
+		public LoginPage()
 		{
 			InitializeComponent();
 		}
 
-		public EmployeePage(String user)
+		public LoginPage(String user)
 		{
 			InitializeComponent();
 			userType.Text = user;
@@ -20,7 +20,7 @@ namespace LiveWell
 
 		void CreateButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new EmployeeSignupPage(userType.Text));
+			Navigation.PushModalAsync(new SignupPage(userType.Text));
 		}
 
 		void LoginButtonClicked(object sender, EventArgs args)
@@ -42,7 +42,7 @@ namespace LiveWell
 
 		void PasswordButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new EmployeePasswordResetPage(userType.Text));
+			Navigation.PushModalAsync(new PasswordResetPage(userType.Text));
 		}
 
 		async void HelpButtonClicked(object sender, EventArgs args)
