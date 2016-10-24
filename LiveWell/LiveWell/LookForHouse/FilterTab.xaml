@@ -3,7 +3,7 @@
 	<ContentPage.Content>
 		<StackLayout>
 
-			<Entry x:Name="distance" Placeholder="Maximum distance from current location" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" 
+			<Entry x:Name="distance" Placeholder="Maximum distance" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" 
 				HeightRequest="60" WidthRequest="300"  FontSize="Large"/>
 			
 			<Entry x:Name="numRooms" Placeholder="Minimum Number of Rooms" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" 

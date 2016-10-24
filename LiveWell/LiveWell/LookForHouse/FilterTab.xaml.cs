@@ -17,7 +17,8 @@ namespace LiveWell
 			int x = Int32.Parse(price.Text);
 			String y = accommodationType.Text;
 			int z = Int32.Parse(numRooms.Text);
-			Navigation.PushModalAsync(new MapTab(x,y,z));
+			int d = Int32.Parse(distance.Text);
+			Navigation.PushModalAsync(new MapTab(x,y,z,d));
 		}
 	}
 }

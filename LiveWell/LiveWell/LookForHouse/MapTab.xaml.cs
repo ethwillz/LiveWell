@@ -25,15 +25,16 @@ namespace LiveWell
 			geoCoder = new Geocoder();
 			InitializeComponent();
 			userLocation();
-			populateList(0, "ALL", 0);
+			populateList(0, "ALL", 0, 1000);
 		}
 
-		public MapTab(int price, String accommodationType, int numRooms)
+		public MapTab(int price, String accommodationType, int numRooms, int maxDistance)
 		{
 			geoCoder = new Geocoder();
 			InitializeComponent();
 			userLocation();
-			populateList(price, accommodationType, numRooms);
+			populateList(price, accommodationType, numRooms, maxDistance);
+
 		}
 
 
@@ -68,7 +69,6 @@ namespace LiveWell
 
 		async void userLocation()
 		{
-
 			var locator = CrossGeolocator.Current;
 			var userPosition = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
 			userPositionLatitude = userPosition.Latitude;
@@ -79,7 +79,7 @@ namespace LiveWell
 					new Xamarin.Forms.Maps.Position(userPositionLatitude, userPositionLongitude), Distance.FromMiles(1.5)));
 		}
 
-		async void populateList(int price, String accommodationType, int numRooms)
+		async void populateList(int price, String accommodationType, int numRooms, int maxDistance)
 		{
 			////Another Location
 			//var approximateLocation = await geoCoder.GetPositionsForAddressAsync("");
@@ -98,34 +98,37 @@ namespace LiveWell
 			List<QuickViewAddress> address = new List<QuickViewAddress>();
 			for (int i = 0; i < addresses.Count; i++)
 			{
-				//approximateLocation = await geoCoder.GetPositionsForAddressAsync(addresses[i].address);
-				//foreach (var position in approximateLocation)
-				//{
-				//if(CalculateDistance(position.Latitude, position.Longitude, userPosition.Latitude, userPosition.Longitude) < 50){
-					if(CalculateDistance(38.898556, -77.037852, 38.897147, -77.043934) < 5){
-						address.Add(new QuickViewAddress(addresses[i].address));
+				//System.Diagnostics.Debug.WriteLine(CalculateDistance(userPositionLatitude, userPositionLongitude, 10, 11));
+				var approximateLocation = await geoCoder.GetPositionsForAddressAsync(addresses[i].address);
+				foreach (var position in approximateLocation)
+				{
+				double distance = CalculateDistance(position.Latitude, position.Longitude, userPositionLatitude, userPositionLongitude);
+					if( distance < maxDistance){
+						address.Add(new QuickViewAddress(addresses[i].address + ", Distance: " + distance));
 						addPins(addresses[i].address, addresses[i].accommodationType);
-						await Task.Delay(600);
+						await Task.Delay(1000);
 					}
-				//}
+				}
 			}
-
 			quickview.ItemsSource = address;
 			quickview.RowHeight = 30;
 			filterResult = addresses.Count;
-
 		}
 
 		public double CalculateDistance(double positionLatitude, double positionLongitude, double currentLatitude, double currentLongitude)
         {
             double d = Math.Acos(
-               (Math.Sin(positionLatitude) * Math.Sin(currentLatitude)) +
-               (Math.Cos(positionLatitude) * Math.Cos(currentLatitude)) 
-               * Math.Cos(currentLongitude - positionLongitude));
+				(Math.Sin(deg2rad(positionLatitude)) * Math.Sin(deg2rad(currentLatitude))) +
+				(Math.Cos(deg2rad(positionLatitude)) * Math.Cos(deg2rad(currentLatitude))) 
+				* Math.Cos(deg2rad(currentLongitude - positionLongitude)));
 
-            return 6378137 * d;
+            return 6378.137 * d;
         }
 
+		public double deg2rad(double angle)
+		{
+			return angle*Math.PI/180;
+		}
 
 		public int getFilterResult()
 		{
