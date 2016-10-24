@@ -76,9 +76,13 @@ namespace LiveWell
 
 		async void populateList(int price, String accommodationType, int numRooms)
 		{
-			//int price = 700;
-			//String accommodationType = "Apartment";
-			//int numRooms = 3;
+			////Current Location
+			//var locator = CrossGeolocator.Current;
+			//var userPosition = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
+
+			////Another Location
+			//var approximateLocation = await geoCoder.GetPositionsForAddressAsync("");
+
 
 			List<Address> addresses;
 			DatabaseGET conn = new DatabaseGET();
@@ -93,9 +97,16 @@ namespace LiveWell
 			List<QuickViewAddress> address = new List<QuickViewAddress>();
 			for (int i = 0; i < addresses.Count; i++)
 			{
-				address.Add(new QuickViewAddress(addresses[i].address));
-				addPins(addresses[i].address, addresses[i].accommodationType);
-				await Task.Delay(600);
+				//approximateLocation = await geoCoder.GetPositionsForAddressAsync(addresses[i].address);
+				//foreach (var position in approximateLocation)
+				//{
+				//if(CalculateDistance(position.Latitude, position.Longitude, userPosition.Latitude, userPosition.Longitude) < 50){
+					if(CalculateDistance(38.898556, -77.037852, 38.897147, -77.043934) < 10){
+						address.Add(new QuickViewAddress(addresses[i].address));
+						addPins(addresses[i].address, addresses[i].accommodationType);
+						await Task.Delay(600);
+					}
+				//}
 			}
 
 			quickview.ItemsSource = address;
@@ -103,6 +114,17 @@ namespace LiveWell
 			filterResult = addresses.Count;
 
 		}
+
+		public double CalculateDistance(double positionLatitude, double positionLongitude, double currentLatitude, double currentLongitude)
+        {
+            double d = Math.Acos(
+               (Math.Sin(positionLatitude) * Math.Sin(currentLatitude)) +
+               (Math.Cos(positionLatitude) * Math.Cos(currentLatitude)) 
+               * Math.Cos(currentLongitude - positionLongitude));
+
+            return 6378137 * d;
+        }
+
 
 		public int getFilterResult()
 		{
