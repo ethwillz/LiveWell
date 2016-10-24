@@ -16,21 +16,24 @@ namespace LiveWell
 	{
 		Geocoder geoCoder;
 		private int filterResult = 100;
+		private double userPositionLatitude = 0;
+		private double userPositionLongitude = 0;
+
 
 		public MapTab()
 		{
 			geoCoder = new Geocoder();
 			InitializeComponent();
-			populateList(0, "ALL", 0);
 			userLocation();
+			populateList(0, "ALL", 0);
 		}
 
 		public MapTab(int price, String accommodationType, int numRooms)
 		{
 			geoCoder = new Geocoder();
 			InitializeComponent();
-			populateList(price, accommodationType, numRooms);
 			userLocation();
+			populateList(price, accommodationType, numRooms);
 		}
 
 
@@ -68,18 +71,16 @@ namespace LiveWell
 
 			var locator = CrossGeolocator.Current;
 			var userPosition = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
+			userPositionLatitude = userPosition.Latitude;
+			userPositionLongitude = userPosition.Longitude;
 
 			MyMap.MoveToRegion(
 			MapSpan.FromCenterAndRadius(
-					new Xamarin.Forms.Maps.Position(userPosition.Latitude, userPosition.Longitude), Distance.FromMiles(1.5)));
+					new Xamarin.Forms.Maps.Position(userPositionLatitude, userPositionLongitude), Distance.FromMiles(1.5)));
 		}
 
 		async void populateList(int price, String accommodationType, int numRooms)
 		{
-			////Current Location
-			//var locator = CrossGeolocator.Current;
-			//var userPosition = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
-
 			////Another Location
 			//var approximateLocation = await geoCoder.GetPositionsForAddressAsync("");
 
@@ -101,7 +102,7 @@ namespace LiveWell
 				//foreach (var position in approximateLocation)
 				//{
 				//if(CalculateDistance(position.Latitude, position.Longitude, userPosition.Latitude, userPosition.Longitude) < 50){
-					if(CalculateDistance(38.898556, -77.037852, 38.897147, -77.043934) < 10){
+					if(CalculateDistance(38.898556, -77.037852, 38.897147, -77.043934) < 5){
 						address.Add(new QuickViewAddress(addresses[i].address));
 						addPins(addresses[i].address, addresses[i].accommodationType);
 						await Task.Delay(600);
