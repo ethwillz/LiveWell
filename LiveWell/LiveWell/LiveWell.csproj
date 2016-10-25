@@ -38,6 +38,7 @@
     <Compile Include="ConnectHelpers.cs" />
     <Compile Include="DatabaseGET.cs" />
     <Compile Include="DatabasePOST.cs" />
+    <Compile Include="DatabaseUPDATE.cs" />
     <Compile Include="ResidentMain\AddProduct.xaml.cs">
       <DependentUpon>AddProduct.xaml</DependentUpon>
     </Compile>

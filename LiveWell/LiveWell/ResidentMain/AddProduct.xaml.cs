@@ -12,12 +12,19 @@ namespace LiveWell
     public partial class AddProduct : ContentPage
     {
         List<ListInformation> lists;
+        List<Item> items;
+        String name;
+        String user;
+        int index;
 
-        public AddProduct(List<ListInformation> lists)
+        public AddProduct(List<ListInformation> lists, String name, String user, int index)
         {
             InitializeComponent();
 
             this.lists = lists;
+            this.name = name;
+            this.user = user;
+            this.index = index;
 
             populateSuggestions();
         }
@@ -27,7 +34,7 @@ namespace LiveWell
             DatabaseGET conn = new DatabaseGET();
             List<ListInformation> suggestions = await conn.getSuggestions(1);
 
-            List<Item> items = new List<Item>();
+            items = new List<Item>();
             for(int i = 0; i < suggestions.Count; i++)
             {
                 items.Add(new Item(suggestions[i].itemName));
@@ -48,7 +55,17 @@ namespace LiveWell
             }
 
             DatabasePOST conn2 = new DatabasePOST();
+            DatabaseGET conn3 = new DatabaseGET();
             await conn2.postItem("1", item.Text, imageUrl);
+            MessagingCenter.Send(this, "newList", await conn3.getLists(1));
+            await Navigation.PushModalAsync(new ListDetails(lists, name, user, index));
+        }
+
+        void onTap(object sender, ItemTappedEventArgs e)
+        {
+            var index = (suggestedItems.ItemsSource as List<Item>).IndexOf(((ListView)sender).SelectedItem as Item);
+            item.Text = items[index].ItemName;
+            ((ListView)sender).SelectedItem = null;
         }
     }
 

@@ -21,7 +21,7 @@ namespace LiveWell
         void onTap(object sender, ItemTappedEventArgs e)
         {
             var index = (allLists.ItemsSource as List<ListInfo>).IndexOf(((ListView)sender).SelectedItem as ListInfo);
-            Navigation.PushModalAsync(new ListDetails(lists, list[index].ListName, list[index].Users));
+            Navigation.PushModalAsync(new ListDetails(lists, list[index].ListName, list[index].Users, index));
             ((ListView)sender).SelectedItem = null;
         }
 

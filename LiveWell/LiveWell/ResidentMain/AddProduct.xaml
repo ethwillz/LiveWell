@@ -6,7 +6,7 @@
     <Label Text="Enter item:" FontSize="20"/>
     <Editor x:Name="item"/>
     <Label Text="Suggested items" FontSize="18"/>
-    <ListView x:Name="suggestedItems">
+    <ListView x:Name="suggestedItems" ItemTapped="onTap">
       <ListView.ItemTemplate>
         <DataTemplate>
           <TextCell Text="{Binding Path = ItemName}"/>

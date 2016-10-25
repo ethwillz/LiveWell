@@ -10,15 +10,31 @@ namespace LiveWell
     {
         List<Product> productList;
         List<ListInformation> lists;
+        String name;
+        String user;
+        int index;
+        List<ListInformation> refresh;
 
-        public ListDetails(List<ListInformation> lists, String name, String user)
+        public ListDetails(List<ListInformation> lists, String name, String user, int index)
         {
             InitializeComponent();
 
             this.lists = lists;
+            this.name = name;
+            this.user = user;
+            this.index = index;
 
             listName.Text = name;
             users.Text = user;
+
+            MessagingCenter.Subscribe<AddProduct, List<ListInformation>>(this, "newList", (sender, refresh) => {
+                productList = new List<Product>();
+                for (int i = 0; i < refresh.Count; i++)
+                {
+                    productList.Add(new Product(refresh[i].imageUrl, refresh[i].itemName));
+                }
+                products.ItemsSource = productList;
+            });
 
             populatePage(lists);
         }
@@ -38,7 +54,7 @@ namespace LiveWell
 
         public void addClick(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new AddProduct(lists));
+            Navigation.PushModalAsync(new AddProduct(lists, name, user, index));
         }
 
         public void boughtClick(object sender, EventArgs e)

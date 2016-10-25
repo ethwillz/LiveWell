@@ -128,5 +128,14 @@ namespace LiveWell
             public String imageUrl { get; set; }
         }
 
+        public class paymentType
+        {
+            public paymentType(String type)
+            {
+                this.type = type;
+            }
+
+            public String type { get; set; }
+        }
     }
 }
