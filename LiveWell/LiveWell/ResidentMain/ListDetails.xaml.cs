@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 using static LiveWell.ConnectHelpers;
 
@@ -27,6 +26,17 @@ namespace LiveWell
             listName.Text = name;
             users.Text = user;
 
+            populatePage(lists);
+        }
+
+        void populatePage(List<ListInformation> lists)
+        {
+            productList = new List<Product>();
+            for(int i = 0; i < lists.Count; i++)
+            {
+                productList.Add(new Product(lists[i].imageUrl, lists[i].itemName));
+            }
+
             MessagingCenter.Subscribe<AddProduct, List<ListInformation>>(this, "newList", (sender, refresh) => {
                 productList = new List<Product>();
                 for (int i = 0; i < refresh.Count; i++)
@@ -35,17 +45,6 @@ namespace LiveWell
                 }
                 products.ItemsSource = productList;
             });
-
-            populatePage(lists);
-        }
-
-        async void populatePage(List<ListInformation> lists)
-        {
-            productList = new List<Product>();
-            for(int i = 0; i < lists.Count; i++)
-            {
-                productList.Add(new Product(lists[i].imageUrl, lists[i].itemName));
-            }
 
             products.ItemsSource = productList;
             products.RowHeight = 60;

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 using static LiveWell.ConnectHelpers;
 
@@ -22,7 +22,12 @@ namespace LiveWell
         {
             //Instantiates conenction object and calls method which gets notifications given a residentID
             DatabaseGET conn = new DatabaseGET();
+            List<balance> balances = await conn.getBalances(1);
             List<Notification> notifications = await conn.getPayments(1);
+
+            roomBill.Text = (Convert.ToDouble(balances[0].amount1) + Convert.ToDouble(balances[0].amount2) + Convert.ToDouble(balances[0].amount3) + Convert.ToDouble(balances[0].amount4)).ToString();
+            buildingBill.Text = balances[0].bAmount;
+
 
             //Payment history of the current user
             List<PayRecord> pay = new List<PayRecord>();

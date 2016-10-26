@@ -128,14 +128,22 @@ namespace LiveWell
             public String imageUrl { get; set; }
         }
 
-        public class paymentType
+        public class balance
         {
-            public paymentType(String type)
+            public balance(String amount1, String amount2, String amount3, String amount4, String bAmount)
             {
-                this.type = type;
+                this.amount1 = amount1;
+                this.amount2 = amount2;
+                this.amount3 = amount3;
+                this.amount4 = amount4;
+                this.bAmount = bAmount;
             }
 
-            public String type { get; set; }
+            public String amount1 { get; set; }
+            public String amount2 { get; set; }
+            public String amount3 { get; set; }
+            public String amount4 { get; set; }
+            public String bAmount { get; set; }
         }
     }
 }
