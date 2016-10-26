@@ -6,10 +6,10 @@
 		<Label/>
 		<Label Text="Ames" TextColor="#000" FontSize="30" HorizontalOptions="Center"/>
 		<Label x:Name="title" Text="Explore 35 apartments" TextColor="#000" FontSize="30" HorizontalOptions="Center"/>
-		<Image Source="apartment1.jpg" />
-		<Image Source="apartment2.jpg" />
-		<Image Source="apartment3.jpg" />
-		<Image Source="apartment4.jpg" />
+
+		<ListView x:Name="quickview">
+          <Image Source="{Binding Path = AccommodationImageUrl}" />
+   	    </ListView>
 
 		</StackLayout>
 		</ScrollView>

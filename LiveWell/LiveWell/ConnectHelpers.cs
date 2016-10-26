@@ -38,6 +38,21 @@ namespace LiveWell
 
 			public String accommodationType { get; set; }
 			public String address { get; set; }
+			public String imageUrl { get; set; }
+		}
+
+		public class Image
+		{
+			public Image(String accommodationType, String address, String imageUrl)
+			{
+				this.accommodationType = accommodationType;
+				this.address = address;
+				this.imageUrl = imageUrl;
+			}
+
+			public String accommodationType { get; set; }
+			public String address { get; set; }
+			public String imageUrl { get; set; }
 		}
 
         public class ResidentInfo
