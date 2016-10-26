@@ -23,14 +23,13 @@ namespace LiveWell
 
 		void OnSearchButtonClicked(object sender, EventArgs args)
 		{
-			//int x = Int32.Parse(price.Value.ToString());
-			//String y = "Apartment";//accommodationType.Items[];
-			//int z = Int32.Parse(numRooms.Value.ToString());
-			//int d = Int32.Parse(distance.Value.ToString());
-			int x = 0;
-			int d = 0;
-			int z = 0;
-			String y = "Apartment";
+			int x = (int) Convert.ToDouble(price.Value.ToString());
+			String y = accommodationType.Items[];
+			int z = (int)Convert.ToDouble(numRooms.Value.ToString());
+			int d = (int)Convert.ToDouble(distance.Value.ToString());
+
+			System.Diagnostics.Debug.WriteLine(y);
+
 			Navigation.PushModalAsync(new MapTab(x, y, z, d));
 		}
 	}

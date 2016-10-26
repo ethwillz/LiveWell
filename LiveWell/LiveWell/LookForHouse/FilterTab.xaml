@@ -70,7 +70,6 @@
         </StackLayout>
         </StackLayout>
 
-
         <Button Text="Search!" VerticalOptions="CenterAndExpand"
         HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"
         Clicked="OnSearchButtonClicked"/>
