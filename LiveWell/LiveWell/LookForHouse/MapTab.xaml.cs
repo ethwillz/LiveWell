@@ -25,7 +25,7 @@ namespace LiveWell
 			geoCoder = new Geocoder();
 			InitializeComponent();
 			userLocation();
-			populateList(0, "ALL", 0, 1000);
+			populateList(0, "ALL", 0, 100);
 		}
 
 		public MapTab(int price, String accommodationType, int numRooms, int maxDistance)
@@ -33,7 +33,7 @@ namespace LiveWell
 			geoCoder = new Geocoder();
 			InitializeComponent();
 			userLocation();
-			populateList(price, accommodationType, numRooms, maxDistance);
+			populateList(price, accommodationType, numRooms, 10);
 
 		}
 
@@ -99,16 +99,18 @@ namespace LiveWell
 			for (int i = 0; i < addresses.Count; i++)
 			{
 				//System.Diagnostics.Debug.WriteLine(CalculateDistance(userPositionLatitude, userPositionLongitude, 10, 11));
-				var approximateLocation = await geoCoder.GetPositionsForAddressAsync(addresses[i].address);
-				foreach (var position in approximateLocation)
-				{
-				double distance = CalculateDistance(position.Latitude, position.Longitude, userPositionLatitude, userPositionLongitude);
-					if( distance < maxDistance){
-						address.Add(new QuickViewAddress(addresses[i].address + ", Distance: " + distance));
+				//var approximateLocation = await geoCoder.GetPositionsForAddressAsync(addresses[i].address);
+				//foreach (var position in approximateLocation)
+				//{
+				//double distance = CalculateDistance(position.Latitude, position.Longitude, userPositionLatitude, userPositionLongitude);
+				//	if( distance < maxDistance){
+				//		address.Add(new QuickViewAddress(addresses[i].address + ", Distance: " + distance));
+						address.Add(new QuickViewAddress(addresses[i].address));
+
 						addPins(addresses[i].address, addresses[i].accommodationType);
-						await Task.Delay(1000);
-					}
-				}
+						await Task.Delay(300);
+				//	}
+				//}
 			}
 			quickview.ItemsSource = address;
 			quickview.RowHeight = 30;
@@ -130,9 +132,10 @@ namespace LiveWell
 			return angle*Math.PI/180;
 		}
 
-		public int getFilterResult()
+		public void setFilterResult()
 		{
-			return filterResult;
+			var homeTab = new HomeTab();
+			homeTab.Title = filterResult.ToString();
 		}
 
 	}
