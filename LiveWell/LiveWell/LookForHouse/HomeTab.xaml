@@ -8,7 +8,16 @@
 		<Label x:Name="title" Text="Explore 35 apartments" TextColor="#000" FontSize="30" HorizontalOptions="Center"/>
 
 		<ListView x:Name="quickview">
-          <Image Source="{Binding Path = AccommodationImageUrl}" />
+      	<ListView.ItemTemplate>
+		 <DataTemplate>
+		 <ViewCell>
+          <Image Aspect="AspectFill" Source="{Binding Path = AccommodationImageUrl}"/>
+		</ViewCell>
+
+<!--		  <Label TextColor="Black" Text="{Binding Path = AccommodationType}"/>
+-->
+       	 </DataTemplate>
+      	</ListView.ItemTemplate>
    	    </ListView>
 
 		</StackLayout>

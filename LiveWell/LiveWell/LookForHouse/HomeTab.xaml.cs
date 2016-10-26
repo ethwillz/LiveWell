@@ -33,8 +33,8 @@ namespace LiveWell
 				//await Task.Delay(300);
 			}
 			quickview.ItemsSource = address;
-			quickview.RowHeight = 30;
-			title.Text = "Explore " + addresses.Count + "Apartments";
+			quickview.RowHeight = 400;
+			title.Text = "Explore " + addresses.Count + " Apartments";
 
 		}
 	}
