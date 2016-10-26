@@ -24,7 +24,7 @@ namespace LiveWell
 		void OnSearchButtonClicked(object sender, EventArgs args)
 		{
 			int x = (int) Convert.ToDouble(price.Value.ToString());
-			String y = accommodationType.Items[];
+			String y = accommodationType.Items[accommodationType.SelectedIndex];
 			int z = (int)Convert.ToDouble(numRooms.Value.ToString());
 			int d = (int)Convert.ToDouble(distance.Value.ToString());
 
