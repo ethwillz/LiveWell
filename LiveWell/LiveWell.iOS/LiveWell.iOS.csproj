@@ -50,7 +50,10 @@
     <CodesignKey>iPhone Developer: keisuke_0607@yahoo.co.jp (65355UQ2T2)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>85ddcdd4-05c6-493f-ae13-5905f09c9f6a</CodesignProvision>
+    <CodesignProvision>d2a59bae-8763-448c-8a36-1896c6073b2a</CodesignProvision>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
+    <MtouchFastDev>false</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -62,6 +65,7 @@
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>

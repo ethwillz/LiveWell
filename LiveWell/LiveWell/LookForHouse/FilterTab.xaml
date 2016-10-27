@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.FilterTab">
 	<ContentPage.Content>
-		<!--<StackLayout>
-
-			<Entry x:Name="distance" Placeholder="Maximum distance" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" 
-				HeightRequest="60" WidthRequest="300"  FontSize="Large"/>
-			
-			<Entry x:Name="numRooms" Placeholder="Minimum Number of Rooms" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" 
-				HeightRequest="60" WidthRequest="300"  FontSize="Large"/>
-
-			<Entry x:Name="accommodationType" Placeholder="Accommodation Type" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" 
-				HeightRequest="60" WidthRequest="300" FontSize="Large"/>
-
-			<Entry x:Name="price" Placeholder="Maximum Price" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" 
-				HeightRequest="60" WidthRequest="300" FontSize="Large"/>
-
-			<Label x:Name="testLabel" Text="Default" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" 
-				HeightRequest="60" WidthRequest="300" FontSize="Large"/>
-
-		<Button Text="Search!" VerticalOptions="CenterAndExpand"
-        HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"
-		Clicked="OnSearchButtonClicked"/>
-			
-		</StackLayout>-->
-
 
 		<StackLayout>
         <Label/>

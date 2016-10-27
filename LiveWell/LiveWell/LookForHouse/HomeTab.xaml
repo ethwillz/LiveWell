@@ -11,11 +11,19 @@
       	<ListView.ItemTemplate>
 		 <DataTemplate>
 		 <ViewCell>
-          <Image Aspect="AspectFill" Source="{Binding Path = AccommodationImageUrl}"/>
+		<StackLayout Spacing="1">	
+          <Image Aspect="AspectFill" HeightRequest="350" Source="{Binding Path = AccommodationImageUrl}"/>
+          <StackLayout Orientation = "Horizontal">
+			<StackLayout>
+			<Label TextColor="Black" Text= "{Binding Path = AccommodationType}"/>
+			<Label TextColor="Black" Text="{Binding Path = AccommodationAddress}"/>
+			</StackLayout>
+			<Button Text="LIKE" FontSize="Small" TextColor="White" BackgroundColor="Lime"/>
+		  </StackLayout>
+		</StackLayout>
 		</ViewCell>
 
-<!--		  <Label TextColor="Black" Text="{Binding Path = AccommodationType}"/>
--->
+
        	 </DataTemplate>
       	</ListView.ItemTemplate>
    	    </ListView>
