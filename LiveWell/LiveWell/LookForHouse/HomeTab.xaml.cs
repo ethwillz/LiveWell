@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using static LiveWell.ConnectHelpers;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
@@ -34,7 +35,7 @@ namespace LiveWell
 			}
 			quickview.ItemsSource = address;
 			quickview.RowHeight = 400;
-			title.Text = "Explore " + addresses.Count + " Apartments";
+			title.Text = "Explore " + addresses.Count + " Accommodations";
 
 		}
 	}
