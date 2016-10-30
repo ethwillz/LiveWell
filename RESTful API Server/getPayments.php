@@ -1,40 +1,32 @@
 <?php
-	$response = array;
+	//Set up for connection to database
+	$db = new mysqli('mysql.cs.iastate.edu', 'dbu309la04', 'YTGUxudv7py', 'db309la04');
 	
-	require_once __dir__.'/connect.php';
+	//Attempts to connect to database which returns an error if unsuccessful
+	if($db->connect_errno > 0 ){
+		die('Unable to connect to database [' . $db->connect_error . ']');
+	}
 	
-	$db = new DB_CONNECT;
-	
-	if(isset($_GET['paymentID')){
-		$paymentID = $_GET('paymentID');
-		$result = mysql_query("SELECT * FROM tblPayment WHERE paymentID = $paymentID");
+	//If statement checks that HTTP request URI contains residentID parameter
+	if(isset($_GET["residentID"])){
+		$residentID = $_GET['residentID'];
 		
-		if(emptyempty($result)){
-			
-			if(mysql_num_rows($result) > 0){
-				$result = mysql_fetch_array($result);
-				$payment = array();
-				$payment["paymentID"] = $result["paymentID"];
-				$payment["amount"] = $result["amount"];
-				$payment["recipient"] = $result["recipient"];
-				
-				$response["success"] = 1;
-				
-				$response["payment"] = array();
-				array_push($response["payment"], $payment);
-				
-				echo json_encode($response);
-			}
-			else{
-				$response["success"] = 0;
-				$response["message"] = "No payment found";
-				
-				echo json_encode($response);
-			}
+		//Sets value of $result to SQL query and returns an error otherwise
+		if(!$result = $db->query("SELECT notificationID, tblNotification.residentID, type, amount, firstName, lastName, details FROM tblNotification INNER JOIN tblResident ON tblNotification.sender = tblResident.residentID WHERE tblNotification.residentID = $residentID AND type='groceries' OR type='fine' OR type='payment' LIMIT 50")){
+			die('There was an error running the query [' . $db->error . ']');
 		}
-		else{
-			$response["success"] = 0;
-			$respnonse["message"] = "No payment found";
+		
+		//Goes through all rows returned by query and sets the payment array to the data
+		$payment = array();
+		while($row = $result->fetch_assoc()){
+				$payment[] = $row;
 		}
+		
+		//Encodes the array to json and returns it as an HTTP response
+		echo json_encode($payment);
+		
+		//Closes the SQL connection
+		$result->close();
+		$db->close();
 	}
 ?>

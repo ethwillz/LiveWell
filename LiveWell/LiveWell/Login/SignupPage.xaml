@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.EmployeeSignupPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.SignupPage">
 	<ContentPage.Content>
 		<StackLayout>
 		<Label Text="Welcome to Live Well!" VerticalOptions="Start" HorizontalOptions="Center" Font="Large" FontAttributes="Bold" />
-		<Label Text="Employee Sign Up" VerticalOptions="Fill" HorizontalOptions="Center" />
+		<Label x:Name="userType" Text="Sign Up" VerticalOptions="Fill" HorizontalOptions="Center" />
 		<Label Text="First name" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" Font="Large" FontAttributes="Bold" />
 		<Entry Placeholder="Enter first name" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" />
 		<Label Text="Last name" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" Font="Large" FontAttributes="Bold" />

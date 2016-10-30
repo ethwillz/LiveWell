@@ -4,15 +4,15 @@
              x:Class="LiveWell.AddProduct">
   <StackLayout Orientation="Vertical">
     <Label Text="Enter item:" FontSize="20"/>
-    <Editor/>
+    <Editor x:Name="item"/>
     <Label Text="Suggested items" FontSize="18"/>
     <ListView x:Name="suggestedItems">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell Text="{Binding Path = ItemName}" Detail="{Binding Path = Reason}"/>
+          <TextCell Text="{Binding Path = ItemName}"/>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Button Text="Add item"/>
+    <Button Text="Add item" Clicked="add"/>
   </StackLayout>
 </ContentPage>

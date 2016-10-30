@@ -5,11 +5,18 @@ using Xamarin.Forms;
 
 namespace LiveWell
 {
-	public partial class EmployeePasswordResetPage : ContentPage
+	public partial class PasswordResetPage : ContentPage
 	{
-		public EmployeePasswordResetPage()
+		String userType = "";
+		public PasswordResetPage()
 		{
 			InitializeComponent();
+		}
+
+		public PasswordResetPage(String user)
+		{
+			InitializeComponent();
+			userType = user;
 		}
 
 		async void SendPasswordButtonClicked(object sender, EventArgs args)
@@ -21,7 +28,7 @@ namespace LiveWell
 
 		void BackButtonClicked(object sender, EventArgs args)
 		{
-			Navigation.PushModalAsync(new EmployeePage());
+			Navigation.PushModalAsync(new LoginPage(userType));
 		}
 
 	}
