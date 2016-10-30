@@ -148,7 +148,20 @@ namespace LiveWell
 
         public class ItemList
         {
-            public ItemList()
+            public ItemList(String listName, int residentID1, int residentID2, int residentID3, int residentID4)
+            {
+                this.listName = listName;
+                this.residentID1 = residentID1;
+                this.residentID2 = residentID2;
+                this.residentID3 = residentID3;
+                this.residentID4 = residentID4;
+            }
+
+            public String listName { get; set; }
+            public int residentID1 { get; set; }
+            public int residentID2 { get; set; }
+            public int residentID3 { get; set; }
+            public int residentID4 { get; set; }
         }
     }
 }

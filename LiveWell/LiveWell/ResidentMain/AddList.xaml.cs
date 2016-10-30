@@ -36,17 +36,9 @@ namespace LiveWell.ResidentMain
 
         async void add(Object sender, EventArgs e)
         {
-            DatabasePOST conn = new DatabasePOST();
-            conn.postList(1, listName.Text, ids);
-        }
-
-        async void selected(Object sender, EventArgs e)
-        {
-            if (((SwitchCell)sender).On)
-                names.Add(((SwitchCell)sender).Text);
-            for(int i = 0; i < names.Count; i++)
+            for (int i = 0; i < names.Count; i++)
             {
-                for(int j = 0; j < roommates.Count; j++)
+                for (int j = 0; j < roommates.Count; j++)
                 {
                     if ((roommates[j].firstName + " " + roommates[j].lastName).Equals(names[i]))
                     {
@@ -54,6 +46,16 @@ namespace LiveWell.ResidentMain
                     }
                 }
             }
+
+            DatabasePOST conn = new DatabasePOST();
+            await conn.postList(listName.Text, ids);
+            await Navigation.PushModalAsync(new GroceryLists());
+        }
+
+        public void selected(Object sender, EventArgs e)
+        {
+            if (((SwitchCell)sender).On)
+                names.Add(((SwitchCell)sender).Text);
         }
     }
 

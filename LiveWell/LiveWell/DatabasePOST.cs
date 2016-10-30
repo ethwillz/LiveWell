@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,16 +36,37 @@ namespace LiveWell
             string contentJson = JsonConvert.SerializeObject(item);
             var content = new StringContent(contentJson, Encoding.UTF8, "application/json");
 
-            //Runs GET HTTP request to server and gets data back in JSON format
+            //Runs POST HTTP request to server and gets data back in JSON format
             HttpResponseMessage gotNotifications = await getNotifications.PostAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/postItem.php"), content);
         }
 
-        public async Task postList(int residentID, String listName, List<int> ids)
+        public async Task postList(String listName, List<int> ids)
         {
             var postList = new HttpClient(new NativeMessageHandler());
-            postList.BaseAddress = new Uri("http://proj-309.la-04.cs.iastate.edu");
+            postList.BaseAddress = new Uri("http://proj-309.la-04.cs.iastate.edu/postList.php");
 
-            ConnectHelpers.
+            ConnectHelpers.ItemList list;
+            if(ids.Count == 1)
+            {
+                list = new ConnectHelpers.ItemList(listName, ids[0], 0, 0, 0);
+            }
+            else if(ids.Count == 2)
+            {
+                list = new ConnectHelpers.ItemList(listName, ids[0], ids[1], 0, 0);
+            }
+            else if(ids.Count == 3)
+            {
+                list = new ConnectHelpers.ItemList(listName, ids[0], ids[1], ids[2], 0);
+            }
+            else
+                list = new ConnectHelpers.ItemList(listName, ids[0], ids[1], ids[2], ids[3]);
+
+
+            string contentJson = JsonConvert.SerializeObject(list);
+            var content = new StringContent(contentJson, Encoding.UTF8, "application/json");
+
+            //Runs POST HTTP request to server and gets data back in JSON format
+            HttpResponseMessage sentList = await postList.PostAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/postList.php"), content);
         }
     }
 }
