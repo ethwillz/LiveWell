@@ -81,8 +81,8 @@ namespace LiveWell
 
 		async void populateList(int price, String accommodationType, int numRooms, int maxDistance)
 		{
-			////Another Location
-			//var approximateLocation = await geoCoder.GetPositionsForAddressAsync("");
+			//////Another Location
+			////var approximateLocation = await geoCoder.GetPositionsForAddressAsync("");
 
 
 			List<Address> addresses;

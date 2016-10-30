@@ -76,7 +76,7 @@
 		$db->close();
 	}
 
-	if(isset($_GET["favorite"]){
+	if(isset($_GET["favorite"])){
 		$favorite = $_GET['favorite'];
 
 		if(!$result = $db->query("SELECT address, numRooms, price, accommodationType, imageUrl FROM tblBuilding
