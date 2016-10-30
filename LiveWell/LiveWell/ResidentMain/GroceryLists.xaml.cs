@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiveWell.ResidentMain;
+using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -59,6 +60,11 @@ namespace LiveWell
 
             allLists.ItemsSource = list;
             allLists.RowHeight = 60;
+        }
+
+        async void newList(Object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new AddList());
         }
     }
 

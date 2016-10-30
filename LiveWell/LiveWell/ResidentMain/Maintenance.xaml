@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LiveWell.Maintenance">
-  <StackLayout Orientation="Vertical">
+  <StackLayout Orientation="Vertical" BackgroundColor="White">
     <Label Text="Submit new maintenance request" FontSize="20" HorizontalOptions="Center"/>
     <Label Text="Summary of issue" FontSize="15"/>
     <Editor x:Name="summary" HeightRequest="100"/>

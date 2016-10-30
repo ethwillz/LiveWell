@@ -2,14 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LiveWell.Payment">
-  <StackLayout Orientation="Vertical">
+  <StackLayout Orientation="Vertical" BackgroundColor="White">
     
     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
       <StackLayout Orientation="Vertical">
         <Label Text="Building bill" FontSize="20"/>
         <Label x:Name="buildingBill" Text="$692.37" FontSize="20"/>
       </StackLayout>
-      <Button Text="Pay" Clicked="payBuilding"/>
+      <Button Text="Pay" Clicked="payBuilding" BackgroundColor="#8F1616" TextColor="White" />
     </StackLayout>
     
     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -17,7 +17,7 @@
         <Label Text="Room bill" FontSize="20"/>
         <Label x:Name="roomBill" Text="$72.35" FontSize="20"/>
       </StackLayout>
-      <Button Text="Pay" Clicked="payRoom"/>
+      <Button Text="Pay" Clicked="payRoom" BackgroundColor="#8F1616" TextColor="White"/>
     </StackLayout>
     
     <Label Text="History" FontSize="20"/>

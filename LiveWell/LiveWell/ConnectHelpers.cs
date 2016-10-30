@@ -145,5 +145,10 @@ namespace LiveWell
             public String amount4 { get; set; }
             public String bAmount { get; set; }
         }
+
+        public class ItemList
+        {
+            public ItemList()
+        }
     }
 }

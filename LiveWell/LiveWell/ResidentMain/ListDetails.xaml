@@ -9,11 +9,11 @@
     <ListView x:Name = "products">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <ImageCell x:Name="productCell" ImageSource="{Binding Path = ProductImageUrl}" Text="{Binding Path = ProductName}" TextColor="Black" Detail="Cheapest at _________"/>
+          <ImageCell x:Name="productCell" ImageSource="{Binding Path = ProductImageUrl}" Text="{Binding Path = ProductName}" TextColor="Black"/>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Button Clicked="addClick" Text="Add"/>
-    <Button Clicked="boughtClick" Text="I bought this"/>
+    <Button Clicked="addClick" Text="Add" BackgroundColor="#8F1616" TextColor="White"/>
+    <Button Clicked="boughtClick" Text="I bought this" BackgroundColor="#8F1616" TextColor="White"/>
   </StackLayout>
 </ContentPage>

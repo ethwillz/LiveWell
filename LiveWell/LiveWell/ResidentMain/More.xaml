@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LiveWell.More">
-  <ListView x:Name="otherPages" ItemTapped="onTap">
+  <ListView x:Name="otherPages" ItemTapped="onTap" BackgroundColor="White">
     <ListView.ItemTemplate>
       <DataTemplate>
         <TextCell TextColor="Black" Text="{Binding Path = PageName}"/>
