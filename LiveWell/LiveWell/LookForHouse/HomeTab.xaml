@@ -18,7 +18,7 @@
 			<Label TextColor="Black" Text= "{Binding Path = AccommodationType}"/>
 			<Label TextColor="Black" Text="{Binding Path = AccommodationAddress}"/>
 			</StackLayout>
-			<Button Text="LIKE" FontSize="Small" TextColor="White" BackgroundColor="Lime"/>
+			<Button Text="LIKE" FontSize="Small" TextColor="White" BackgroundColor="Lime" Clicked="OnFavoriteButtonClicked"/>
 		  </StackLayout>
 		</StackLayout>
 		</ViewCell>

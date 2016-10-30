@@ -17,7 +17,7 @@
 			<Label TextColor="Black" Text= "{Binding Path = AccommodationType}"/>
 			<Label TextColor="Black" Text="{Binding Path = AccommodationAddress}"/>
 			</StackLayout>
-			<Button Text="REMOVE" FontSize="Small" TextColor="White" BackgroundColor="Lime"/>
+			<Button Text="REMOVE" FontSize="Small" TextColor="White" BackgroundColor="Lime" Clicked="OnRemoveButtonClicked"/>
 		  </StackLayout>
 		</StackLayout>
 		</ViewCell>

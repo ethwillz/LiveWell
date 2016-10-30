@@ -16,6 +16,11 @@ namespace LiveWell
 			populateList();
 		}
 
+		async void OnRemoveButtonClicked(object sender, EventArgs args)
+		{
+			DatabasePOST conn2 = new DatabasePOST();
+			await conn2.postFavoriteAccommodation(1, 0);
+		}
 
 		async void populateList()
 		{

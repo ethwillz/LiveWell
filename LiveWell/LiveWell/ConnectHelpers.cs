@@ -41,6 +41,18 @@ namespace LiveWell
 			public String imageUrl { get; set; }
 		}
 
+		public class Favorite
+		{
+			public Favorite(int buildingID, int favorite)
+			{
+				this.buildingID = buildingID;
+				this.favorite = favorite;
+			}
+
+			public int buildingID { get; set; }
+			public int favorite { get; set; }
+		}
+
 		public class Image
 		{
 			public Image(String accommodationType, String address, String imageUrl)

@@ -15,6 +15,12 @@ namespace LiveWell
 			populateList(0, "ALL", 0, 100);
 		}
 
+		async void OnFavoriteButtonClicked(object sender, EventArgs args)
+		{
+			DatabasePOST conn2 = new DatabasePOST();
+			await conn2.postFavoriteAccommodation(1,1);
+		}
+
 		async void populateList(int price, String accommodationType, int numRooms, int maxDistance)
 		{
 			List<Address> addresses;
