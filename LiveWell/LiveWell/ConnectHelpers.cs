@@ -39,6 +39,8 @@ namespace LiveWell
 			public String accommodationType { get; set; }
 			public String address { get; set; }
 			public String imageUrl { get; set; }
+			public int buildingID { get; set; }
+
 		}
 
 		public class Favorite
@@ -55,16 +57,19 @@ namespace LiveWell
 
 		public class Image
 		{
-			public Image(String accommodationType, String address, String imageUrl)
+			public Image(String accommodationType, String address, String imageUrl, int buildingID)
 			{
 				this.accommodationType = accommodationType;
 				this.address = address;
 				this.imageUrl = imageUrl;
+				this.buildingID = buildingID;
 			}
 
 			public String accommodationType { get; set; }
 			public String address { get; set; }
 			public String imageUrl { get; set; }
+			public int buildingID { get; set; }
+
 		}
 
         public class ResidentInfo

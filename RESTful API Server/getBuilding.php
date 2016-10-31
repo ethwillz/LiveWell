@@ -79,7 +79,7 @@
 	if(isset($_GET["favorite"])){
 		$favorite = $_GET['favorite'];
 
-		if(!$result = $db->query("SELECT address, numRooms, price, accommodationType, imageUrl FROM tblBuilding
+		if(!$result = $db->query("SELECT * FROM tblBuilding
 		WHERE tblBuilding.favorite = $favorite")) {
 			die('There was an error running the query [' . $db->error . ']');
 		}
