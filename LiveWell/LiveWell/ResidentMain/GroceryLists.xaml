@@ -3,13 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:LiveWell;assembly=LiveWell"
              x:Class="LiveWell.GroceryLists">
-  
-  <ListView x:Name="allLists" ItemTapped="onTap">
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <TextCell x:Name="listCell" TextColor="Black" Text="{Binding Path = ListName}" Detail="{Binding Path = Users}"/>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>
+
+  <StackLayout Orientation="Vertical" BackgroundColor="White">
+    <ListView x:Name="allLists" ItemTapped="onTap">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell x:Name="listCell" TextColor="Black" Text="{Binding Path = ListName}" Detail="{Binding Path = Users}"/>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Button x:Name="add" Text="Add New List" BackgroundColor="#8F1616" TextColor="White" Clicked="newList"/>
+  </StackLayout>
 
 </ContentPage>

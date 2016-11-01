@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LiveWell.ResidentMain.AddList">
+  
+  <StackLayout Orientation="Vertical" BackgroundColor="White">
+    <Label TextColor="Black" Text="List Name:" FontSize="15"/>
+    <Editor x:Name="listName" TextColor="Black"/>
+    <Label TextColor="Black" Text="Users on list:" FontSize="15"/>
+    <ListView x:Name="users">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <SwitchCell OnChanged="selected" Text="{Binding Path = user}"/>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Button Text="Add item(s) to list" BackgroundColor="#8F1616" TextColor="White" Clicked="addItem"/>
+    <Button Text="Add list" BackgroundColor="#8F1616" TextColor="White" Clicked="add"/>
+  </StackLayout>
+  
+</ContentPage>

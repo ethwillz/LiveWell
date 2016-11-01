@@ -105,7 +105,7 @@ namespace LiveWell
 
         public class ListInformation
         {
-            public ListInformation(String listID, String listName, String residentID1, String residentID2, String residentID3, String residentID4, String itemID)
+            public ListInformation(String listID, String listName, String residentID1, String residentID2, String residentID3, String residentID4)
             {
                 this.listID = listID;
                 this.listName = listName;
@@ -113,9 +113,6 @@ namespace LiveWell
                 this.residentID2 = residentID2;
                 this.residentID3 = residentID3;
                 this.residentID4 = residentID4;
-                this.itemID = itemID;
-                this.itemName = itemName;
-                this.imageUrl = imageUrl;
             }
 
             public String listID { get; set; }
@@ -124,9 +121,6 @@ namespace LiveWell
             public String residentID2 { get; set; }
             public String residentID3 { get; set; }
             public String residentID4 { get; set; }
-            public String itemID { get; set; }
-            public String itemName { get; set; }
-            public String imageUrl { get; set; }
         }
 
         public class Food
@@ -143,17 +137,64 @@ namespace LiveWell
 
         public class Item
         {
-            public Item(String listID, String itemName, String imageUrl)
+            public Item(String itemName, String imageUrl)
             {
-                this.listID = listID;
                 this.itemName = itemName;
                 this.imageUrl = imageUrl;
             }
 
-            public String listID { get; set; }
             public String itemName { get; set; }
             public String imageUrl { get; set; }
         }
 
+        public class ItemPost
+        {
+            public ItemPost(String itemName, String imageUrl, String listID)
+            {
+                this.itemName = itemName;
+                this.imageUrl = imageUrl;
+                this.listID = listID;
+            }
+
+            public String itemName { get; set; }
+            public String imageUrl { get; set; }
+            public String listID { get; set; }
+        }
+
+        public class balance
+        {
+            public balance(String amount1, String amount2, String amount3, String amount4, String bAmount)
+            {
+                this.amount1 = amount1;
+                this.amount2 = amount2;
+                this.amount3 = amount3;
+                this.amount4 = amount4;
+                this.bAmount = bAmount;
+            }
+
+            public String amount1 { get; set; }
+            public String amount2 { get; set; }
+            public String amount3 { get; set; }
+            public String amount4 { get; set; }
+            public String bAmount { get; set; }
+        }
+
+        public class ItemList
+        {
+            public ItemList(String listName, int residentID1, int residentID2, int residentID3, int residentID4)
+            {
+                this.listName = listName;
+                this.residentID1 = residentID1;
+                this.residentID2 = residentID2;
+                this.residentID3 = residentID3;
+                this.residentID4 = residentID4;
+            }
+
+            public String listName { get; set; }
+            public int residentID1 { get; set; }
+            public int residentID2 { get; set; }
+            public int residentID3 { get; set; }
+            public int residentID4 { get; set; }
+        }
     }
 }

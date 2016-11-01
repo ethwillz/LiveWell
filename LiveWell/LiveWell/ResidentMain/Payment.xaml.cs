@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 using static LiveWell.ConnectHelpers;
 
@@ -8,6 +8,8 @@ namespace LiveWell
 {
     public partial class Payment : ContentPage
     {
+        DatabaseUPDATE u = new DatabaseUPDATE();
+
         public Payment()
         {
             InitializeComponent();
@@ -20,7 +22,12 @@ namespace LiveWell
         {
             //Instantiates conenction object and calls method which gets notifications given a residentID
             DatabaseGET conn = new DatabaseGET();
+            List<balance> balances = await conn.getBalances(1);
             List<Notification> notifications = await conn.getPayments(1);
+
+            roomBill.Text = (Convert.ToDouble(balances[0].amount1) + Convert.ToDouble(balances[0].amount2) + Convert.ToDouble(balances[0].amount3) + Convert.ToDouble(balances[0].amount4)).ToString();
+            buildingBill.Text = balances[0].bAmount;
+
 
             //Payment history of the current user
             List<PayRecord> pay = new List<PayRecord>();
@@ -49,50 +56,22 @@ namespace LiveWell
         async void payBuilding(Object sender, EventArgs e)
         {
             var action = await DisplayActionSheet("Submit payment", "Cancel", null, "Bank Account", "Credit Card", "PayPal", "Venmo");
-            //Handles payment through bank account
-            if (action.Equals("Bank Account"))
-            {
-                new ResidentMain.HandlePayment().bankAccount();
-            }
             //Handles payment through credit card
             if (action.Equals("Credit Card"))
             {
                 new ResidentMain.HandlePayment().creditCard();
-            }
-            //Handles payment through PayPal
-            if (action.Equals("PayPal"))
-            {
-                new ResidentMain.HandlePayment().payPal();
-            }
-            //Handles payment through Venmo
-            if (action.Equals("Venmo"))
-            {
-                new ResidentMain.HandlePayment().venmo();
+                await u.updateBalances(false, true, "1");
             }
         }
 
         async void payRoom(Object sender, EventArgs e)
         {
-            var action = await DisplayActionSheet("Submit payment", "Cancel", null, "Bank Account", "Credit Card", "PayPal", "Venmo");
-            //Handles payment through bank account
-            if (action.Equals("Bank Account"))
-            {
-                new ResidentMain.HandlePayment().bankAccount();
-            }
+            var action = await DisplayActionSheet("Submit payment", "Cancel", null, "Credit Card");
             //Handles payment through credit card
             if (action.Equals("Credit Card"))
             {
                 new ResidentMain.HandlePayment().creditCard();
-            }
-            //Handles payment through PayPal
-            if (action.Equals("PayPal"))
-            {
-                new ResidentMain.HandlePayment().payPal();
-            }
-            //Handles payment through Venmo
-            if (action.Equals("Venmo"))
-            {
-                new ResidentMain.HandlePayment().venmo();
+                await u.updateBalances(true, false, "1");
             }
         }
 

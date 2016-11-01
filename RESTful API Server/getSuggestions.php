@@ -12,7 +12,7 @@
 		$residentID = $_GET['residentID'];
 		
 		$sql = <<<SQL
-SELECT * 
+SELECT itemName, imageUrl
 FROM tblList 
 INNER JOIN tblItem ON tblItem.listID=tblList.listID 
 WHERE residentID1=1 OR residentID2=1 OR residentID3=1 OR residentID4=1

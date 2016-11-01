@@ -17,7 +17,7 @@ namespace LiveWell.ResidentMain
         }
 
         //Creates json object with all credit card information which is then sent to the HTTP server
-        public void creditCard()
+        async public void creditCard()
         {
             FundingInstrument[] fu = new FundingInstrument[1];
             fu[0] = new FundingInstrument(new CreditCard("4032032534003485", "visa", "9", "2021", "123", "Ethan", "Williams"));
@@ -28,7 +28,7 @@ namespace LiveWell.ResidentMain
             transactions[0] = new Transactions(new Amount("72.34", "USD"), "Payment for rent");
             payDetails.transactions = transactions;
 
-            RunAsyncPayment(payDetails);
+           await RunAsyncPayment(payDetails);
         }
 
         public void payPal()

@@ -11,15 +11,6 @@ namespace LiveWell
 		{
 			InitializeComponent();
 
-
-			List<ListInfo> lists = new List<ListInfo>()
-			{
-				new ListInfo("PLACEHOLDER", "TEST"),
-			};
-
-			allLists.ItemsSource = lists;
-			allLists.RowHeight = 60;
-
 		}
 	}
 }

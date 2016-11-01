@@ -2,17 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LiveWell.AddProduct">
-  <StackLayout Orientation="Vertical">
-    <Label Text="Enter item:" FontSize="20"/>
-    <Editor x:Name="item"/>
-    <Label Text="Suggested items" FontSize="18"/>
-    <ListView x:Name="suggestedItems">
+  <StackLayout Orientation="Vertical" BackgroundColor="White">
+    <Label TextColor="Black" Text="Enter item:" FontSize="20"/>
+    <Editor TextColor="Black" x:Name="item"/>
+    <Label TextColor="Black" Text="Suggested items" FontSize="18"/>
+    <ListView x:Name="suggestedItems" ItemTapped="onTap">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell Text="{Binding Path = ItemName}"/>
+          <TextCell TextColor="#8F1616" Text="{Binding Path = ItemName}"/>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Button Text="Add item" Clicked="add"/>
+    <Button Text="Add item" Clicked="add" BackgroundColor="#8F1616" TextColor="White"/>
   </StackLayout>
 </ContentPage>
