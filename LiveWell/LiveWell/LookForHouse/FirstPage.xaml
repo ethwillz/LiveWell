@@ -6,17 +6,17 @@
 
 			<Label Text="__________LOG IN__________" TextColor="#000" FontSize="40" HorizontalOptions="Center"/>
 
-			<Button Text="LOGIN AS A RESIDENT" VerticalOptions="CenterAndExpand"
-        	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"
-			Clicked="OnResidentButtonClicked"/>
-
+			<Button x:Name="btntest" Text="LOGIN AS A RESIDENT" VerticalOptions="CenterAndExpand"
+        	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"/>
+<!--			Clicked="OnResidentButtonClicked"/>
+-->
       		<Button Text="LOGIN AS AN EMPLOYEE" VerticalOptions="CenterAndExpand"
-        	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"
-			Clicked="OnEmployeeButtonClicked"/>
-
+        	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"/>
+<!--			Clicked="OnEmployeeButtonClicked"/>
+-->
 			<Button Text="LOGIN AS AN OWNER" VerticalOptions="CenterAndExpand"
-        	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"
-			Clicked="OnOwnerButtonClicked"/>
-		</StackLayout>
+        	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"/>
+<!--			Clicked="OnOwnerButtonClicked"/>
+-->		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
