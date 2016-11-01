@@ -11,6 +11,7 @@ namespace LiveWell.ResidentMain
         List<String> names = new List<String>();
         List<ResidentInfo> roommates;
         List<int> ids = new List<int>();
+        int item = 0;
 
 
         public AddList()
@@ -34,28 +35,43 @@ namespace LiveWell.ResidentMain
             users.RowHeight = 60;
         }
 
+        async void addItem(Object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new AddProduct("1"));
+            item = 1;
+        }
+
         async void add(Object sender, EventArgs e)
         {
-            for (int i = 0; i < names.Count; i++)
+            if (item == 0)
             {
-                for (int j = 0; j < roommates.Count; j++)
+                await DisplayAlert("Error", "Add at least one item to list", "Okay");
+            }
+            else
+            {
+                for (int i = 0; i < names.Count; i++)
                 {
-                    if ((roommates[j].firstName + " " + roommates[j].lastName).Equals(names[i]))
+                    for (int j = 0; j < roommates.Count; j++)
                     {
-                        ids.Add(Convert.ToInt32(roommates[j].residentID));
+                        if ((roommates[j].firstName + " " + roommates[j].lastName).Equals(names[i]))
+                        {
+                            ids.Add(Convert.ToInt32(roommates[j].residentID));
+                        }
                     }
                 }
-            }
 
-            DatabasePOST conn = new DatabasePOST();
-            await conn.postList(listName.Text, ids);
-            await Navigation.PushModalAsync(new GroceryLists());
+                DatabasePOST conn = new DatabasePOST();
+                await conn.postList(listName.Text, ids);
+                await Navigation.PushModalAsync(new GroceryLists());
+            }
         }
 
         public void selected(Object sender, EventArgs e)
         {
             if (((SwitchCell)sender).On)
                 names.Add(((SwitchCell)sender).Text);
+            else
+                names.RemoveAt(names.BinarySearch(((SwitchCell)sender).Text));
         }
     }
 

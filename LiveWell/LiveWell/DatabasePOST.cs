@@ -32,7 +32,7 @@ namespace LiveWell
             var getNotifications = new HttpClient(new NativeMessageHandler());
             getNotifications.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/postItem.php");
 
-            ConnectHelpers.Item item = new ConnectHelpers.Item(listID, itemName, imageUrl);
+            ConnectHelpers.ItemPost item = new ConnectHelpers.ItemPost(listID, itemName, imageUrl);
             string contentJson = JsonConvert.SerializeObject(item);
             var content = new StringContent(contentJson, Encoding.UTF8, "application/json");
 

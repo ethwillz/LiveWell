@@ -19,19 +19,17 @@
 		$residentID4 = $input['residentID4'];
 		
 		if($residentID2 == 0){
-			$residentID2 = NULL;
+			$sql = "INSERT INTO tblList (listName, residentID1, residentID2, residentID3, residentID4) VALUES ('$listName', $residentID1, NULL, NULL, NULL)";
 		}
-		if($residentID3 === 0){
-			$residentID3 = NULL;
+		else if($residentID3 == 0){
+			$sql = "INSERT INTO tblList (listName, residentID1, residentID2, residentID3, residentID4) VALUES ('$listName', $residentID1, $residentID2, NULL, NULL)";
 		}
-		if($residentID4 === 0){
-			$residentID4 = NULL;
+		else if($residentID4 == 0){
+			$sql = "INSERT INTO tblList (listName, residentID1, residentID2, residentID3, residentID4) VALUES ('$listName', $residentID1, $residentID2, $residentID3, NULL)";
 		}
-		
-		$sql = <<<SQL
-INSERT INTO tblList (listName, residentID1, residentID2, residentID3, residentID4)
-VALUES ('$listName', $residentID1, $residentID2, $residentID3, $residentID4)
-SQL;
+		else{
+			$sql = "INSERT INTO tblList (listName, residentID1, residentID2, residentID3, residentID4) VALUES ('$listName', $residentID1, $residentID2, $residentID3, $resident4)";
+		}
 		
 		//Sets value of $result to SQL query and returns an error otherwise
 		if(!$result = $db->query($sql)){

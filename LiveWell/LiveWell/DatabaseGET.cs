@@ -101,7 +101,7 @@ namespace LiveWell
             return addresses;
         }
 
-        public async Task<List<ListInformation>> getSuggestions(int residentID)
+        public async Task<List<ConnectHelpers.Item>> getSuggestions(int residentID)
         {
             client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getSuggestions.php");
 
@@ -110,7 +110,7 @@ namespace LiveWell
             String data = await gotLists.Content.ReadAsStringAsync();
 
             //Data desrialized into list of notification objects (automatically handled by NewtonSoft.Json library)
-            List<ListInformation> foods = JsonConvert.DeserializeObject<List<ListInformation>>(data);
+            List<ConnectHelpers.Item> foods = JsonConvert.DeserializeObject<List<ConnectHelpers.Item>>(data);
 
             //Returns list for use in UI
             return foods;
@@ -130,6 +130,22 @@ namespace LiveWell
 
             //Returns list for use in UI
             return balances;
+
+        }
+
+        public async Task<List<ConnectHelpers.Item>> getProductsOnList(String listID)
+        {
+            client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getItems.php");
+
+            //Runs GET HTTP request to server and gets data back in JSON format
+            HttpResponseMessage gotItems = await client.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getItems.php?listID=" + listID));
+            String data = await gotItems.Content.ReadAsStringAsync();
+
+            //Data desrialized into list of notification objects (automatically handled by NewtonSoft.Json library)
+            List<ConnectHelpers.Item> items = JsonConvert.DeserializeObject<List<ConnectHelpers.Item>>(data);
+
+            //Returns list for use in UI
+            return items;
 
         }
     }
