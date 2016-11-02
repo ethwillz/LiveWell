@@ -8,22 +8,22 @@
 	}
 	
 	//If statement checks that HTTP request URI contains residentID parameter
-	if(isset($_GET["listID"])){
-		$listID = $_GET['listID'];
+	if(isset($_GET["residentID"])){
+		$residentID = $_GET['residentID'];
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("SELECT itemName, imageUrl FROM tblItem WHERE listID = $listID")){
+		if(!$result = $db->query("SELECT firstName, lastName FROM tblResident WHERE residentID = $residentID")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
 		
 		//Goes through all rows returned by query and sets the list array to the data
-		$items = array();
+		$name = array();
 		while($row = $result->fetch_assoc()){
-				$items[] = $row;
+				$name[] = $row;
 		}
 		
 		//Encodes the array to json and returns it as an HTTP response
-		echo json_encode($items);
+		echo json_encode($name);
 		
 		//Closes the SQL connection
 		$result->close();

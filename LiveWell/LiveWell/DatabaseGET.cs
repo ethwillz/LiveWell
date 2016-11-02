@@ -74,6 +74,21 @@ namespace LiveWell
             return lists;
         }
 
+        public async Task<List<ListInformation>> getLists(String listID)
+        {
+            client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getLists.php");
+
+            //Runs GET HTTP request to server and gets data back in JSON format
+            HttpResponseMessage gotLists = await client.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getLists.php?listID=" + listID));
+            String data = await gotLists.Content.ReadAsStringAsync();
+
+            //Data desrialized into list of notification objects (automatically handled by NewtonSoft.Json library)
+            List<ListInformation> lists = JsonConvert.DeserializeObject<List<ListInformation>>(data);
+
+            //Returns list for use in UI
+            return lists;
+        }
+
         public async Task<List<Food>> getFoods()
         {
             client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getFoods.php");
@@ -175,6 +190,21 @@ namespace LiveWell
             //Returns list for use in UI
             return items;
 
+        }
+
+        public async Task<String> getName(String residentID)
+        {
+            client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getName.php");
+
+            //Runs GET HTTP request to server and gets data back in JSON format
+            HttpResponseMessage gotName = await client.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getName.php?residentID=" + residentID));
+            String data = await gotName.Content.ReadAsStringAsync();
+
+            //Data desrialized into list of notification objects (automatically handled by NewtonSoft.Json library)
+            List<Name> name = JsonConvert.DeserializeObject<List<Name>>(data);
+
+            //Returns list for use in UI
+            return name[0].firstName + " " + name[0].lastName;
         }
     }
 }

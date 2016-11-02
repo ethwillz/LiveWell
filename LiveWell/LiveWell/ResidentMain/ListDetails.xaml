@@ -14,6 +14,7 @@
       </ListView.ItemTemplate>
     </ListView>
     <Button Clicked="addClick" Text="Add" BackgroundColor="#8F1616" TextColor="White"/>
-    <Button Clicked="boughtClick" Text="I bought this" BackgroundColor="#8F1616" TextColor="White"/>
+    <Entry x:Name="amount" Placeholder="List Amount"/>
+    <Button x:Name="bought" Clicked="boughtClick" Text="I bought this" BackgroundColor="#8F1616" TextColor="White"/>
   </StackLayout>
 </ContentPage>

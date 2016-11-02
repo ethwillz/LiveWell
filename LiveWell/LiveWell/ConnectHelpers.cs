@@ -149,16 +149,16 @@ namespace LiveWell
 
         public class ItemPost
         {
-            public ItemPost(String itemName, String imageUrl, String listID)
+            public ItemPost(String listID, String itemName, String imageUrl)
             {
+                this.listID = listID;
                 this.itemName = itemName;
                 this.imageUrl = imageUrl;
-                this.listID = listID;
             }
 
+            public String listID { get; set; }
             public String itemName { get; set; }
             public String imageUrl { get; set; }
-            public String listID { get; set; }
         }
 
         public class balance
@@ -195,6 +195,18 @@ namespace LiveWell
             public int residentID2 { get; set; }
             public int residentID3 { get; set; }
             public int residentID4 { get; set; }
+        }
+
+        public class Name
+        {
+            public Name(String firstName, String lastName)
+            {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
+            public String firstName { get; set; }
+            public String lastName { get; set; }
         }
     }
 }

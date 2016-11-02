@@ -1,5 +1,7 @@
-﻿using System;
+﻿using LiveWell.ResidentMain;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Xamarin.Forms;
 using static LiveWell.ConnectHelpers;
 
@@ -29,6 +31,7 @@ namespace LiveWell
 
         async void populatePage()
         {
+            Debug.WriteLine(listID);
             DatabaseGET conn = new DatabaseGET();
             items = await conn.getProductsOnList(listID);
 
@@ -46,7 +49,7 @@ namespace LiveWell
                 }
                 products.ItemsSource = productList;
             });
-
+            
             products.ItemsSource = productList;
             products.RowHeight = 60;
             products.IsPullToRefreshEnabled = true;
@@ -57,9 +60,45 @@ namespace LiveWell
             Navigation.PushModalAsync(new AddProduct(items, name, user, listID));
         }
 
-        public void boughtClick(object sender, EventArgs e)
+        async void boughtClick(object sender, EventArgs e)
         {
+            if (bought.Text.Equals(""))
+            {
+                await DisplayAlert("Error", "Please specify amount you bought for", "Okay");
+            }
+            else
+            {
+                //gets residents on the list
+                //adds split balance to amount of roommate who clicks button
+                //adds notification for user letting them know list is bought
+                //deleted list from database, keeps items for suggestion purposes
+                DatabaseGET conn = new DatabaseGET();
+                List<ListInformation> list = await conn.getLists(listID);
+                List<String> roommateIDs = new List<string>();
+                if(list[0].residentID1 != null && !list[0].residentID1.Equals("1"))
+                {
+                    roommateIDs.Add(list[0].residentID1);
+                }
+                if (list[0].residentID2 != null && !list[0].residentID2.Equals("1"))
+                {
+                    roommateIDs.Add(list[0].residentID2);
+                }
+                if (list[0].residentID3 != null && !list[0].residentID3.Equals("1"))
+                {
+                    roommateIDs.Add(list[0].residentID3);
+                }
+                if (list[0].residentID4 != null && !list[0].residentID4.Equals("1"))
+                {
+                    roommateIDs.Add(list[0].residentID4);
+                }
+                String amount = (Convert.ToDouble(bought.Text)/(roommateIDs.Count+1)).ToString();
+            }
+        }
 
+        protected override bool OnBackButtonPressed()
+        {
+            Navigation.PushModalAsync(new Resident());
+            return true;
         }
     }
 

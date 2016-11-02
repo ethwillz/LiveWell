@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,11 +32,11 @@ namespace LiveWell
             populateSuggestions();
         }
 
-        public AddProduct(String listNum)
+        public AddProduct(String listID)
         {
             InitializeComponent();
 
-            this.listNum = listNum;
+            this.listID = listID;
             newList = 1;
 
             populateSuggestions();
@@ -67,19 +68,20 @@ namespace LiveWell
             }
 
             DatabasePOST conn2 = new DatabasePOST();
-            DatabaseGET conn3 = new DatabaseGET();
 
             if (newList == 0)
             {
+                Debug.WriteLine(listID + " " + item.Text + " " + imageUrl);
                 await conn2.postItem(listID, item.Text, imageUrl);
-                MessagingCenter.Send(this, "newList", await conn3.getLists(1));
-                //await Navigation.PushModalAsync(new ListDetails(lists, name, user, index));
+                //MessagingCenter.Send(this, "newList", await conn.getLists(1));
+                await Navigation.PushModalAsync(new ListDetails(listID, name, user));
             }
             else
             {
+                Debug.WriteLine(listID + " " + item.Text + " " + imageUrl);
                 await conn2.postItem(listID, item.Text, imageUrl);
-                MessagingCenter.Send(this, "newList", await conn3.getLists(1));
-                //await Navigation.PushModalAsync(new ListDetails(lists, name, user, index));
+                //MessagingCenter.Send(this, "newList", await conn.getLists(1));
+                await Navigation.PopModalAsync();
             }
         }
 

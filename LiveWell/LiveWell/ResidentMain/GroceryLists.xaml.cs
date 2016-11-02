@@ -38,22 +38,22 @@ namespace LiveWell
             {
                 if (lists[i].residentID1 != null && lists[i].residentID2 != null && lists[i].residentID3 != null && lists[i].residentID4 != null && !added.Contains(Convert.ToInt32(lists[i].listID)))
                 {
-                    list.Add(new ListInfo(lists[i].listName, lists[i].residentID1 + ", " + lists[i].residentID2 + ", " + lists[i].residentID3 + ", & " + lists[i].residentID4, lists[i].listID));
+                    list.Add(new ListInfo(lists[i].listName, await conn.getName(lists[i].residentID1) + ", " + await conn.getName(lists[i].residentID2) + ", " + await conn.getName(lists[i].residentID3) + ", & " + await conn.getName(lists[i].residentID4), lists[i].listID));
                     added.Add(Convert.ToInt32(lists[i].listID));
                 }
                 else if (lists[i].residentID1 != null && lists[i].residentID2 != null && lists[i].residentID3 != null && !added.Contains(Convert.ToInt32(lists[i].listID)))
                 {
-                    list.Add(new ListInfo(lists[i].listName, lists[i].residentID1 + ", " + lists[i].residentID2 + ", & " + lists[i].residentID3, lists[i].listID));
+                    list.Add(new ListInfo(lists[i].listName, await conn.getName(lists[i].residentID1) + ", " + await conn.getName(lists[i].residentID2) + ", & " + await conn.getName(lists[i].residentID3), lists[i].listID));
                     added.Add(Convert.ToInt32(lists[i].listID));
                 }
                 else if (lists[i].residentID1 != null && lists[i].residentID2 != null && !added.Contains(Convert.ToInt32(lists[i].listID)))
                 {
-                    list.Add(new ListInfo(lists[i].listName, lists[i].residentID1 + ", & " + lists[i].residentID2, lists[i].listID));
+                    list.Add(new ListInfo(lists[i].listName, await conn.getName(lists[i].residentID1) + ", & " + await conn.getName(lists[i].residentID2), lists[i].listID));
                     added.Add(Convert.ToInt32(lists[i].listID));
                 }
                 else if (!added.Contains(Convert.ToInt32(lists[i].listID)))
                 {
-                    list.Add(new ListInfo(lists[i].listName, lists[i].residentID1, lists[i].listID));
+                    list.Add(new ListInfo(lists[i].listName, await conn.getName(lists[i].residentID1), lists[i].listID));
                     added.Add(Convert.ToInt32(lists[i].listID));
                 }
             }
