@@ -10,8 +10,6 @@ namespace LiveWell
 		public FirstPage()
 		{
 			InitializeComponent();
-			btntest.Clicked += OnResidentButtonClicked;
-
 		}
 
 		public void OnResidentButtonClicked(object sender, EventArgs args)

@@ -17,17 +17,13 @@ namespace LiveWell
 			populateList(0, "ALL", 0, 100);
 		}
 
-		//async void OnFavoriteButtonClicked(object sender, EventArgs args)
-		//{
-		//	//DatabasePOST conn2 = new DatabasePOST();
+		public HomeTab(int price, String accommodationType, int numRooms, int maxDistance)
+		{
+			InitializeComponent();
+			populateList(price, accommodationType, numRooms, 10);
 
-		//	var index = (quickview.ItemsSource as List<QuickViewImage>).IndexOf(((ListView)((Button)sender)).SelectedItem as QuickViewImage);
-		//	System.Diagnostics.Debug.WriteLine(index);
-		//	((ListView)sender).SelectedItem = null;
+		}
 
-
-		//	//await conn2.postFavoriteAccommodation(1,1);
-		//}
 
 		async void onTap(object sender, ItemTappedEventArgs e)
 		{
