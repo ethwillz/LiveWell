@@ -8,15 +8,15 @@
 
 			<Button x:Name="btntest" Text="LOGIN AS A RESIDENT" VerticalOptions="CenterAndExpand"
         	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"
-			Clicked="OnResidentButtonClicked"/>
+			Clicked="OnResidentButtonClicked" />
 
       		<Button Text="LOGIN AS AN EMPLOYEE" VerticalOptions="CenterAndExpand"
         	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"
-			Clicked="OnEmployeeButtonClicked"/>
+			Clicked="OnEmployeeButtonClicked" />
 
 			<Button Text="LOGIN AS AN OWNER" VerticalOptions="CenterAndExpand"
         	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"
-			Clicked="OnOwnerButtonClicked"/>
+			Clicked="OnOwnerButtonClicked" />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

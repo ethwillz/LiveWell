@@ -7,6 +7,8 @@ namespace LiveWell
 {
 	public partial class FilterTab : ContentPage
 	{
+		private int priceFilter;
+
 		public FilterTab()
 		{
 			InitializeComponent();
@@ -14,18 +16,39 @@ namespace LiveWell
 
 		void OnSearchButtonClicked(object sender, EventArgs args)
 		{
-			int x = (int) Convert.ToDouble(price.Value.ToString());
-			String y = accommodationType.Items[accommodationType.SelectedIndex];
-			int z = (int)Convert.ToDouble(numRooms.Value.ToString());
-			int d = (int)Convert.ToDouble(distance.Value.ToString());
-
-			System.Diagnostics.Debug.WriteLine(y);
+			priceFilter = (int)Convert.ToDouble(price.Value.ToString());
+			System.Diagnostics.Debug.WriteLine("Index: " + accommodationType.SelectedIndex);
+			System.Diagnostics.Debug.WriteLine("Price: " + priceFilter);
 
 			var masterPage = this.Parent as TabbedPage;
-			HomeTab map = new HomeTab(x,y,z,d);
 			masterPage.CurrentPage = masterPage.Children[0]; //Go to Home
+		}
 
-			//Navigation.PushModalAsync(new MapTab(x, y, z, d));
+		public int getDistance()
+		{
+			return (int)Convert.ToDouble(distance.Value.ToString());
+		}
+
+		public int getPrice()
+		{
+			return priceFilter;
+		}
+
+		public String getAccommodationType()
+		{
+			if (accommodationType.SelectedIndex < 0)
+			{ 
+				return "Apartment"; 
+			}
+			else
+			{ 
+				return "Apartment";
+			} //accommodationType.Items[accommodationType.SelectedIndex];
+		}
+
+		public int getNumRooms()
+		{
+			return (int)Convert.ToDouble(numRooms.Value.ToString());
 		}
 	}
 }

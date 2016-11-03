@@ -14,16 +14,12 @@ namespace LiveWell
 		public HomeTab()
 		{
 			InitializeComponent();
-			populateList(0, "ALL", 0, 100);
+			FilterTab filter = new FilterTab();
+			System.Diagnostics.Debug.WriteLine(filter.getAccommodationType());
+			System.Diagnostics.Debug.WriteLine(filter.getPrice());
+
+			populateList(filter.getPrice(), filter.getAccommodationType(), filter.getNumRooms(), filter.getDistance());
 		}
-
-		public HomeTab(int price, String accommodationType, int numRooms, int maxDistance)
-		{
-			InitializeComponent();
-			populateList(price, accommodationType, numRooms, 10);
-
-		}
-
 
 		async void onTap(object sender, ItemTappedEventArgs e)
 		{
@@ -31,7 +27,6 @@ namespace LiveWell
 
 			var index = (quickview.ItemsSource as List<QuickViewImage>).IndexOf(((ListView)sender).SelectedItem as QuickViewImage);
 			System.Diagnostics.Debug.WriteLine(index);
-			System.Diagnostics.Debug.WriteLine(list[index].buildingID);
 
 			await conn2.postFavoriteAccommodation(list[index].buildingID,1);
 
