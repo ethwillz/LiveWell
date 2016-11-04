@@ -16,9 +16,16 @@ namespace LiveWell
 			InitializeComponent();
 			FilterTab filter = new FilterTab();
 			System.Diagnostics.Debug.WriteLine(filter.getAccommodationType());
-			System.Diagnostics.Debug.WriteLine(filter.getPrice());
 
-			populateList(filter.getPrice(), filter.getAccommodationType(), filter.getNumRooms(), filter.getDistance());
+			MessagingCenter.Subscribe<FilterTab, int>(this, "price", (sender, arg) =>
+			{
+				populateList(arg, filter.getAccommodationType(), filter.getNumRooms(), filter.getDistance());
+				title.Text = "Subscribed";
+			});
+			if (title.Text != "Subscribed")
+			{
+				populateList(filter.getPrice(), filter.getAccommodationType(), filter.getNumRooms(), filter.getDistance());
+			}
 		}
 
 		async void onTap(object sender, ItemTappedEventArgs e)

@@ -29,6 +29,7 @@ namespace LiveWell
 			await conn2.postFavoriteAccommodation(list[index].buildingID, 0);
 
 			((ListView)sender).SelectedItem = null;
+			populateList();
 		}
 
 		async void populateList()

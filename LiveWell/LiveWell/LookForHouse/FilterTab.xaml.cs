@@ -7,7 +7,7 @@ namespace LiveWell
 {
 	public partial class FilterTab : ContentPage
 	{
-		private int priceFilter;
+		static int priceFilter;
 
 		public FilterTab()
 		{
@@ -17,8 +17,7 @@ namespace LiveWell
 		void OnSearchButtonClicked(object sender, EventArgs args)
 		{
 			priceFilter = (int)Convert.ToDouble(price.Value.ToString());
-			System.Diagnostics.Debug.WriteLine("Index: " + accommodationType.SelectedIndex);
-			System.Diagnostics.Debug.WriteLine("Price: " + priceFilter);
+			MessagingCenter.Send<FilterTab, int>(this, "price", (int)Convert.ToDouble(price.Value.ToString()));
 
 			var masterPage = this.Parent as TabbedPage;
 			masterPage.CurrentPage = masterPage.Children[0]; //Go to Home
