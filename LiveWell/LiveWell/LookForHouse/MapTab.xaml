@@ -1,31 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		x:Class="LiveWell.MapTab"
-		xmlns:maps="clr-namespace:LiveWell;assembly=LiveWell">
-	
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.MapTab" xmlns:maps="clr-namespace:LiveWell;assembly=LiveWell">
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="StartAndExpand" Padding="30">
-        <maps:CustomMap x:Name="MyMap" MapType="Street" IsShowingUser="true" WidthRequest="320" HeightRequest="500"/>
-
-		<ListView x:Name="quickview">
-      	<ListView.ItemTemplate>
-        <DataTemplate>
-          <TextCell TextColor="#8F1616" DetailColor="#8F1616" Text="{Binding Path = Summary}" Detail="{Binding Path = Details}"/>
-        </DataTemplate>
-      	</ListView.ItemTemplate>
-   	    </ListView>
-
-			
-
-			<Label Text="Geocode:" />
-			<Entry x:Name="inputEntry" Text="Pacific Ave, San Francisco, California" />
-			<Button Text="Add Pin (TEST)" VerticalOptions="CenterAndExpand"
-        	HorizontalOptions="Center" HeightRequest="50" WidthRequest="300" BorderWidth="1" FontSize="Small"
-			Clicked="OnTestButtonClicked"/>			
-			<Label x:Name="geocodedOutputLabel" />
+			<Label x:Name="title" Text="Explore Apartments" TextColor="#000" FontSize="30" HorizontalOptions="Center" />
+			<maps:CustomMap x:Name="MyMap" MapType="Street" IsShowingUser="true" WidthRequest="320" HeightRequest="500" />
+			<ListView x:Name="quickview">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<TextCell TextColor="#8F1616" DetailColor="#8F1616" Text="{Binding Path = Summary}" Detail="{Binding Path = Details}" />
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
 		</StackLayout>
 	</ContentPage.Content>
-
-
 </ContentPage>

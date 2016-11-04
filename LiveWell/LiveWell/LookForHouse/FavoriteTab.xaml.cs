@@ -14,8 +14,8 @@ namespace LiveWell
 
 		public FavoriteTab()
 		{
+			OnAppearing();
 			InitializeComponent();
-			populateList();
 		}
 
 		async void onTap(object sender, ItemTappedEventArgs e)
@@ -40,6 +40,8 @@ namespace LiveWell
 
 
 		    list = new List<QuickViewImage>();
+			quickview.ItemsSource = list;
+
 		    for (int i = 0; i < addresses.Count; i++)
 		    {
 				list.Add(new QuickViewImage(addresses[i].imageUrl, addresses[i].address, addresses[i].accommodationType,addresses[i].buildingID));
@@ -49,8 +51,13 @@ namespace LiveWell
 		    quickview.ItemsSource = list;
 		    quickview.RowHeight = 400;
 		    title.Text = "Favorite " + addresses.Count + " Accommodations";
+		}
 
-
+		/*Refreshing this page after favorite button is clicked from HomeTab*/
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			populateList();
 		}
 	}
 }

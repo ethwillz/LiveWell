@@ -1,30 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using static LiveWell.ConnectHelpers;
+using Plugin.Geolocator;
+using Plugin.Geolocator.Abstractions;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace LiveWell
 {
 	public partial class HomeTab : ContentPage
 	{
 		List<QuickViewImage> list;
+		Geocoder geoCoder;
+		private double userPositionLatitude = 0;
+		private double userPositionLongitude = 0;
 
 		public HomeTab()
 		{
+			geoCoder = new Geocoder();
 			InitializeComponent();
-			FilterTab filter = new FilterTab();
-			System.Diagnostics.Debug.WriteLine(filter.getAccommodationType());
+			userLocation();
 
-			MessagingCenter.Subscribe<FilterTab, int>(this, "price", (sender, arg) =>
+			FilterTab filter = new FilterTab();
+			MessagingCenter.Subscribe<FilterTab, String[]>(this, "filterData", (sender, arg) =>
 			{
-				populateList(arg, filter.getAccommodationType(), filter.getNumRooms(), filter.getDistance());
+				int price = (int)Convert.ToDouble(arg[0]);
+				String accommodationType = arg[1];
+				int numRooms = (int)Convert.ToDouble(arg[2]);
+				int distance = (int)Convert.ToDouble(arg[3]);
+
+				populateList(price, accommodationType, numRooms, distance);
 				title.Text = "Subscribed";
 			});
 			if (title.Text != "Subscribed")
 			{
-				populateList(filter.getPrice(), filter.getAccommodationType(), filter.getNumRooms(), filter.getDistance());
+				populateList(0, "ALL", 0, 1000);
 			}
 		}
 
@@ -38,6 +50,14 @@ namespace LiveWell
 			await conn2.postFavoriteAccommodation(list[index].buildingID,1);
 
 			((ListView)sender).SelectedItem = null;
+		}
+
+		async void userLocation()
+		{
+			var locator = CrossGeolocator.Current;
+			var userPosition = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
+			userPositionLatitude = userPosition.Latitude;
+			userPositionLongitude = userPosition.Longitude;
 		}
 
 		async void populateList(int price, String accommodationType, int numRooms, int maxDistance)
@@ -55,13 +75,35 @@ namespace LiveWell
 			list = new List<QuickViewImage>();
 			for (int i = 0; i < addresses.Count; i++)
 			{
-				list.Add(new QuickViewImage(addresses[i].imageUrl,addresses[i].address, addresses[i].accommodationType, addresses[i].buildingID));
-				//await Task.Delay(300);
+				var approximateLocation = await geoCoder.GetPositionsForAddressAsync(addresses[i].address);
+				foreach (var position in approximateLocation)
+				{
+					double distance = CalculateDistance(position.Latitude, position.Longitude, userPositionLatitude, userPositionLongitude);
+					if (distance < maxDistance)
+					{
+						list.Add(new QuickViewImage(addresses[i].imageUrl, addresses[i].address, addresses[i].accommodationType, addresses[i].buildingID));
+					}
+				}
 			}
 			quickview.ItemsSource = list;
 			quickview.RowHeight = 400;
-			title.Text = "Explore " + addresses.Count + " Accommodations";
+			title.Text = "Explore " + list.Count + " Accommodations";
 
+		}
+
+		public double CalculateDistance(double positionLatitude, double positionLongitude, double currentLatitude, double currentLongitude)
+		{
+			double d = Math.Acos(
+				(Math.Sin(deg2rad(positionLatitude)) * Math.Sin(deg2rad(currentLatitude))) +
+				(Math.Cos(deg2rad(positionLatitude)) * Math.Cos(deg2rad(currentLatitude)))
+				* Math.Cos(deg2rad(currentLongitude - positionLongitude)));
+
+			return 6378.137 * d;
+		}
+
+		public double deg2rad(double angle)
+		{
+			return angle * Math.PI / 180;
 		}
 	}
 

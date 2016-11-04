@@ -9,7 +9,7 @@
         <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
         <Label Text="Location: My Current Location" FontSize="Large"/>
         <Label BindingContext="{x:Reference distance}"
-           Text="{Binding Value, StringFormat='Maximum Distance: {0:F0} miles'}"
+           Text="{Binding Value, StringFormat='Maximum Distance: {0:F0} km'}"
            FontSize="Large"
            HorizontalOptions="Center"/>        
         <Slider x:Name="distance"

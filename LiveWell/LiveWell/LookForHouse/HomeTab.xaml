@@ -5,7 +5,7 @@
 		<StackLayout>
 		<Label/>
 		<Label Text="Ames" TextColor="#000" FontSize="30" HorizontalOptions="Center"/>
-		<Label x:Name="title" Text="Explore 35 apartments" TextColor="#000" FontSize="30" HorizontalOptions="Center"/>
+		<Label x:Name="title" Text="Explore Apartments" TextColor="#000" FontSize="30" HorizontalOptions="Center"/>
 
 		<ListView x:Name="quickview" ItemTapped="onTap">
       	<ListView.ItemTemplate>

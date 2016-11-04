@@ -15,7 +15,6 @@ namespace LiveWell
 	public partial class MapTab : ContentPage
 	{
 		Geocoder geoCoder;
-		private int filterResult = 100;
 		private double userPositionLatitude = 0;
 		private double userPositionLongitude = 0;
 
@@ -25,18 +24,23 @@ namespace LiveWell
 			geoCoder = new Geocoder();
 			InitializeComponent();
 			userLocation();
-			populateList(0, "ALL", 0, 100);
+
+			FilterTab filter = new FilterTab();
+			MessagingCenter.Subscribe<FilterTab, String[]>(this, "filterData", (sender, arg) =>
+			{
+				int price = (int)Convert.ToDouble(arg[0]);
+				String accommodationType = arg[1];
+				int numRooms = (int)Convert.ToDouble(arg[2]);
+				int distance = (int)Convert.ToDouble(arg[3]);
+
+				populateList(price, accommodationType, numRooms, distance);
+				title.Text = "Subscribed";
+			});
+			if (title.Text != "Subscribed")
+			{
+				populateList(0, "ALL", 0, 1000);
+			}
 		}
-
-		public MapTab(int price, String accommodationType, int numRooms, int maxDistance)
-		{
-			geoCoder = new Geocoder();
-			InitializeComponent();
-			userLocation();
-			populateList(price, accommodationType, numRooms, 10);
-
-		}
-
 
 		async void addPins(String houseAddress, String accommodationType)
 		{
@@ -44,8 +48,6 @@ namespace LiveWell
 
 			foreach (var position in approximateLocation)
 			{
-				geocodedOutputLabel.Text = position.Latitude + ", " + position.Longitude + "\n";
-
 				var pin = new CustomPin
 				{
 					Pin = new Pin
@@ -59,12 +61,6 @@ namespace LiveWell
 				MyMap.CustomPins = new List<CustomPin> { pin };
 				MyMap.Pins.Add(pin.Pin);
 			}
-		}
-
-		async void OnTestButtonClicked(object sender, EventArgs args)
-		{
-			var xamarinAddress = inputEntry.Text;
-			addPins(xamarinAddress, "Apartment");
 		}
 
 		async void userLocation()
@@ -81,10 +77,6 @@ namespace LiveWell
 
 		async void populateList(int price, String accommodationType, int numRooms, int maxDistance)
 		{
-			//////Another Location
-			////var approximateLocation = await geoCoder.GetPositionsForAddressAsync("");
-
-
 			List<Address> addresses;
 			DatabaseGET conn = new DatabaseGET();
 			if (accommodationType == "ALL")
@@ -96,25 +88,26 @@ namespace LiveWell
 			}
 
 			List<QuickViewAddress> address = new List<QuickViewAddress>();
+			MyMap.Pins.Clear();
+
 			for (int i = 0; i < addresses.Count; i++)
 			{
 				//System.Diagnostics.Debug.WriteLine(CalculateDistance(userPositionLatitude, userPositionLongitude, 10, 11));
-				//var approximateLocation = await geoCoder.GetPositionsForAddressAsync(addresses[i].address);
-				//foreach (var position in approximateLocation)
-				//{
-				//double distance = CalculateDistance(position.Latitude, position.Longitude, userPositionLatitude, userPositionLongitude);
-				//	if( distance < maxDistance){
-				//		address.Add(new QuickViewAddress(addresses[i].address + ", Distance: " + distance));
-						address.Add(new QuickViewAddress(addresses[i].address));
+				var approximateLocation = await geoCoder.GetPositionsForAddressAsync(addresses[i].address);
+				foreach (var position in approximateLocation)
+				{
+				double distance = CalculateDistance(position.Latitude, position.Longitude, userPositionLatitude, userPositionLongitude);
+					if( distance < maxDistance){
+						address.Add(new QuickViewAddress(addresses[i].address + ", Distance: " + distance));
 
 						addPins(addresses[i].address, addresses[i].accommodationType);
 						await Task.Delay(300);
-				//	}
-				//}
+					}
+				}
 			}
 			quickview.ItemsSource = address;
 			quickview.RowHeight = 30;
-			filterResult = addresses.Count;
+			title.Text = "Explore " + address.Count + " Accommodations";
 		}
 
 		public double CalculateDistance(double positionLatitude, double positionLongitude, double currentLatitude, double currentLongitude)
@@ -130,12 +123,6 @@ namespace LiveWell
 		public double deg2rad(double angle)
 		{
 			return angle*Math.PI/180;
-		}
-
-		public void setFilterResult()
-		{
-			var homeTab = new HomeTab();
-			homeTab.Title = filterResult.ToString();
 		}
 
 	}
