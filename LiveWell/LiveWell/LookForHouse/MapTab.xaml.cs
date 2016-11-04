@@ -88,6 +88,7 @@ namespace LiveWell
 			}
 
 			List<QuickViewAddress> address = new List<QuickViewAddress>();
+
 			MyMap.Pins.Clear();
 
 			for (int i = 0; i < addresses.Count; i++)
@@ -101,6 +102,7 @@ namespace LiveWell
 						address.Add(new QuickViewAddress(addresses[i].address + ", Distance: " + distance));
 
 						addPins(addresses[i].address, addresses[i].accommodationType);
+
 						await Task.Delay(300);
 					}
 				}

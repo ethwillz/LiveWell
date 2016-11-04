@@ -82,6 +82,7 @@ namespace LiveWell
 					if (distance < maxDistance)
 					{
 						list.Add(new QuickViewImage(addresses[i].imageUrl, addresses[i].address, addresses[i].accommodationType, addresses[i].buildingID));
+						await Task.Delay(300);
 					}
 				}
 			}
