@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LiveWell
 {
@@ -28,44 +29,44 @@ namespace LiveWell
             public String details { get; set; }
         }
 
-		public class Address
-		{
-			public Address(String accommodationType, String address)
-			{
-				this.accommodationType = accommodationType;
-				this.address = address;
-			}
+        public class Address
+        {
+            public Address(String accommodationType, String address)
+            {
+                this.accommodationType = accommodationType;
+                this.address = address;
+            }
 
-			public String accommodationType { get; set; }
-			public String address { get; set; }
-			public String imageUrl { get; set; }
-		}
+            public String accommodationType { get; set; }
+            public String address { get; set; }
+            public String imageUrl { get; set; }
+        }
 
-		public class Favorite
-		{
-			public Favorite(int buildingID, int favorite)
-			{
-				this.buildingID = buildingID;
-				this.favorite = favorite;
-			}
+        public class Favorite
+        {
+            public Favorite(int buildingID, int favorite)
+            {
+                this.buildingID = buildingID;
+                this.favorite = favorite;
+            }
 
-			public int buildingID { get; set; }
-			public int favorite { get; set; }
-		}
+            public int buildingID { get; set; }
+            public int favorite { get; set; }
+        }
 
-		public class Image
-		{
-			public Image(String accommodationType, String address, String imageUrl)
-			{
-				this.accommodationType = accommodationType;
-				this.address = address;
-				this.imageUrl = imageUrl;
-			}
+        public class Image
+        {
+            public Image(String accommodationType, String address, String imageUrl)
+            {
+                this.accommodationType = accommodationType;
+                this.address = address;
+                this.imageUrl = imageUrl;
+            }
 
-			public String accommodationType { get; set; }
-			public String address { get; set; }
-			public String imageUrl { get; set; }
-		}
+            public String accommodationType { get; set; }
+            public String address { get; set; }
+            public String imageUrl { get; set; }
+        }
 
         public class ResidentInfo
         {
@@ -208,5 +209,24 @@ namespace LiveWell
             public String firstName { get; set; }
             public String lastName { get; set; }
         }
+
+        public class Payment
+        {
+            public Payment(String amount, String sender, List<String> roommates, String listID, String listName)
+            {
+                this.amount = amount;
+                this.sender = sender;
+                this.roommates = roommates;
+                this.listID = listID;
+                this.listName = listName;
+            }
+
+            public String amount { get; set; }
+            public String sender { get; set; }
+            public List<String> roommates { get; set; }
+            public String listID { get; set; }
+            public String listName { get; set; }
+        }
+
     }
 }

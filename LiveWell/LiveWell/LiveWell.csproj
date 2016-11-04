@@ -318,9 +318,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Folder Include="Login\" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="ResidentMain\AddList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>

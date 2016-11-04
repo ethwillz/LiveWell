@@ -92,6 +92,8 @@ namespace LiveWell
                     roommateIDs.Add(list[0].residentID4);
                 }
                 String amount = (Convert.ToDouble(bought.Text)/(roommateIDs.Count+1)).ToString();
+                DatabasePOST conn2 = new DatabasePOST();
+                await conn2.chargeAllAndNotify(amount, "1", roommateIDs, listID, listName);
             }
         }
 
