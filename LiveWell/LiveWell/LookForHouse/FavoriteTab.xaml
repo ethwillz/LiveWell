@@ -6,7 +6,7 @@
 		<Label/>
 		<Label x:Name="title" Text="Favorite 35 apartments" TextColor="#000" FontSize="30" HorizontalOptions="Center"/>
 
-		<ListView x:Name="quickview">
+		<ListView x:Name="quickview" ItemTapped="onTap">
       	<ListView.ItemTemplate>
 		 <DataTemplate>
 		 <ViewCell>
@@ -17,7 +17,7 @@
 			<Label TextColor="Black" Text= "{Binding Path = AccommodationType}"/>
 			<Label TextColor="Black" Text="{Binding Path = AccommodationAddress}"/>
 			</StackLayout>
-			<Button Text="REMOVE" FontSize="Small" TextColor="White" BackgroundColor="Lime" Clicked="OnRemoveButtonClicked"/>
+			<Label Text="  Remove  " FontSize="Large" TextColor="White" BackgroundColor="Lime" />
 		  </StackLayout>
 		</StackLayout>
 		</ViewCell>

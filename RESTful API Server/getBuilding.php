@@ -30,7 +30,7 @@
 		$db->close();
 	}
 
-	if(isset($_GET["ownerID"])){
+	else if(isset($_GET["ownerID"])){
 		$ownerID = $_GET['ownerID'];
 
 		//Sets value of $result to SQL query and returns an error otherwise
@@ -52,12 +52,13 @@
 		$db->close();
 	}
 
-	if(isset($_GET["price"]) && isset($_GET["accommodationType"]) && isset($_GET["numRooms"])){
+	else if(isset($_GET["price"]) && isset($_GET["accommodationType"]) && isset($_GET["numRooms"]))
+	{
 		$price = $_GET['price'];
 		$numRooms = $_GET['numRooms'];
 		$accommodationType = $_GET['accommodationType'];
 
-		if(!$result = $db->query("SELECT address, numRooms, price, accommodationType, imageUrl FROM tblBuilding
+		if(!$result = $db->query("SELECT * FROM tblBuilding
 		WHERE tblBuilding.price <= $price AND tblBuilding.numRooms >= $numRooms AND tblBuilding.accommodationType = '$accommodationType'")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
@@ -74,12 +75,13 @@
 		//Closes the SQL connection
 		$result->close();
 		$db->close();
+
 	}
 
-	if(isset($_GET["favorite"])){
+	else if(isset($_GET["favorite"])){
 		$favorite = $_GET['favorite'];
 
-		if(!$result = $db->query("SELECT address, numRooms, price, accommodationType, imageUrl FROM tblBuilding
+		if(!$result = $db->query("SELECT * FROM tblBuilding
 		WHERE tblBuilding.favorite = $favorite")) {
 			die('There was an error running the query [' . $db->error . ']');
 		}

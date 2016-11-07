@@ -29,44 +29,50 @@ namespace LiveWell
             public String details { get; set; }
         }
 
-        public class Address
-        {
-            public Address(String accommodationType, String address)
-            {
-                this.accommodationType = accommodationType;
-                this.address = address;
-            }
+		public class Address
+		{
+			public Address(String accommodationType, String address)
+			{
+				this.accommodationType = accommodationType;
+				this.address = address;
+			}
 
-            public String accommodationType { get; set; }
-            public String address { get; set; }
-            public String imageUrl { get; set; }
-        }
+			public String accommodationType { get; set; }
+			public String address { get; set; }
+			public String imageUrl { get; set; }
+			public int buildingID { get; set; }
 
-        public class Favorite
-        {
-            public Favorite(int buildingID, int favorite)
-            {
-                this.buildingID = buildingID;
-                this.favorite = favorite;
-            }
+		}
 
-            public int buildingID { get; set; }
-            public int favorite { get; set; }
-        }
+		public class Favorite
+		{
+			public Favorite(int buildingID, int favorite)
+			{
+				this.buildingID = buildingID;
+				this.favorite = favorite;
+			}
 
-        public class Image
-        {
-            public Image(String accommodationType, String address, String imageUrl)
-            {
-                this.accommodationType = accommodationType;
-                this.address = address;
-                this.imageUrl = imageUrl;
-            }
+			public int buildingID { get; set; }
+			public int favorite { get; set; }
+		}
 
-            public String accommodationType { get; set; }
-            public String address { get; set; }
-            public String imageUrl { get; set; }
-        }
+		public class Image
+		{
+			public Image(String accommodationType, String address, String imageUrl, int buildingID)
+			{
+				this.accommodationType = accommodationType;
+				this.address = address;
+				this.imageUrl = imageUrl;
+				this.buildingID = buildingID;
+			}
+
+			public String accommodationType { get; set; }
+			public String address { get; set; }
+			public String imageUrl { get; set; }
+			public int buildingID { get; set; }
+
+		}
+>>>>>>> LocationService
 
         public class ResidentInfo
         {

@@ -10,16 +10,26 @@ namespace LiveWell
 {
 	public partial class FavoriteTab : ContentPage
 	{
+		List<QuickViewImage> list;
+
 		public FavoriteTab()
 		{
+			OnAppearing();
 			InitializeComponent();
-			populateList();
 		}
 
-		async void OnRemoveButtonClicked(object sender, EventArgs args)
+		async void onTap(object sender, ItemTappedEventArgs e)
 		{
 			DatabasePOST conn2 = new DatabasePOST();
-			await conn2.postFavoriteAccommodation(1, 0);
+
+			var index = (quickview.ItemsSource as List<QuickViewImage>).IndexOf(((ListView)sender).SelectedItem as QuickViewImage);
+			System.Diagnostics.Debug.WriteLine(index);
+			System.Diagnostics.Debug.WriteLine(list[index].buildingID);
+
+			await conn2.postFavoriteAccommodation(list[index].buildingID, 0);
+
+			((ListView)sender).SelectedItem = null;
+			populateList();
 		}
 
 		async void populateList()
@@ -29,16 +39,25 @@ namespace LiveWell
 			addresses = await conn.getFavorite();
 
 
-		    List<QuickViewImage> address = new List<QuickViewImage>();
+		    list = new List<QuickViewImage>();
+			quickview.ItemsSource = list;
+
 		    for (int i = 0; i < addresses.Count; i++)
 		    {
-		        address.Add(new QuickViewImage(addresses[i].imageUrl, addresses[i].address, addresses[i].accommodationType));
+				list.Add(new QuickViewImage(addresses[i].imageUrl, addresses[i].address, addresses[i].accommodationType,addresses[i].buildingID));
+				System.Diagnostics.Debug.WriteLine(addresses[i].buildingID);
+
 		    }
-		    quickview.ItemsSource = address;
+		    quickview.ItemsSource = list;
 		    quickview.RowHeight = 400;
 		    title.Text = "Favorite " + addresses.Count + " Accommodations";
+		}
 
-
+		/*Refreshing this page after favorite button is clicked from HomeTab*/
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			populateList();
 		}
 	}
 }

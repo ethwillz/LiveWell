@@ -14,14 +14,11 @@ namespace LiveWell
 
 		void OnSearchButtonClicked(object sender, EventArgs args)
 		{
-			int x = (int) Convert.ToDouble(price.Value.ToString());
-			String y = accommodationType.Items[accommodationType.SelectedIndex];
-			int z = (int)Convert.ToDouble(numRooms.Value.ToString());
-			int d = (int)Convert.ToDouble(distance.Value.ToString());
+			String[] arr = new String[4] { price.Value.ToString(), accommodationType.Items[accommodationType.SelectedIndex], numRooms.Value.ToString(), distance.Value.ToString() };
+			MessagingCenter.Send<FilterTab, String[]>(this, "filterData", arr);
 
-			System.Diagnostics.Debug.WriteLine(y);
-
-			Navigation.PushModalAsync(new MapTab(x, y, z, d));
+			var masterPage = this.Parent as TabbedPage;
+			masterPage.CurrentPage = masterPage.Children[0]; //Go to Home
 		}
 	}
 }
