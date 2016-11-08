@@ -13,16 +13,16 @@ namespace LiveWell
         //Instantiates new httpclient object with base address for http requests
         HttpClient client = new HttpClient(new NativeMessageHandler());
 
-        public async Task<List<Notification>> getNotifications(int residentID)
+        public async Task<List<ConnectHelpers.NotificationHandler>> getNotifications(int residentID)
         {
             client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/");
 
             //Runs GET HTTP request to server and gets data back in JSON format
             HttpResponseMessage gotNotifications = await client.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getNotifications.php?residentID=" + residentID));
             String data = await gotNotifications.Content.ReadAsStringAsync();
-            
+
             //Data desrialized into list of notification objects (automatically handled by NewtonSoft.Json library)
-            List<Notification> notifications = JsonConvert.DeserializeObject<List<Notification>>(data);
+            List<ConnectHelpers.NotificationHandler> notifications = JsonConvert.DeserializeObject<List<ConnectHelpers.NotificationHandler>>(data);
 
             //Returns list for use in UI
             return notifications;
@@ -44,7 +44,7 @@ namespace LiveWell
             return residentInfo;
         }
 
-        public async Task<List<Notification>> getPayments(int residentID)
+        public async Task<List<ConnectHelpers.NotificationHandler>> getPayments(int residentID)
         {
            client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getPayments.php");
 
@@ -53,7 +53,7 @@ namespace LiveWell
             String data = await gotNotifications.Content.ReadAsStringAsync();
 
             //Data desrialized into list of notification objects (automatically handled by NewtonSoft.Json library)
-            List<Notification> notifications = JsonConvert.DeserializeObject<List<Notification>>(data);
+            List<ConnectHelpers.NotificationHandler> notifications = JsonConvert.DeserializeObject<List<ConnectHelpers.NotificationHandler>>(data);
 
             //Returns list for use in UI
             return notifications;

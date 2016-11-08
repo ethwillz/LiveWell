@@ -1,16 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 
 namespace LiveWell
 {
-	public partial class FirstPage : ContentPage
+    public partial class FirstPage : ContentPage
 	{
 		public FirstPage()
 		{
 			InitializeComponent();
-		}
+
+            logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
+        }
 
 		void OnResidentButtonClicked(object sender, EventArgs args)
 		{

@@ -7,9 +7,9 @@ namespace LiveWell
     {
 
         //Notification object which stores all necessary data returned by the HTTP request
-        public class Notification
+        public class NotificationHandler
         {
-            public Notification(String notificationID, String residentID, String type, String amount, String firstName, String lastName, String details)
+            public NotificationHandler(String notificationID, String residentID, String type, String amount, String firstName, String lastName, String details)
             {
                 this.notificationID = notificationID;
                 this.residentID = residentID;
