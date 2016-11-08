@@ -39,6 +39,7 @@
     <Compile Include="DatabaseGET.cs" />
     <Compile Include="DatabasePOST.cs" />
     <Compile Include="DatabaseUPDATE.cs" />
+    <Compile Include="NotificationHandler.cs" />
     <Compile Include="ResidentMain\AddList.xaml.cs">
       <DependentUpon>AddList.xaml</DependentUpon>
     </Compile>
@@ -135,6 +136,9 @@
     <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v7.0\Mono.Android.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
@@ -316,7 +320,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="ResidentMain\AddList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

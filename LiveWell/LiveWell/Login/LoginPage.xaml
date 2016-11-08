@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.LoginPage">
 	<ContentPage.Content>
-		<StackLayout>
+		<StackLayout BackgroundColor="White">
 	<Label Text="Welcome to Live Well!" 
 			VerticalOptions="Start" 
 			HorizontalOptions="Center" 
@@ -30,21 +30,25 @@
 			<Button Text="Forget your password ?" 
 				HorizontalOptions="FillAndExpand" 
 				VerticalOptions="CenterAndExpand"
-				Clicked="PasswordButtonClicked"/>
+				Clicked="PasswordButtonClicked"
+        BackgroundColor="#8F1616" TextColor="White"/>
 			<Button Text="Login"
 				HorizontalOptions="FillAndExpand" 
 				VerticalOptions="CenterAndExpand" 
-				Clicked="LoginButtonClicked"/>
+				Clicked="LoginButtonClicked"
+        BackgroundColor="#8F1616" TextColor="White"/>
 		</StackLayout>
 		<StackLayout Orientation = "Horizontal">
 			<Button Text="Create an account"
 				HorizontalOptions="FillAndExpand" 
-				VerticalOptions="CenterAndExpand" 
-				Clicked="CreateButtonClicked" />
+				VerticalOptions="CenterAndExpand"
+        Clicked="CreateButtonClicked"
+        BackgroundColor="#8F1616" TextColor="White"/>
 			<Button Text="Help"
 				HorizontalOptions="FillAndExpand" 
 				VerticalOptions="CenterAndExpand"
-				Clicked="HelpButtonClicked" />
+        Clicked="HelpButtonClicked"
+        BackgroundColor="#8F1616" TextColor="White"/>
 		</StackLayout>
 	</StackLayout>
 	</ContentPage.Content>

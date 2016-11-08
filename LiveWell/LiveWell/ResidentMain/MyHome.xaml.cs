@@ -22,7 +22,7 @@ namespace LiveWell
             //Instantiates conenction object and calls method which gets notifications given a residentID
             DatabaseGET conn = new DatabaseGET();
             List<balance> balances = await conn.getBalances(1);
-            List<Notification> notifications = await conn.getNotifications(1);
+            List<ConnectHelpers.NotificationHandler> notifications = await conn.getNotifications(1);
             List<ResidentInfo> resident = await (conn.getResidentInfo(1));
 
             balance.Text = (Convert.ToDouble(balances[0].amount1) + Convert.ToDouble(balances[0].amount2) + Convert.ToDouble(balances[0].amount3) + Convert.ToDouble(balances[0].amount4) + Convert.ToDouble(balances[0].bAmount)).ToString();
