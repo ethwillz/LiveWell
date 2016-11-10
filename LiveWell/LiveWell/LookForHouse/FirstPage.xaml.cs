@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using System;
 
 using Xamarin.Forms;
 
@@ -13,7 +14,12 @@ namespace LiveWell
             logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
         }
 
-		void OnResidentButtonClicked(object sender, EventArgs args)
+        public static MobileServiceClient MobileService =
+            new MobileServiceClient(
+            "https://la-04-livewell.azurewebsites.net"
+        );
+
+        void OnResidentButtonClicked(object sender, EventArgs args)
 		{
 			Navigation.PushModalAsync(new LoginPage("Resident"));
 		}
