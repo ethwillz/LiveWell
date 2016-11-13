@@ -120,9 +120,6 @@
     </Compile>
     <Compile Include="LookForHouse\CustomMap.cs" />
     <Compile Include="LookForHouse\FilterTab.xaml.cs" />
-    <Compile Include="LookForHouse\FirstPage.xaml.cs">
-      <DependentUpon>FirstPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Employee\EmployeeHomePage.xaml.cs" />
     <Compile Include="Employee\EmployeeHistoryPage.xaml.cs" />
     <Compile Include="Employee\EmployeeMaintenancePage.xaml.cs" />
@@ -130,6 +127,9 @@
     <Compile Include="Login\SignupPage.xaml.cs" />
     <Compile Include="Login\PasswordResetPage.xaml.cs" />
     <Compile Include="Login\LoginPage.xaml.cs" />
+    <Compile Include="Login\FirstPage.xaml.cs">
+      <DependentUpon>FirstPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -205,14 +205,14 @@
     <EmbeddedResource Include="Login\SignupPage.xaml" />
     <EmbeddedResource Include="Login\PasswordResetPage.xaml" />
     <EmbeddedResource Include="Login\LoginPage.xaml" />
+    <EmbeddedResource Include="Login\FirstPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ResidentMain\Resident.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LookForHouse\FirstPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="LookForHouse\MainOrSearchHouse.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

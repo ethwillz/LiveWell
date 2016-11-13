@@ -44,25 +44,20 @@ namespace LiveWell
             return residentInfo;
         }
 
-		public async Task<List<ResidentInfo>> getResidentInfo(String email, String password)
+		/*For resident, employee and owner*/
+		public async Task<List<UserInfo>> getUserInfo(String userType, String email, String password)
 		{
-			client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getResidentInfo.php");
+			client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getUserInfo.php");
 
 			//Runs GET HTTP request to server and gets data back in JSON format
-			HttpResponseMessage gotNotifications = await client.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getResidentInfo.php?email=" + email + "&password=" + password));
+			HttpResponseMessage gotNotifications = await client.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getUserInfo.php?userType="+ userType +"&email=" + email + "&password=" + password));
 			String data = await gotNotifications.Content.ReadAsStringAsync();
 
 			//Data desrialized into list of notification objects (automatically handled by NewtonSoft.Json library)
-			List<ResidentInfo> userInfo = JsonConvert.DeserializeObject<List<ResidentInfo>>(data);
+			List<UserInfo> userInfo = JsonConvert.DeserializeObject<List<UserInfo>>(data);
 
 			//Returns list for use in UI
 			return userInfo;
-
-				//List<EmployeeInfo> userInfo = JsonConvert.DeserializeObject<List<EmployeeInfo>>(data);
-				//return userInfo;
-
-				//List<OwnerInfo> userInfo = JsonConvert.DeserializeObject<List<OwnerInfo>>(data);
-				//return userInfo;
 
 		}
 

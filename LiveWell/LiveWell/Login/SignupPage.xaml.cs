@@ -26,7 +26,7 @@ namespace LiveWell
 		async void CreateButtonClicked(object sender, EventArgs args)
 		{
 			DatabasePOST conn = new DatabasePOST();
-			await conn.postResidentInfo(firstName.Text, lastName.Text, email.Text, password.Text);
+			await conn.postUserInfo(userType.Text, firstName.Text, lastName.Text, email.Text, password.Text);
 			Navigation.PushModalAsync(new LoginPage(userType.Text));
 		}
 	}

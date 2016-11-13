@@ -12,6 +12,11 @@ namespace LiveWell
 			InitializeComponent();
 		}
 
+		public EmployeeHomePage(String employeeID)
+		{
+			InitializeComponent();
+		}
+
 		void HomeButtonClicked(object sender, EventArgs args)
 		{
 			Navigation.PushModalAsync(new EmployeeHomePage());

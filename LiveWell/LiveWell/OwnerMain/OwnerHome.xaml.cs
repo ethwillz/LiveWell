@@ -22,7 +22,6 @@ namespace LiveWell
 			quickview.RowHeight = 60;
 		}
 
-
 		public class Notification
 		{
 			public Notification(String summary, String details)

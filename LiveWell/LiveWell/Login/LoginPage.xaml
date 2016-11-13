@@ -27,6 +27,16 @@
 			HorizontalOptions="FillAndExpand"
 			IsPassword="true" />
 		<StackLayout Orientation = "Horizontal">
+			<Button Text="Login"
+				HorizontalOptions="FillAndExpand" 
+				VerticalOptions="CenterAndExpand" 
+				Clicked="LoginButtonClicked"/>
+			<Button Text="Create an account"
+				HorizontalOptions="FillAndExpand" 
+				VerticalOptions="CenterAndExpand" 
+				Clicked="CreateButtonClicked" />
+		</StackLayout>
+		<!--<StackLayout Orientation = "Horizontal">
 			<Button Text="Forget your password ?" 
 				HorizontalOptions="FillAndExpand" 
 				VerticalOptions="CenterAndExpand"
@@ -45,7 +55,7 @@
 				HorizontalOptions="FillAndExpand" 
 				VerticalOptions="CenterAndExpand"
 				Clicked="HelpButtonClicked" />
-		</StackLayout>
+		</StackLayout>-->
 		<Label x:Name="errorMessage" Text=""
 		VerticalOptions="Fill" 
 		HorizontalOptions="StartAndExpand" 

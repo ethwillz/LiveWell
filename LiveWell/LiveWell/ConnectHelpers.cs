@@ -87,15 +87,6 @@ namespace LiveWell
 				this.residentID =residentID;
             }
 
-			//Use this for signing up new users
-			public ResidentInfo(String firstName, String lastName,String email, String password)
-			{
-				this.firstName = firstName;
-				this.lastName = lastName;
-				this.email = email;
-				this.password = password;
-			}
-
 			public String email { get; set; }
 			public String password { get; set; }
             public String address { get; set; }
@@ -105,44 +96,27 @@ namespace LiveWell
 			public String residentID { get; set; }
         }
 
-		public class EmployeeInfo
+		/*Both resident, employee and owner*/
+		public class UserInfo
 		{
-			public EmployeeInfo(String email, String password, String firstName, String lastName, String employeeID, String buildingID)
+			public UserInfo(String userType, String firstName, String lastName, String email, String password)
 			{
-				this.email = email;
-				this.password = password;
+				this.userType = userType;
 				this.firstName = firstName;
 				this.lastName = lastName;
-				this.employeeID = employeeID;
-				this.buildingID = buildingID;
+				this.email = email;
+				this.password = password;
 			}
 
+			public String userType { get; set; }
 			public String email { get; set; }
 			public String password { get; set; }
 			public String firstName { get; set; }
 			public String lastName { get; set; }
+			public String residentID { get; set; }
 			public String employeeID { get; set; }
-			public String buildingID { get; set; }
-		}
-
-		public class OwnerInfo
-		{
-			public OwnerInfo(String email, String password, String firstName, String lastName, String ownerID)
-			{
-				this.email = email;
-				this.password = password;
-				this.firstName = firstName;
-				this.lastName = lastName;
-				this.ownerID = ownerID;
-			}
-
-			public String email { get; set; }
-			public String password { get; set; }
-			public String firstName { get; set; }
-			public String lastName { get; set; }
 			public String ownerID { get; set; }
 		}
-
 
 		public class MaintenanceRequest
         {
