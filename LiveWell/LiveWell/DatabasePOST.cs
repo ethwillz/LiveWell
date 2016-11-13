@@ -53,6 +53,24 @@ namespace LiveWell
 			//Runs GET HTTP request to server and gets data back in JSON format
 			HttpResponseMessage gotNotifications = await getNotifications.PostAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/postBuilding.php"), content);
 		}
+
+		public async Task postResidentInfo(String firstName, String lastName, String email, String password)
+		{
+			System.Diagnostics.Debug.WriteLine(firstName);
+			System.Diagnostics.Debug.WriteLine(lastName);
+			System.Diagnostics.Debug.WriteLine("YES!!!!!!!!!!!!!!!!!!!!!!!!");
+
+			//Instantiates new httpclient object with base address for http requests
+			var getNotifications = new HttpClient(new NativeMessageHandler());
+			getNotifications.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/postResidentInfo.php");
+
+			ConnectHelpers.ResidentInfo resident = new ConnectHelpers.ResidentInfo(firstName,lastName,email,password);
+			string contentJson = JsonConvert.SerializeObject(resident);
+			var content = new StringContent(contentJson, Encoding.UTF8, "application/json");
+
+			//Runs GET HTTP request to server and gets data back in JSON format
+			HttpResponseMessage gotNotifications = await getNotifications.PostAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/postResidentInfo.php"), content);
+		}
 		
         public async Task postList(String listName, List<int> ids)
         {

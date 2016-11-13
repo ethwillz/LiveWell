@@ -23,19 +23,29 @@ namespace LiveWell
 			Navigation.PushModalAsync(new SignupPage(userType.Text));
 		}
 
-		void LoginButtonClicked(object sender, EventArgs args)
+		async void LoginButtonClicked(object sender, EventArgs args)
 		{
-			if (userType.Text == "Resident") 
+			DatabaseGET conn = new DatabaseGET();
+			var personalInfo = await conn.getResidentInfo(email.Text, password.Text);
+
+			if (personalInfo.Count > 0)
 			{
-				Navigation.PushModalAsync(new MainOrSearchHouse());
+				if (userType.Text == "Resident")
+				{
+					Navigation.PushModalAsync(new MainOrSearchHouse());
+				}
+				else if (userType.Text == "Employee")
+				{
+					Navigation.PushModalAsync(new EmployeeHomePage());
+				}
+				else if (userType.Text == "Owner")
+				{
+					Navigation.PushModalAsync(new Owner());
+				}
 			}
-			else if (userType.Text == "Employee") 
-			{ 
-				Navigation.PushModalAsync(new EmployeeHomePage());
-			}	
-			else if (userType.Text == "Owner") 
-			{ 
-				Navigation.PushModalAsync(new Owner());
+
+			else {
+				errorMessage.Text = "Please type correct email address and password"; 
 			}
 
 		}

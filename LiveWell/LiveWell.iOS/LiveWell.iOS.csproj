@@ -51,7 +51,7 @@
     <CodesignKey>iPhone Developer: keisuke_0607@yahoo.co.jp (65355UQ2T2)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>35c66a6c-84e2-4808-9625-f68b2595ff64</CodesignProvision>
+    <CodesignProvision>aeec5e3a-4496-4e2b-952c-2cd4389bfc6a</CodesignProvision>
     <MtouchFloat32>true</MtouchFloat32>
     <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
     <MtouchFastDev>false</MtouchFastDev>

@@ -10,21 +10,21 @@
 	<Label x:Name="userType" Text="Login" 
 			VerticalOptions="Fill" 
 			HorizontalOptions="Center" />
-	<Label Text="Username / Email Address"
+	<Label Text="Email Address"
 			VerticalOptions="Fill" 
 			HorizontalOptions="StartAndExpand" 
 			Font="Large"
 			FontAttributes="Bold"/>
-	<Entry Placeholder="Enter username" 
+	<Entry x:Name="email" Placeholder="Enter email" 
 			VerticalOptions="Fill" 
-			HorizontalOptions="StartAndExpand"/>
-	<Label Text="Username / Email Address" 
+			HorizontalOptions="FillAndExpand"/>
+	<Label Text="Password" 
 			VerticalOptions="Fill" 
 			HorizontalOptions="StartAndExpand" 
 			Font="Large" FontAttributes="Bold"/>
-	<Entry Placeholder="Enter password" 
+	<Entry x:Name="password" Placeholder="Enter password" 
 			VerticalOptions="Fill" 
-			HorizontalOptions="StartAndExpand"
+			HorizontalOptions="FillAndExpand"
 			IsPassword="true" />
 		<StackLayout Orientation = "Horizontal">
 			<Button Text="Forget your password ?" 
@@ -46,6 +46,12 @@
 				VerticalOptions="CenterAndExpand"
 				Clicked="HelpButtonClicked" />
 		</StackLayout>
+		<Label x:Name="errorMessage" Text=""
+		VerticalOptions="Fill" 
+		HorizontalOptions="StartAndExpand" 
+		Font="Large"
+		FontAttributes="Bold"
+		TextColor ="Red"/>
 	</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
