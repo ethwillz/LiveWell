@@ -7,9 +7,10 @@ namespace LiveWell
 {
 	public partial class MainOrSearchHouse : ContentPage
 	{
-		public MainOrSearchHouse()
+		public MainOrSearchHouse(String residentID, String firstName)
 		{
 			InitializeComponent();
+			title.Text = "Hi, " + firstName;
 		}
 
 		public void OnMainButtonClicked(object sender, EventArgs args)

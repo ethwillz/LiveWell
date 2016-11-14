@@ -23,33 +23,43 @@ namespace LiveWell
 			Navigation.PushModalAsync(new SignupPage(userType.Text));
 		}
 
-		void LoginButtonClicked(object sender, EventArgs args)
+		async void LoginButtonClicked(object sender, EventArgs args)
 		{
-			if (userType.Text == "Resident") 
+			DatabaseGET conn = new DatabaseGET();
+			var personalInfo = await conn.getUserInfo(userType.Text, email.Text, password.Text);
+
+			if (personalInfo.Count > 0)
 			{
-				Navigation.PushModalAsync(new MainOrSearchHouse());
+				if (userType.Text == "Resident")
+				{
+					Navigation.PushModalAsync(new MainOrSearchHouse(personalInfo[0].residentID, personalInfo[0].firstName));
+				}
+				else if (userType.Text == "Employee")
+				{
+					Navigation.PushModalAsync(new EmployeeHomePage(personalInfo[0].employeeID));
+				}
+				else if (userType.Text == "Owner")
+				{
+					Navigation.PushModalAsync(new Owner(personalInfo[0].ownerID));
+				}
 			}
-			else if (userType.Text == "Employee") 
-			{ 
-				Navigation.PushModalAsync(new Employee());
-			}	
-			else if (userType.Text == "Owner") 
-			{ 
-				Navigation.PushModalAsync(new Owner());
+
+			else {
+				errorMessage.Text = "Please type correct email address and password"; 
 			}
 
 		}
 
-		void PasswordButtonClicked(object sender, EventArgs args)
-		{
-			Navigation.PushModalAsync(new PasswordResetPage(userType.Text));
-		}
+		//void PasswordButtonClicked(object sender, EventArgs args)
+		//{
+		//	Navigation.PushModalAsync(new PasswordResetPage(userType.Text));
+		//}
 
-		async void HelpButtonClicked(object sender, EventArgs args)
-		{
-			await DisplayAlert("Contact Information",
-				"Our Email Address: LiveWell@iastate.edu" + '\n' + "Our Phone Number: 515-555-5555",
-				"Go Back");
-		}
+		//async void HelpButtonClicked(object sender, EventArgs args)
+		//{
+		//	await DisplayAlert("Contact Information",
+		//		"Our Email Address: LiveWell@iastate.edu" + '\n' + "Our Phone Number: 515-555-5555",
+		//		"Go Back");
+		//}
 	}
 }

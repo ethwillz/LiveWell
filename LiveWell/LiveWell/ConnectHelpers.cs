@@ -75,23 +75,50 @@ namespace LiveWell
 
         public class ResidentInfo
         {
-            public ResidentInfo(String address, String number, String residentID, String firstName, String lastName)
+			public ResidentInfo(){ } //default constructor is needed since there are two other constructors
+            public ResidentInfo(String address, String number, String email, String password, String firstName, String lastName, String residentID)
             {
                 this.address = address;
                 this.number = number;
-                this.residentID = residentID;
+				this.email = email;
+				this.password = password;
                 this.firstName = firstName;
                 this.lastName = lastName;
+				this.residentID =residentID;
             }
 
+			public String email { get; set; }
+			public String password { get; set; }
             public String address { get; set; }
             public String number { get; set; }
-            public String residentID { get; set; }
             public String firstName { get; set; }
             public String lastName { get; set; }
+			public String residentID { get; set; }
         }
 
-        public class MaintenanceRequest
+		/*Both resident, employee and owner*/
+		public class UserInfo
+		{
+			public UserInfo(String userType, String firstName, String lastName, String email, String password)
+			{
+				this.userType = userType;
+				this.firstName = firstName;
+				this.lastName = lastName;
+				this.email = email;
+				this.password = password;
+			}
+
+			public String userType { get; set; }
+			public String email { get; set; }
+			public String password { get; set; }
+			public String firstName { get; set; }
+			public String lastName { get; set; }
+			public String residentID { get; set; }
+			public String employeeID { get; set; }
+			public String ownerID { get; set; }
+		}
+
+		public class MaintenanceRequest
         {
             public MaintenanceRequest(String roomID, String residentID, String employeeID, String summary, String date)
             {
