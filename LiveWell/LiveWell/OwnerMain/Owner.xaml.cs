@@ -14,5 +14,10 @@ namespace LiveWell
 		{
 			InitializeComponent();
 		}
+
+		public Owner(String ownerID)
+		{
+			InitializeComponent();
+		}
 	}
 }

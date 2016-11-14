@@ -44,6 +44,23 @@ namespace LiveWell
             return residentInfo;
         }
 
+		/*For resident, employee and owner*/
+		public async Task<List<UserInfo>> getUserInfo(String userType, String email, String password)
+		{
+			client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getUserInfo.php");
+
+			//Runs GET HTTP request to server and gets data back in JSON format
+			HttpResponseMessage gotNotifications = await client.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getUserInfo.php?userType="+ userType +"&email=" + email + "&password=" + password));
+			String data = await gotNotifications.Content.ReadAsStringAsync();
+
+			//Data desrialized into list of notification objects (automatically handled by NewtonSoft.Json library)
+			List<UserInfo> userInfo = JsonConvert.DeserializeObject<List<UserInfo>>(data);
+
+			//Returns list for use in UI
+			return userInfo;
+
+		}
+
         public async Task<List<ConnectHelpers.NotificationHandler>> getPayments(int residentID)
         {
            client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getPayments.php");
