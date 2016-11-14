@@ -36,11 +36,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ConnectHelpers.cs" />
+    <Compile Include="CurrentUser.cs" />
     <Compile Include="DatabaseGET.cs" />
     <Compile Include="DatabasePOST.cs" />
     <Compile Include="DatabaseUPDATE.cs" />
     <Compile Include="Employee\Employee.xaml.cs">
       <DependentUpon>Employee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeMaintenancePage.xaml.cs">
+      <DependentUpon>EmployeeMaintenancePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\MaintenanceDetails.xaml.cs">
+      <DependentUpon>MaintenanceDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="NotificationHandler.cs" />
     <Compile Include="ResidentMain\AddList.xaml.cs">
@@ -126,7 +133,6 @@
     <Compile Include="LookForHouse\FilterTab.xaml.cs" />
     <Compile Include="Employee\EmployeeHomePage.xaml.cs" />
     <Compile Include="Employee\EmployeeHistoryPage.xaml.cs" />
-    <Compile Include="Employee\EmployeeMaintenancePage.xaml.cs" />
     <Compile Include="Employee\EmployeeEmptyRoomPage.xaml.cs" />
     <Compile Include="Login\SignupPage.xaml.cs" />
     <Compile Include="Login\PasswordResetPage.xaml.cs" />
@@ -270,7 +276,6 @@
     <EmbeddedResource Include="LookForHouse\FilterTab.xaml" />
     <EmbeddedResource Include="Employee\EmployeeHomePage.xaml" />
     <EmbeddedResource Include="Employee\EmployeeHistoryPage.xaml" />
-    <EmbeddedResource Include="Employee\EmployeeMaintenancePage.xaml" />
     <EmbeddedResource Include="Employee\EmployeeEmptyRoomPage.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -329,6 +334,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Employee\Employee.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Employee\EmployeeMaintenancePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Employee\MaintenanceDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

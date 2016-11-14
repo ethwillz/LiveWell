@@ -32,15 +32,21 @@ namespace LiveWell
 			{
 				if (userType.Text == "Resident")
 				{
-					Navigation.PushModalAsync(new MainOrSearchHouse(personalInfo[0].residentID, personalInfo[0].firstName));
+                    CurrentUser.ID = Convert.ToInt32(personalInfo[0].residentID);
+                    CurrentUser.type = 0;
+                    await Navigation.PushModalAsync(new MainOrSearchHouse());
 				}
 				else if (userType.Text == "Employee")
 				{
-					Navigation.PushModalAsync(new EmployeeHomePage(personalInfo[0].employeeID));
+                    CurrentUser.ID = Convert.ToInt32(personalInfo[0].employeeID);
+                    CurrentUser.type = 1;
+                    await Navigation.PushModalAsync(new Employee());
 				}
 				else if (userType.Text == "Owner")
 				{
-					Navigation.PushModalAsync(new Owner(personalInfo[0].ownerID));
+                    CurrentUser.ID = Convert.ToInt32(personalInfo[0].ownerID);
+                    CurrentUser.type = 2;
+                    await Navigation.PushModalAsync(new Owner(personalInfo[0].ownerID));
 				}
 			}
 
