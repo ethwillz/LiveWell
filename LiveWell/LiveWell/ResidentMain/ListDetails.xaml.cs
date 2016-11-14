@@ -93,6 +93,7 @@ namespace LiveWell
                 }
                 String amount = (Convert.ToDouble(bought.Text)/(roommateIDs.Count+1)).ToString();
                 DatabasePOST conn2 = new DatabasePOST();
+
                 await conn2.chargeAllAndNotify(amount, "1", roommateIDs, listID, listName.Text);
                 //NotificationHandler notifications = new NotificationHandler();
                 //notifications.send(amount, "1", roommateIDs, listID, listName.Text);

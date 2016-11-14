@@ -72,6 +72,7 @@ namespace LiveWell
 			public int buildingID { get; set; }
 
 		}
+>>>>>>> LocationService
 
         public class ResidentInfo
         {
