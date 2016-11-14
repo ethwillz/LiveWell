@@ -31,7 +31,7 @@ namespace LiveWell
 			}
 			else if (userType.Text == "Employee") 
 			{ 
-				Navigation.PushModalAsync(new EmployeeHomePage());
+				Navigation.PushModalAsync(new Employee());
 			}	
 			else if (userType.Text == "Owner") 
 			{ 

@@ -40,27 +40,6 @@
         HorizontalOptions="CenterAndExpand"
         VerticalOptions="StartAndExpand"
 		FontAttributes="Bold"/>
-			<StackLayout Orientation = "Horizontal">
-				<Button Text="Home"
-					HorizontalOptions="FillAndExpand" 
-					VerticalOptions="FillAndExpand"
-					Clicked="HomeButtonClicked" />
-				<Button Text="History"
-					HorizontalOptions="FillAndExpand" 
-					VerticalOptions="FillAndExpand"
-					Clicked="HistoryButtonClicked" />
-				<Button Text="Maintenance"
-					HorizontalOptions="FillAndExpand" 
-					VerticalOptions="FillAndExpand"
-					Clicked="MaintenanceButtonClicked" />
-				<Button Text="EmptyRoom"
-					HorizontalOptions="FillAndExpand" 
-					VerticalOptions="FillAndExpand"
-					Clicked="EmptyRoomButtonClicked"/>
-				<Button Text="..."
-					HorizontalOptions="FillAndExpand" 
-					VerticalOptions="FillAndExpand" />
-			</StackLayout>
 	</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

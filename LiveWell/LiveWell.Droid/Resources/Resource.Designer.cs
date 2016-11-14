@@ -26,7 +26,6 @@ namespace LiveWell.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Gcm.Client.Resource.String.library_name = global::LiveWell.Droid.Resource.String.library_name;
 			global::PCLCrypto.Resource.String.ApplicationName = global::LiveWell.Droid.Resource.String.ApplicationName;
 			global::PCLCrypto.Resource.String.Hello = global::LiveWell.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::LiveWell.Droid.Resource.Attribute.actionBarSize;

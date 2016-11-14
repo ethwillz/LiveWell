@@ -39,6 +39,9 @@
     <Compile Include="DatabaseGET.cs" />
     <Compile Include="DatabasePOST.cs" />
     <Compile Include="DatabaseUPDATE.cs" />
+    <Compile Include="Employee\Employee.xaml.cs">
+      <DependentUpon>Employee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NotificationHandler.cs" />
     <Compile Include="ResidentMain\AddList.xaml.cs">
       <DependentUpon>AddList.xaml</DependentUpon>
@@ -83,7 +86,7 @@
     <Compile Include="LookForHouse\HomeTab.xaml.cs">
       <DependentUpon>HomeTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LookForHouse\ChatTab.xaml.cs">
+    <Compile Include="Login\ChatTab.xaml.cs">
       <DependentUpon>ChatTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="LookForHouse\FavoriteTab.xaml.cs">
@@ -201,7 +204,6 @@
     <None Include="packages.config" />
     <None Include="Employee\EmployeeHelpPage.xaml" />
     <None Include="Employee\Tabbed.xaml" />
-    <None Include="Employee\TabbedPage.xaml" />
     <EmbeddedResource Include="LiveWellLogo.png" />
     <EmbeddedResource Include="LiveWellFullLogo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -227,7 +229,7 @@
     <EmbeddedResource Include="LookForHouse\HomeTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="LookForHouse\ChatTab.xaml">
+    <EmbeddedResource Include="Login\ChatTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="LookForHouse\FavoriteTab.xaml">
@@ -265,7 +267,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\EmployeeHelpPage.xaml.cs" />
     <EmbeddedResource Include="Employee\Tabbed.xaml.cs" />
-    <EmbeddedResource Include="Employee\TabbedPage.xaml.cs" />
     <EmbeddedResource Include="LookForHouse\FilterTab.xaml" />
     <EmbeddedResource Include="Employee\EmployeeHomePage.xaml" />
     <EmbeddedResource Include="Employee\EmployeeHistoryPage.xaml" />
@@ -322,6 +323,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ResidentMain\AddList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Employee\Employee.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
