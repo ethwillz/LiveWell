@@ -29,7 +29,7 @@ namespace LiveWell
             public String details { get; set; }
         }
 
-		public class Address
+        public class Address
 		{
 			public Address(String accommodationType, String address)
 			{

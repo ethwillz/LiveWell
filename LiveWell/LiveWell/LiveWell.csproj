@@ -40,6 +40,9 @@
     <Compile Include="DatabaseGET.cs" />
     <Compile Include="DatabasePOST.cs" />
     <Compile Include="DatabaseUPDATE.cs" />
+    <Compile Include="Employee\EmployeeHistoryPage.xaml.cs">
+      <DependentUpon>EmployeeHistoryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Employee\EmployeeHome.xaml.cs">
       <DependentUpon>EmployeeHome.xaml</DependentUpon>
     </Compile>
@@ -134,7 +137,6 @@
     </Compile>
     <Compile Include="LookForHouse\CustomMap.cs" />
     <Compile Include="LookForHouse\FilterTab.xaml.cs" />
-    <Compile Include="Employee\EmployeeHistoryPage.xaml.cs" />
     <Compile Include="Employee\EmployeeEmptyRoomPage.xaml.cs" />
     <Compile Include="Login\SignupPage.xaml.cs" />
     <Compile Include="Login\PasswordResetPage.xaml.cs" />
@@ -274,7 +276,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\EmployeeHelpPage.xaml.cs" />
     <EmbeddedResource Include="LookForHouse\FilterTab.xaml" />
-    <EmbeddedResource Include="Employee\EmployeeHistoryPage.xaml" />
     <EmbeddedResource Include="Employee\EmployeeEmptyRoomPage.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -345,6 +346,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Employee\EmployeeMaintenance.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Employee\EmployeeHistoryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

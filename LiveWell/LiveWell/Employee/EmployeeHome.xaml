@@ -2,5 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LiveWell.EmployeeHome">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <StackLayout BackgroundColor="White">
+    <Image x:Name="logo"/>
+    <Label Text="Quick View" HorizontalOptions="Center" FontSize="18" TextColor="#8F1616"/>
+    <ListView x:Name="quickview">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell TextColor="#8F1616" DetailColor="#8F1616" Text="{Binding Path = Summary}" Detail="{Binding Path = Details}"/>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
 </ContentPage>

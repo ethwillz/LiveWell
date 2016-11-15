@@ -5,11 +5,11 @@ using Xamarin.Forms;
 
 namespace LiveWell
 {
-	public partial class EmployeeHistoryPage : ContentPage
-	{
-		public EmployeeHistoryPage()
-		{
-			InitializeComponent();
-		}
-	}
+    public partial class EmployeeHistoryPage : ContentPage
+    {
+        public EmployeeHistoryPage()
+        {
+            InitializeComponent();
+        }
+    }
 }

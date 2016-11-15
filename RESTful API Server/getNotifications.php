@@ -29,4 +29,27 @@
 		$result->close();
 		$db->close();
 	}
+	
+	//If statement checks that HTTP request URI contains residentID parameter
+	if(isset($_GET["employeeID"])){
+		$employeeID = $_GET['employeeID'];
+		
+		//Sets value of $result to SQL query and returns an error otherwise
+		if(!$result = $db->query("SELECT notificationID, tblNotification.employeeID, type, amount, firstName, lastName, details FROM tblNotification INNER JOIN tblResident ON tblNotification.sender = tblResident.residentID WHERE employeeID = $employeeID LIMIT 50")){
+			die('There was an error running the query [' . $db->error . ']');
+		}
+		
+		//Goes through all rows returned by query and sets the notification array to the data
+		$notification = array();
+		while($row = $result->fetch_assoc()){
+				$notification[] = $row;
+		}
+		
+		//Encodes the array to json and returns it as an HTTP response
+		echo json_encode($notification);
+		
+		//Closes the SQL connection
+		$result->close();
+		$db->close();
+	}
 ?>

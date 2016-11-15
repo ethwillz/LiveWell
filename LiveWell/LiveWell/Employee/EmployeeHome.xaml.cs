@@ -13,6 +13,22 @@ namespace LiveWell
         public EmployeeHome()
         {
             InitializeComponent();
+
+            logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
+
+            populateList();
+        }
+
+        async void populateList()
+        {
+            DatabaseGET conn = new DatabaseGET();
+            List<ConnectHelpers.NotificationHandler> notifications = await conn.getNotifications(CurrentUser.type, CurrentUser.ID);
+            List<QuickViewNotif> all = new List<QuickViewNotif>();
+            for (int i = 0; i < notifications.Count; i++)
+            {
+                all.Add(new QuickViewNotif("Maintenance scheduled for " + notifications[i].details, notifications[i].type));
+            }
+
         }
     }
 }
