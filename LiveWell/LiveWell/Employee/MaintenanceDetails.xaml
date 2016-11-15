@@ -1,6 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LiveWell.Employee.MaintenanceDetails">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             x:Class="LiveWell.MaintenanceDetails"
+             BackgroundColor="White">
+  <StackLayout BackgroundColor="White" Margin="15,15,15,15">
+    <Label x:Name="requestID" TextColor="Black" FontSize="30" FontAttributes="Bold"/>
+    <Label x:Name="room" TextColor="Black" FontSize="15" FontAttributes="Bold"/>
+    <Label x:Name="building" TextColor="Black" FontSize="15" FontAttributes="Bold"/>
+    <Label x:Name="summaryTitle" TextColor="Black" Text="Summary:" FontSize="15" FontAttributes="Bold"/>
+    <Label x:Name="summary" TextColor="Black" FontSize="15"/>
+    <Label x:Name="descriptionTitle" TextColor="Black" Text="Description:" FontSize="15" FontAttributes="Bold"/>
+    <Label x:Name="description" TextColor="Black" FontSize="15"/>
+    <Label x:Name="date" TextColor="Black" FontSize="15" FontAttributes="Bold"/>
+    <DatePicker x:Name="scheduledDate" VerticalOptions="CenterAndExpand">
+      <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+    </DatePicker>
+    <Button Text="Schedule" BackgroundColor="#8F1616" TextColor="White"/>
+  </StackLayout>
 </ContentPage>

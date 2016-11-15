@@ -2,12 +2,12 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:LiveWell;assembly=LiveWell"
-             x:Class="LiveWell.Employee"
+             x:Class="LiveWell.EmployeeMain"
             BarBackgroundColor="#8F1616">
 
-  <local:EmployeeHomePage Title="Home"/>
+  <local:EmployeeHome Title="Home"/>
   <local:EmployeeHistoryPage Title="History"/>
-  <local:EmployeeMaintenancePage Title="Maintenance"/>
+  <local:EmployeeMaintenance Title="Repair"/>
   <local:EmployeeEmptyRoomPage Title="Empty"/>
 
 </TabbedPage>

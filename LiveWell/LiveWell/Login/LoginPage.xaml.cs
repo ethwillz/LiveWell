@@ -40,7 +40,7 @@ namespace LiveWell
 				{
                     CurrentUser.ID = Convert.ToInt32(personalInfo[0].employeeID);
                     CurrentUser.type = 1;
-                    await Navigation.PushModalAsync(new Employee());
+                    await Navigation.PushModalAsync(new EmployeeMain());
 				}
 				else if (userType.Text == "Owner")
 				{

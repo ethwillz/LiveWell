@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace LiveWell
 {
-    public partial class Employee : TabbedPage
+    public partial class EmployeeHome : ContentPage
     {
-        public Employee()
+        public EmployeeHome()
         {
             InitializeComponent();
         }

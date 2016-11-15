@@ -44,8 +44,24 @@ namespace LiveWell
             return residentInfo;
         }
 
-		/*For resident, employee and owner*/
-		public async Task<List<UserInfo>> getUserInfo(String userType, String email, String password)
+        //Gets all relevant information for an individual resident
+        public async Task<List<EmployeeInfo>> getEmployeeInfo(int employeeID)
+        {
+            client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getEmployee.php");
+
+            //Runs GET HTTP request to server and gets data back in JSON format
+            HttpResponseMessage gotEmployee = await client.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getEmployee.php?employeeID=" + employeeID));
+            String data = await gotEmployee.Content.ReadAsStringAsync();
+
+            //Data desrialized into list of notification objects (automatically handled by NewtonSoft.Json library)
+            List<EmployeeInfo> employeeInfo = JsonConvert.DeserializeObject<List<EmployeeInfo>>(data);
+
+            //Returns list for use in UI
+            return employeeInfo;
+        }
+
+        /*For resident, employee and owner*/
+        public async Task<List<UserInfo>> getUserInfo(String userType, String email, String password)
 		{
 			client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getUserInfo.php");
 
@@ -224,7 +240,7 @@ namespace LiveWell
             return name[0].firstName + " " + name[0].lastName;
         }
 
-        public async Task<List<MaintenanceRequest>> getMaintenance(String buildingID)
+        public async Task<List<MaintenanceRecord>> getMaintenance(String buildingID)
         {
             client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getMaintenance.php");
 
@@ -233,7 +249,7 @@ namespace LiveWell
             String data = await gotRequests.Content.ReadAsStringAsync();
 
             //Data desrialized into list of notification objects (automatically handled by NewtonSoft.Json library)
-            List<MaintenanceRequest> requests = JsonConvert.DeserializeObject<List<MaintenanceRequest>>(data);
+            List<MaintenanceRecord> requests = JsonConvert.DeserializeObject<List<MaintenanceRecord>>(data);
 
             return requests;
         }

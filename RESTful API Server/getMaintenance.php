@@ -35,7 +35,7 @@
 		$buildingID = $_GET['buildingID'];
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("SELECT * FROM tblMaintenance INNER JOIN tblRoom ON tblRoom.roomID = tblMaintenance.roomID WHERE buildingID = $buildingID")){
+		if(!$result = $db->query("SELECT maintenanceID, tblMaintenance.roomID, residentID, employeeID, summary, description, date FROM tblMaintenance INNER JOIN tblRoom ON tblRoom.roomID = tblMaintenance.roomID WHERE buildingID = $buildingID AND resolved = 0")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
 		

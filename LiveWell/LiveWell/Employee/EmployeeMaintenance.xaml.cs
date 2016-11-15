@@ -6,11 +6,12 @@ using static LiveWell.ConnectHelpers;
 
 namespace LiveWell
 {
-    public partial class EmployeeMaintenancePage : ContentPage
+    public partial class EmployeeMaintenance : ContentPage
     {
-        List<MaintenanceRequest> requests;
+        List<MaintenanceRecord> requests;
+        List<EmployeeInfo> employee;
 
-        public EmployeeMaintenancePage()
+        public EmployeeMaintenance()
         {
             InitializeComponent();
 
@@ -20,20 +21,21 @@ namespace LiveWell
         async void populateList()
         {
             DatabaseGET conn = new DatabaseGET();
-            //requests = conn.getMaintenance(CurrentUser.ID);
+            employee = await conn.getEmployeeInfo(CurrentUser.ID);
+            requests = await conn.getMaintenance(employee[0].buildingID);
             List<Request> allRequests = new List<Request>();
-            for(int i = 0; i < requests.Count; i++)
+            for (int i = 0; i < requests.Count; i++)
             {
                 allRequests.Add(new Request(requests[i].summary, requests[i].roomID));
             }
-            //requestList.ItemsSource = 
+            requestList.ItemsSource = allRequests;
         }
 
         public void onTap(Object sender, EventArgs e)
         {
-            //var index = (requestList.ItemsSource as List<Request>).IndexOf(((ListView)sender).SelectedItem as ListInfo);
-            //Navigation.PushModalAsync(new MaintenanceDetails(requests[index].date, requests[index].summary, requests[index].roomID));
-            //((ListView)sender).SelectedItem = null;
+            var index = (requestList.ItemsSource as List<Request>).IndexOf(((ListView)sender).SelectedItem as Request);
+            Navigation.PushModalAsync(new MaintenanceDetails(requests[index].maintenanceID, requests[index].date, requests[index].summary, requests[index].description, requests[index].roomID, employee[0].address));
+            ((ListView)sender).SelectedItem = null;
         }
     }
 
@@ -49,4 +51,3 @@ namespace LiveWell
         public String room { get; set; }
     }
 }
-
