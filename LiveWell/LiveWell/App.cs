@@ -7,9 +7,10 @@ namespace LiveWell
     {
         public App()
         {
-			MainPage = new FirstPage();
-
-            MainPage.SetValue(NavigationPage.BarBackgroundColorProperty, Color.Black);
+            var main = new NavigationPage(new FirstPage());
+            main.BarBackgroundColor = Color.White;
+            main.BarTextColor = Color.Black;
+			MainPage = main;
         }
 
         protected override void OnStart()

@@ -14,7 +14,6 @@ namespace LiveWell
     {
         List<ConnectHelpers.Item> lists;
         List<Item> items;
-        String listNum;
         String name;
         String user;
         String listID;

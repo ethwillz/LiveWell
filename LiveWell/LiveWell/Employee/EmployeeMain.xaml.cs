@@ -2,9 +2,9 @@
 
 namespace LiveWell
 {
-    public partial class Resident : TabbedPage
+    public partial class EmployeeMain : TabbedPage
     {
-        public Resident()
+        public EmployeeMain()
         {
             InitializeComponent();
         }

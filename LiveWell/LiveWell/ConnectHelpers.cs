@@ -97,8 +97,24 @@ namespace LiveWell
 			public String residentID { get; set; }
         }
 
-		/*Both resident, employee and owner*/
-		public class UserInfo
+        public class EmployeeInfo
+        {
+            public EmployeeInfo(String firstName, String lastName, String buildingID, String address)
+            {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.buildingID = buildingID;
+                this.address = address;
+            }
+
+            public String firstName { get; set; }
+            public String lastName { get; set; }
+            public String buildingID { get; set; }
+            public String address { get; set; }
+        }
+
+        /*Both resident, employee and owner*/
+        public class UserInfo
 		{
 			public UserInfo(String userType, String firstName, String lastName, String email, String password)
 			{
@@ -119,7 +135,7 @@ namespace LiveWell
 			public String ownerID { get; set; }
 		}
 
-		public class MaintenanceRequest
+        public class MaintenanceRequest
         {
             public MaintenanceRequest(String roomID, String residentID, String employeeID, String summary, String date)
             {
@@ -130,10 +146,33 @@ namespace LiveWell
                 this.date = date;
             }
 
+            public String requestID { get; set; }
             public String roomID { get; set; }
             public String residentID { get; set; }
             public String employeeID { get; set; }
             public String summary { get; set; }
+            public String date { get; set; }
+        }
+
+        public class MaintenanceRecord
+        {
+            public MaintenanceRecord(String maintenanceID, String roomID, String residentID, String employeeID, String summary, String description, String date)
+            {
+                this.maintenanceID = maintenanceID;
+                this.roomID = roomID;
+                this.residentID = residentID;
+                this.employeeID = employeeID;
+                this.summary = summary;
+                this.description = description;
+                this.date = date;
+            }
+
+            public String maintenanceID { get; set; }
+            public String roomID { get; set; }
+            public String residentID { get; set; }
+            public String employeeID { get; set; }
+            public String summary { get; set; }
+            public String description { get; set; }
             public String date { get; set; }
         }
 

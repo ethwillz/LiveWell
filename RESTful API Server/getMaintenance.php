@@ -29,4 +29,27 @@
 		$result->close();
 		$db->close();
 	}
+	
+	//If statement checks that HTTP request URI contains residentID parameter
+	if(isset($_GET["buildingID"])){
+		$buildingID = $_GET['buildingID'];
+		
+		//Sets value of $result to SQL query and returns an error otherwise
+		if(!$result = $db->query("SELECT maintenanceID, tblMaintenance.roomID, residentID, employeeID, summary, description, date FROM tblMaintenance INNER JOIN tblRoom ON tblRoom.roomID = tblMaintenance.roomID WHERE buildingID = $buildingID AND resolved = 0")){
+			die('There was an error running the query [' . $db->error . ']');
+		}
+		
+		//Goes through all rows returned by query and sets the maintenance array to the data
+		$maintenance = array();
+		while($row = $result->fetch_assoc()){
+				$maintenance[] = $row;
+		}
+		
+		//Encodes the array to json and returns it as an HTTP response
+		echo json_encode($maintenance);
+		
+		//Closes the SQL connection
+		$result->close();
+		$db->close();
+	}
 ?>

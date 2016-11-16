@@ -36,11 +36,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ConnectHelpers.cs" />
+    <Compile Include="CurrentUser.cs" />
     <Compile Include="DatabaseGET.cs" />
     <Compile Include="DatabasePOST.cs" />
     <Compile Include="DatabaseUPDATE.cs" />
-    <Compile Include="Employee\Employee.xaml.cs">
-      <DependentUpon>Employee.xaml</DependentUpon>
+    <Compile Include="Employee\EmployeeHome.xaml.cs">
+      <DependentUpon>EmployeeHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeMain.xaml.cs">
+      <DependentUpon>EmployeeMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeMaintenance.xaml.cs">
+      <DependentUpon>EmployeeMaintenance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\MaintenanceDetails.xaml.cs">
+      <DependentUpon>MaintenanceDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="NotificationHandler.cs" />
     <Compile Include="ResidentMain\AddList.xaml.cs">
@@ -124,9 +134,7 @@
     </Compile>
     <Compile Include="LookForHouse\CustomMap.cs" />
     <Compile Include="LookForHouse\FilterTab.xaml.cs" />
-    <Compile Include="Employee\EmployeeHomePage.xaml.cs" />
     <Compile Include="Employee\EmployeeHistoryPage.xaml.cs" />
-    <Compile Include="Employee\EmployeeMaintenancePage.xaml.cs" />
     <Compile Include="Employee\EmployeeEmptyRoomPage.xaml.cs" />
     <Compile Include="Login\SignupPage.xaml.cs" />
     <Compile Include="Login\PasswordResetPage.xaml.cs" />
@@ -203,7 +211,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Employee\EmployeeHelpPage.xaml" />
-    <None Include="Employee\Tabbed.xaml" />
     <EmbeddedResource Include="LiveWellLogo.png" />
     <EmbeddedResource Include="LiveWellFullLogo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -266,11 +273,8 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\EmployeeHelpPage.xaml.cs" />
-    <EmbeddedResource Include="Employee\Tabbed.xaml.cs" />
     <EmbeddedResource Include="LookForHouse\FilterTab.xaml" />
-    <EmbeddedResource Include="Employee\EmployeeHomePage.xaml" />
     <EmbeddedResource Include="Employee\EmployeeHistoryPage.xaml" />
-    <EmbeddedResource Include="Employee\EmployeeMaintenancePage.xaml" />
     <EmbeddedResource Include="Employee\EmployeeEmptyRoomPage.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -328,7 +332,25 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Employee\Employee.xaml">
+    <EmbeddedResource Include="Employee\EmployeeMain.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Employee\MaintenanceDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Employee\EmployeeMaintenance.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Employee\EmployeeHome.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
