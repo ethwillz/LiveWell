@@ -21,7 +21,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>6.0</string>
+	<string>7.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>LiveWell</string>
 	<key>CFBundleIdentifier</key>
@@ -50,5 +50,11 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>LiveWell</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7 only</string>
+	</array>
 </dict>
 </plist>

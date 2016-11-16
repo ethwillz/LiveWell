@@ -43,7 +43,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhone\Debug</OutputPath>
-    <DefineConstants>DEBUG</DefineConstants>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -51,11 +51,12 @@
     <CodesignKey>iPhone Developer: keisuke_0607@yahoo.co.jp (65355UQ2T2)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>aeec5e3a-4496-4e2b-952c-2cd4389bfc6a</CodesignProvision>
+    <CodesignProvision>bb5b7858-d13a-4630-918f-7d6b03f21905</CodesignProvision>
     <MtouchFloat32>true</MtouchFloat32>
-    <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
+    <MtouchExtraArgs></MtouchExtraArgs>
     <MtouchFastDev>false</MtouchFastDev>
     <MtouchLink>Full</MtouchLink>
+    <MtouchSdkVersion>10.1</MtouchSdkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
