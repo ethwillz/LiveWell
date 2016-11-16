@@ -99,9 +99,6 @@
     <Compile Include="LookForHouse\HomeTab.xaml.cs">
       <DependentUpon>HomeTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Login\ChatTab.xaml.cs">
-      <DependentUpon>ChatTab.xaml</DependentUpon>
-    </Compile>
     <Compile Include="LookForHouse\FavoriteTab.xaml.cs">
       <DependentUpon>FavoriteTab.xaml</DependentUpon>
     </Compile>
@@ -236,9 +233,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="LookForHouse\HomeTab.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login\ChatTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="LookForHouse\FavoriteTab.xaml">

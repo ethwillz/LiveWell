@@ -5,9 +5,9 @@
         xmlns:mypages="clr-namespace:LiveWell;assembly=LiveWell">
     <TabbedPage.Children>
         <mypages:HomeTab Title="Home"/>
-        <mypages:ChatTab Title="Chat"/>
 		<mypages:MapTab Title="Map"/>
 		<mypages:FavoriteTab Title="Favorite"/>
 	    <mypages:FilterTab Title="Filter"/>
+		<mypages:MoreTab Title="More"/>
     </TabbedPage.Children>
 </TabbedPage>
