@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiveWell;
+using System;
 
 using Xamarin.Forms;
 
@@ -8,7 +9,19 @@ namespace LiveWell
 	{
 		public FirstPage()
 		{
-			InitializeComponent();
+            if(CurrentUser.type == 0)
+            {
+                Navigation.PushModalAsync(new MyHome());
+            }
+            if (CurrentUser.type == 1)
+            {
+                Navigation.PushModalAsync(new EmployeeMain());
+            }
+            if (CurrentUser.type == 2)
+            {
+                Navigation.PushModalAsync(new Owner());
+            }
+            InitializeComponent();
 
             logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
         }

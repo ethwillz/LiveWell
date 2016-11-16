@@ -2,26 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.LoginPage">
 	<ContentPage.Content>
 		<StackLayout BackgroundColor="White">
-	<Label Text="Welcome to Live Well!" 
+	<Label Text="Welcome to LiveWell!" 
 			VerticalOptions="Start" 
 			HorizontalOptions="Center" 
 			Font="Large" 
-			FontAttributes="Bold" />
+			FontAttributes="Bold"
+      TextColor="#8F1616"/>
 	<Label x:Name="userType" Text="Login" 
 			VerticalOptions="Fill" 
-			HorizontalOptions="Center" />
+			HorizontalOptions="Center"
+         TextColor="#8F1616"/>
 	<Label Text="Email Address"
 			VerticalOptions="Fill" 
 			HorizontalOptions="StartAndExpand" 
 			Font="Large"
-			FontAttributes="Bold"/>
+			FontAttributes="Bold"
+         TextColor="#8F1616"/>
 	<Entry x:Name="email" Placeholder="Enter email" 
 			VerticalOptions="Fill" 
 			HorizontalOptions="FillAndExpand"/>
 	<Label Text="Password" 
 			VerticalOptions="Fill" 
 			HorizontalOptions="StartAndExpand" 
-			Font="Large" FontAttributes="Bold"/>
+			Font="Large" FontAttributes="Bold"
+         TextColor="#8F1616"/>
 	<Entry x:Name="password" Placeholder="Enter password" 
 			VerticalOptions="Fill" 
 			HorizontalOptions="FillAndExpand"

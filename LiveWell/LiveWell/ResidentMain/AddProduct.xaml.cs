@@ -44,7 +44,7 @@ namespace LiveWell
         async void populateSuggestions()
         {
             DatabaseGET conn = new DatabaseGET();
-            List<ConnectHelpers.Item> suggestions = await conn.getSuggestions(1);
+            List<ConnectHelpers.Item> suggestions = await conn.getSuggestions(CurrentUser.ID);
 
             items = new List<Item>();
             for(int i = 0; i < suggestions.Count; i++)

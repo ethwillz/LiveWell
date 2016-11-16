@@ -22,11 +22,15 @@ namespace LiveWell
         {
             //Instantiates conenction object and calls method which gets notifications given a residentID
             DatabaseGET conn = new DatabaseGET();
-            List<balance> balances = await conn.getBalances(1);
-            List<ConnectHelpers.NotificationHandler> notifications = await conn.getPayments(1);
+            List<balance> balances = await conn.getBalances(CurrentUser.ID);
+            List<ConnectHelpers.NotificationHandler> notifications = await conn.getPayments(CurrentUser.ID);
 
-            roomBill.Text = (Convert.ToDouble(balances[0].amount1) + Convert.ToDouble(balances[0].amount2) + Convert.ToDouble(balances[0].amount3) + Convert.ToDouble(balances[0].amount4)).ToString();
-            buildingBill.Text = balances[0].bAmount;
+            String amount = (Convert.ToDouble(balances[0].amount1) + Convert.ToDouble(balances[0].amount2) + Convert.ToDouble(balances[0].amount3) + Convert.ToDouble(balances[0].amount4)).ToString();
+            if (amount.Equals("0"))
+                roomBill.Text = "$0.00";
+            else
+                roomBill.Text = "$" + amount;
+            buildingBill.Text = "$" + balances[0].bAmount;
 
 
             //Payment history of the current user

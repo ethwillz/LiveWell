@@ -4,9 +4,9 @@
              x:Class="LiveWell.MyHome">
   <StackLayout Orientation="Vertical" BackgroundColor="White">
     <Image x:Name="logo"/>
-    <Label x:Name ="address" Text="200 Stanton Ave" HorizontalOptions="Center" FontSize="20" TextColor="#8F1616"/>
-    <Label x:Name ="room" Text="Apt 402" HorizontalOptions="Center" FontSize="18" TextColor="#8F1616"/>
-    <Label x:Name ="residents" Text="Ethan W., Chris W., Chase W., and Micah B." HorizontalOptions="Center" FontSize="12" TextColor="#8F1616"/>
+    <Label x:Name ="address" Text="" HorizontalOptions="Center" FontSize="20" TextColor="#8F1616"/>
+    <Label x:Name ="room" Text="" HorizontalOptions="Center" FontSize="18" TextColor="#8F1616"/>
+    <Label x:Name ="residents" Text="" HorizontalOptions="Center" FontSize="12" TextColor="#8F1616"/>
     <Label Text="Quick View" HorizontalOptions="Center" FontSize="18" TextColor="#8F1616"/>
     <ListView x:Name="quickview">
       <ListView.ItemTemplate>

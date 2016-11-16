@@ -21,12 +21,16 @@ namespace LiveWell
         {
             //Instantiates conenction object and calls method which gets notifications given a residentID
             DatabaseGET conn = new DatabaseGET();
-            List<balance> balances = await conn.getBalances(1);
+            List<balance> balances = await conn.getBalances(CurrentUser.ID);
             List<ConnectHelpers.NotificationHandler> notifications = await conn.getNotifications(CurrentUser.type, CurrentUser.ID);
-            List<ResidentInfo> resident = await (conn.getResidentInfo(1));
+            List<ResidentInfo> resident = await (conn.getResidentInfo(CurrentUser.ID));
 
-            balance.Text = (Convert.ToDouble(balances[0].amount1) + Convert.ToDouble(balances[0].amount2) + Convert.ToDouble(balances[0].amount3) + Convert.ToDouble(balances[0].amount4) + Convert.ToDouble(balances[0].bAmount)).ToString();
-
+            String amount = (Convert.ToDouble(balances[0].amount1) + Convert.ToDouble(balances[0].amount2) + Convert.ToDouble(balances[0].amount3) + Convert.ToDouble(balances[0].amount4) + Convert.ToDouble(balances[0].bAmount)).ToString();
+            if (amount.Equals("0"))
+                balance.Text = "$0.00";
+            else
+                balance.Text = "$" + amount;
+            
             //Sets text for room information at top of screen
             address.Text = resident[0].address;
             room.Text = resident[0].number;
@@ -71,6 +75,11 @@ namespace LiveWell
                 new ResidentMain.HandlePayment().creditCard();
                 await u.updateBalances(true, true, "1");
             }
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 

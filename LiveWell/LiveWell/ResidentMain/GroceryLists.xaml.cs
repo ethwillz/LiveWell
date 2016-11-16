@@ -29,7 +29,7 @@ namespace LiveWell
         async void populateLists()
         {
             DatabaseGET conn = new DatabaseGET();
-            lists = await conn.getLists(1);
+            lists = await conn.getLists(CurrentUser.ID);
 
             //List which will come from database with all the list items and information
             list = new List<ListInfo>();
@@ -48,7 +48,7 @@ namespace LiveWell
                 }
                 else if (lists[i].residentID1 != null && lists[i].residentID2 != null && !added.Contains(Convert.ToInt32(lists[i].listID)))
                 {
-                    list.Add(new ListInfo(lists[i].listName, await conn.getName(lists[i].residentID1) + ", & " + await conn.getName(lists[i].residentID2), lists[i].listID));
+                    list.Add(new ListInfo(lists[i].listName, await conn.getName(lists[i].residentID1) + " & " + await conn.getName(lists[i].residentID2), lists[i].listID));
                     added.Add(Convert.ToInt32(lists[i].listID));
                 }
                 else if (!added.Contains(Convert.ToInt32(lists[i].listID)))

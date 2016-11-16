@@ -14,7 +14,6 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Button Text="Add item(s) to list" BackgroundColor="#8F1616" TextColor="White" Clicked="addItem"/>
     <Button Text="Add list" BackgroundColor="#8F1616" TextColor="White" Clicked="add"/>
   </StackLayout>
   

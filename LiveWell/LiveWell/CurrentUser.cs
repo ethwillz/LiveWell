@@ -8,7 +8,7 @@ namespace LiveWell
 {
     class CurrentUser
     {
-        private static int userType;
+        private static int userType = 4;
         private static int userID;
 
         public static int type

@@ -11,7 +11,6 @@ namespace LiveWell.ResidentMain
         List<String> names = new List<String>();
         List<ResidentInfo> roommates;
         List<int> ids = new List<int>();
-        int item = 0;
 
 
         public AddList()
@@ -24,7 +23,7 @@ namespace LiveWell.ResidentMain
         async void populateList()
         {
             DatabaseGET conn = new DatabaseGET();
-            roommates = await conn.getResidentInfo(1);
+            roommates = await conn.getResidentInfo(CurrentUser.ID);
             List<Person> people = new List<Person>();
             for(int i = 0; i < roommates.Count; i++)
             {
@@ -35,35 +34,22 @@ namespace LiveWell.ResidentMain
             users.RowHeight = 60;
         }
 
-        async void addItem(Object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new AddProduct("1"));
-            item = 1;
-        }
-
         async void add(Object sender, EventArgs e)
         {
-            if (item == 0)
+            for (int i = 0; i < names.Count; i++)
             {
-                await DisplayAlert("Error", "Add at least one item to list", "Okay");
-            }
-            else
-            {
-                for (int i = 0; i < names.Count; i++)
-                {
-                    for (int j = 0; j < roommates.Count; j++)
+                for (int j = 0; j < roommates.Count; j++)
+                 {
+                    if ((roommates[j].firstName + " " + roommates[j].lastName).Equals(names[i]))
                     {
-                        if ((roommates[j].firstName + " " + roommates[j].lastName).Equals(names[i]))
-                        {
-                            ids.Add(Convert.ToInt32(roommates[j].residentID));
-                        }
+                        ids.Add(Convert.ToInt32(roommates[j].residentID));
                     }
                 }
-
-                DatabasePOST conn = new DatabasePOST();
-                await conn.postList(listName.Text, ids);
-                await Navigation.PushModalAsync(new GroceryLists());
             }
+
+            DatabasePOST conn = new DatabasePOST();
+            await conn.postList(listName.Text, ids);
+            await Navigation.PushModalAsync(new Resident());
         }
 
         public void selected(Object sender, EventArgs e)
