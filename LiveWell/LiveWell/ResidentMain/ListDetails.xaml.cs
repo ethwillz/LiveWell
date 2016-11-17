@@ -75,26 +75,26 @@ namespace LiveWell
                 DatabaseGET conn = new DatabaseGET();
                 List<ListInformation> list = await conn.getLists(listID);
                 List<String> roommateIDs = new List<string>();
-                if(list[0].residentID1 != null && !list[0].residentID1.Equals("1"))
+                if(list[0].residentID1 != null && !list[0].residentID1.Equals(CurrentUser.ID))
                 {
                     roommateIDs.Add(list[0].residentID1);
                 }
-                if (list[0].residentID2 != null && !list[0].residentID2.Equals("1"))
+                if (list[0].residentID2 != null && !list[0].residentID2.Equals(CurrentUser.ID))
                 {
                     roommateIDs.Add(list[0].residentID2);
                 }
-                if (list[0].residentID3 != null && !list[0].residentID3.Equals("1"))
+                if (list[0].residentID3 != null && !list[0].residentID3.Equals(CurrentUser.ID))
                 {
                     roommateIDs.Add(list[0].residentID3);
                 }
-                if (list[0].residentID4 != null && !list[0].residentID4.Equals("1"))
+                if (list[0].residentID4 != null && !list[0].residentID4.Equals(CurrentUser.ID))
                 {
                     roommateIDs.Add(list[0].residentID4);
                 }
-                String amount = (Convert.ToDouble(bought.Text)/(roommateIDs.Count+1)).ToString();
+                String purchaseAmount = (Convert.ToDouble(amount.Text)/(roommateIDs.Count+1)).ToString();
                 DatabasePOST conn2 = new DatabasePOST();
 
-                await conn2.chargeAllAndNotify(amount, "1", roommateIDs, listID, listName.Text);
+                await conn2.chargeAllAndNotify(purchaseAmount, CurrentUser.ID + "", roommateIDs, listID, listName.Text);
                 //NotificationHandler notifications = new NotificationHandler();
                 //notifications.send(amount, "1", roommateIDs, listID, listName.Text);
             }

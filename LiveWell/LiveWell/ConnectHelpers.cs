@@ -136,13 +136,19 @@ namespace LiveWell
 
         public class MaintenanceRequest
         {
-            public MaintenanceRequest(String roomID, String residentID, String employeeID, String summary, String date)
+            public MaintenanceRequest(String residentID, String summary, String explanation, DateTime date)
             {
-                this.roomID = roomID;
                 this.residentID = residentID;
-                this.employeeID = employeeID;
                 this.summary = summary;
+                this.explanation = explanation;
+                this.date = date.ToString();
+            }
+
+            public MaintenanceRequest(String date, String employeeID, String ID)
+            {
                 this.date = date;
+                this.employeeID = employeeID;
+                this.requestID = ID;
             }
 
             public String requestID { get; set; }
@@ -151,6 +157,8 @@ namespace LiveWell
             public String employeeID { get; set; }
             public String summary { get; set; }
             public String date { get; set; }
+            public String roomNumber { get; set; }
+            public String explanation { get; set; }
         }
 
         public class MaintenanceRecord

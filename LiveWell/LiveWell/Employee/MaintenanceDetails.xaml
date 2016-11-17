@@ -15,6 +15,6 @@
     <DatePicker x:Name="scheduledDate" VerticalOptions="CenterAndExpand">
       <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
     </DatePicker>
-    <Button Text="Schedule" BackgroundColor="#8F1616" TextColor="White"/>
+    <Button Text="Schedule" BackgroundColor="#8F1616" TextColor="White" Clicked="schedule"/>
   </StackLayout>
 </ContentPage>

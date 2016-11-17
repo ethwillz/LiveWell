@@ -16,47 +16,48 @@
 		
 		$amount = mysqli_real_escape_string($db, $input['amount']);
 		$sender = $input['sender'];
-		$roommates = array();
 		$roommates = $input['roommates'];
 		$listID = $input['listID'];
 		$listName = mysqli_real_escape_string($db, $input['listName']);
 		
 		if(count($roommates) == 1){
 			//Sets value of $result to SQL query and returns an error otherwise
-			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[0], 'groceries', $sender, $listName, 0")){
+			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[0], 'groceries', $sender, $listName, 0)")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
 		}
 		
 		if(count($roommates) == 2){
 			//Sets value of $result to SQL query and returns an error otherwise
-			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[0], 'groceries', $sender, $listName, 0")){
+			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[0], 'groceries', $sender, $listName, 0)")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
 			//Sets value of $result to SQL query and returns an error otherwise
-			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[1], 'groceries', $sender, $listName, 0")){
+			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[1], 'groceries', $sender, $listName, 0)")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
 		}
 		
 		if(count($roommates) == 3){
 			//Sets value of $result to SQL query and returns an error otherwise
-			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[0], 'groceries', $sender, $listName, 0")){
+			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[0], 'groceries', $sender, $listName, 0)")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
 			//Sets value of $result to SQL query and returns an error otherwise
-			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[1], 'groceries', $sender, $listName, 0")){
+			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[1], 'groceries', $sender, $listName, 0)")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
 			//Sets value of $result to SQL query and returns an error otherwise
-			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[2], 'groceries', $sender, $listName, 0")){
+			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[2], 'groceries', $sender, $listName, 0)")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
 		}
 		
+		/*
 		$message = '{"data":{"msg":"Standard notification about something"}}';
 		$notification = new Notification("gcm", $message);
 		$hub->sendNotification($notification, null);
+		*/
 		
 		
 		//Sets value of $result to SQL query and returns an error otherwise
@@ -69,6 +70,7 @@
 		$db->close();
 	}
 	
+	/*
 	class NotificationHub {
 		const API_VERSION = "?api-version=2013-10";
 
@@ -116,24 +118,23 @@
 			return $token;
 		}
 		
-		class Notification {
-			public $format;
-			public $payload;
-
-			# array with keynames for headers
-			# Note: Some headers are mandatory: Windows: X-WNS-Type, WindowsPhone: X-NotificationType
-			# Note: For Apple you can set Expiry with header: ServiceBusNotification-ApnsExpiry in W3C DTF, YYYY-MM-DDThh:mmTZD (for example, 1997-07-16T19:20+01:00).
-			public $headers;
-
-			function __construct($format, $payload) {
-				if (!in_array($format, ["template", "apple", "windows", "gcm", "windowsphone"])) {
-					throw new Exception('Invalid format: ' . $format);
-				}
-
-				$this->format = $format;
-				$this->payload = $payload;
-			}
+	
+	class Notification {
+		public $format;
+		public $payload;
+		# array with keynames for headers
+		# Note: Some headers are mandatory: Windows: X-WNS-Type, WindowsPhone: X-NotificationType
+		# Note: For Apple you can set Expiry with header: ServiceBusNotification-ApnsExpiry in W3C DTF, YYYY-MM-DDThh:mmTZD (for example, 1997-07-16T19:20+01:00).
+		public $headers;
+	
+		function __construct($format, $payload) {
+			if (!in_array($format, ["template", "apple", "windows", "gcm", "windowsphone"])) {
+			throw new Exception('Invalid format: ' . $format);
+		}
+		
+		$this->format = $format;
+		$this->payload = $payload;
 		}
 	}
-
+	*/
 ?>
