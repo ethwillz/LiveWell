@@ -8,20 +8,34 @@
 	if($db->connect_errno > 0 ){
 		die('Unable to connect to database [' . $db->connect_error . ']');
 	}
-
-	if(isset($_POST)){
+	
+	if(isset($_GET["resident"])){
 		$input = json_decode(file_get_contents('php://input'), true);
 		
-		$roomID = $input['roomID'];
 		$residentID = $input['residentID'];
-		$employeeID = $input['employeeID'];
 		$summary = mysqli_real_escape_string($db, $input['summary']);
-		$description = mysqli_real_escape_string($db, $input['description']);
+		$description = mysqli_real_escape_string($db, $input['explanation']);
 		$date = mysqli_real_escape_string($db, $input['date']);
-		$resolved = $input['resolved'];
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("INSERT INTO tblMaintenance (roomID, residentID, employeeID, summary, description, date, resolved) VALUES($roomID, $residentID, $employeeID, '$summary', '$description', '$date', $resolved)")){
+		if(!$result = $db->query("INSERT INTO tblMaintenance (roomID, residentID, summary, description, date, resolved) SELECT tblResident.roomID, $residentID, '$summary', '$description', '$date', 0 FROM tblResident WHERE residentID = $residentID")){
+			die('There was an error running the query [' . $db->error . ']');
+		}
+		
+		//Closes the SQL connection
+		$result->close();
+		$db->close();
+	}
+	
+	if(isset($_GET["employee"])){
+		$input = json_decode(file_get_contents('php://input'), true);
+		
+		$date = mysqli_real_escape_string($db, $input['date']);
+		$employeeID = $input['employeeID'];
+		$requestID = $input['requestID'];
+		
+		//Sets value of $result to SQL query and returns an error otherwise
+		if(!$result = $db->query("UPDATE tblMaintenance SET scheduledDate='$date', employeeID=$employeeID, resolved=1 WHERE maintenanceID = $requestID")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
 		

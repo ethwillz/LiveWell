@@ -14,7 +14,7 @@ namespace LiveWell
         async void submitClick (object sender, EventArgs e)
         {
             DatabasePOST conn = new DatabasePOST();
-            await conn.postMaintenance("1", "1", null, summary.Text, explanation.Text);
+            await conn.postMaintenance(CurrentUser.ID, summary.Text, explanation.Text);
             summary.Text = "";
             explanation.Text = "";
             await DisplayAlert("Success", "Maintenance request submitted", "OK");

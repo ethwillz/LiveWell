@@ -30,4 +30,26 @@
 		$db->close();
 	}
 	
+		if(isset($_GET["listID"])){
+		$listID = $_GET['listID'];
+		
+		//Sets value of $result to SQL query and returns an error otherwise
+		if(!$result = $db->query("SELECT listID, listName, residentID1, residentID2, residentID3, residentID4 FROM tblList WHERE listID = $listID")){
+			die('There was an error running the query [' . $db->error . ']');
+		}
+		
+		//Goes through all rows returned by query and sets the list array to the data
+		$list = array();
+		while($row = $result->fetch_assoc()){
+				$list[] = $row;
+		}
+		
+		//Encodes the array to json and returns it as an HTTP response
+		echo json_encode($list);
+		
+		//Closes the SQL connection
+		$result->close();
+		$db->close();
+	}
+	
 ?>
