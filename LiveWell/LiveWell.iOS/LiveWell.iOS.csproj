@@ -51,7 +51,7 @@
     <CodesignKey>iPhone Developer: keisuke_0607@yahoo.co.jp (65355UQ2T2)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>bb5b7858-d13a-4630-918f-7d6b03f21905</CodesignProvision>
+    <CodesignProvision>a79c1d83-a243-47aa-9ca0-422eeda8cf06</CodesignProvision>
     <MtouchFloat32>true</MtouchFloat32>
     <MtouchExtraArgs></MtouchExtraArgs>
     <MtouchFastDev>false</MtouchFastDev>
@@ -106,6 +106,7 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
+    <Compile Include="Helpers\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -174,6 +175,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.1.0\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.1.0\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LiveWell\LiveWell.csproj">

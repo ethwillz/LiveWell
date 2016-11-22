@@ -46,7 +46,7 @@ namespace LiveWell
 				{
                     CurrentUser.ID = Convert.ToInt32(personalInfo[0].ownerID);
                     CurrentUser.type = 2;
-                    await Navigation.PushModalAsync(new Owner(personalInfo[0].ownerID));
+                    await Navigation.PushModalAsync(new Owner());
 				}
 			}
 

@@ -18,7 +18,7 @@
 			<Button Text="LOGIN AS AN OWNER" VerticalOptions="CenterAndExpand"
         	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"
 			Clicked="OnOwnerButtonClicked" BackgroundColor="#8F1616" TextColor="White"/>
-
+			<Label x:Name="test" Text="hello" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
