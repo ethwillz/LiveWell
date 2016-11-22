@@ -13,8 +13,8 @@
 		<Label Text="Password" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" Font="Large" FontAttributes="Bold" />
 		<Entry x:Name="password" Placeholder="Enter password" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" IsPassword="true" />
 		<StackLayout Orientation="Horizontal">
-			<Button Text="Go back" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Clicked="BackButtonClicked" />
-			<Button Text="Create" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Clicked="CreateButtonClicked" />
+			<Button Text="Go back" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Clicked="BackButtonClicked" TextColor="#fff" BackgroundColor="#8F1616"/>
+			<Button Text="Create" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Clicked="CreateButtonClicked" TextColor="#fff" BackgroundColor="#8F1616"/>
 		</StackLayout>
 	</StackLayout>
 	</ContentPage.Content>
