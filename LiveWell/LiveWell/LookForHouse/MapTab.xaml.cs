@@ -38,7 +38,7 @@ namespace LiveWell
 			});
 			if (title.Text != "Subscribed")
 			{
-				populateList(0, "ALL", 0, 1000);
+				populateList(0, "ALL", 0, 30000);
 			}
 		}
 
@@ -93,18 +93,15 @@ namespace LiveWell
 
 			for (int i = 0; i < addresses.Count; i++)
 			{
-				//System.Diagnostics.Debug.WriteLine(CalculateDistance(userPositionLatitude, userPositionLongitude, 10, 11));
-				var approximateLocation = await geoCoder.GetPositionsForAddressAsync(addresses[i].address);
-				foreach (var position in approximateLocation)
+				double accommodationLatitude = addresses[i].latitude;
+				double accommodationLongitude = addresses[i].longitude;
+				double distance = CalculateDistance(accommodationLatitude, accommodationLongitude, userPositionLatitude, userPositionLongitude);
+
+				if (distance < maxDistance)
 				{
-				double distance = CalculateDistance(position.Latitude, position.Longitude, userPositionLatitude, userPositionLongitude);
-					if( distance < maxDistance){
-						address.Add(new QuickViewAddress(addresses[i].address + ", Distance: " + distance));
-
-						addPins(addresses[i].address, addresses[i].accommodationType);
-
-						await Task.Delay(300);
-					}
+					address.Add(new QuickViewAddress(addresses[i].address + ", Distance: " + distance));
+					addPins(addresses[i].address, addresses[i].accommodationType);
+					await Task.Delay(100);
 				}
 			}
 			quickview.ItemsSource = address;

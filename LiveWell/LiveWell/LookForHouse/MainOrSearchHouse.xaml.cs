@@ -22,8 +22,11 @@ namespace LiveWell
             List<ResidentInfo> info = await conn.getResidentInfo(CurrentUser.ID);
             for(int i = 0; i < info.Count; i++)
             {
-                if(Convert.ToInt32(info[i].residentID) == CurrentUser.ID)
-                    title.Text = "Hi, " + info[i].firstName;
+				if (Convert.ToInt32(info[i].residentID) == CurrentUser.ID)
+				{
+					title.Text = "Hi, " + info[i].firstName + "!";
+					//LiveWell.Helpers.Settings.GeneralSettings = title.Text;
+				}
             }
         }
 

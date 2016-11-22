@@ -1,6 +1,6 @@
 ﻿using LiveWell;
 using System;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace LiveWell
@@ -24,6 +24,7 @@ namespace LiveWell
             InitializeComponent();
 
             logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
+			//test.Text = LiveWell.Helpers.Settings.GeneralSettings;
         }
 
         void OnResidentButtonClicked(object sender, EventArgs args)
