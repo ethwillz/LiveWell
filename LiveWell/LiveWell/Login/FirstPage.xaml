@@ -39,7 +39,6 @@
           </OnPlatform>
         </Button.FontFamily>
       </Button>
-
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

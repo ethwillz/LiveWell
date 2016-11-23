@@ -33,19 +33,22 @@ namespace LiveWell
 				if (userType.Text == "Resident")
 				{
                     CurrentUser.ID = Convert.ToInt32(personalInfo[0].residentID);
-                    CurrentUser.type = 0;
+                    CurrentUser.type = 'R';
+					LiveWell.Helpers.Settings.GeneralSettings = "" + CurrentUser.type + CurrentUser.ID;
                     await Navigation.PushModalAsync(new MainOrSearchHouse());
 				}
 				else if (userType.Text == "Employee")
 				{
                     CurrentUser.ID = Convert.ToInt32(personalInfo[0].employeeID);
-                    CurrentUser.type = 1;
+                    CurrentUser.type = 'E';
+					LiveWell.Helpers.Settings.GeneralSettings = ""+CurrentUser.type + CurrentUser.ID;
                     await Navigation.PushModalAsync(new EmployeeMain());
 				}
 				else if (userType.Text == "Owner")
 				{
                     CurrentUser.ID = Convert.ToInt32(personalInfo[0].ownerID);
-                    CurrentUser.type = 2;
+                    CurrentUser.type = 'O';
+					LiveWell.Helpers.Settings.GeneralSettings = ""+CurrentUser.type + CurrentUser.ID;
                     await Navigation.PushModalAsync(new Owner());
 				}
 			}
