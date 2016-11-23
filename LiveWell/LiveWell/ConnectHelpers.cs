@@ -39,7 +39,8 @@ namespace LiveWell
 			public String address { get; set; }
 			public String imageUrl { get; set; }
 			public int buildingID { get; set; }
-
+			public double latitude { get; set; }
+			public double longitude { get; set; }
 		}
 
 		public class Favorite
