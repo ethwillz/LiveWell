@@ -8,10 +8,10 @@ namespace LiveWell
 {
     class CurrentUser
     {
-        private static int userType = 4;
+        private static char userType;
         private static int userID;
 
-        public static int type
+        public static char type
         {
             get
             {

@@ -25,7 +25,6 @@ namespace LiveWell
 				if (Convert.ToInt32(info[i].residentID) == CurrentUser.ID)
 				{
 					title.Text = "Hi, " + info[i].firstName + "!";
-					//LiveWell.Helpers.Settings.GeneralSettings = title.Text;
 				}
             }
         }

@@ -9,22 +9,28 @@ namespace LiveWell
 	{
 		public FirstPage()
 		{
-            if(CurrentUser.type == 0)
+			String loggedInAs = LiveWell.Helpers.Settings.GeneralSettings;
+			if (loggedInAs != "")
+			{
+				CurrentUser.type = loggedInAs[0];
+				CurrentUser.ID = Convert.ToInt32(loggedInAs.Substring(1));
+			}
+
+            if(CurrentUser.type == 'R')
             {
-                Navigation.PushModalAsync(new MyHome());
+				Navigation.PushModalAsync(new MainOrSearchHouse());
             }
-            if (CurrentUser.type == 1)
+            if (CurrentUser.type == 'E')
             {
                 Navigation.PushModalAsync(new EmployeeMain());
             }
-            if (CurrentUser.type == 2)
+            if (CurrentUser.type == 'O')
             {
                 Navigation.PushModalAsync(new Owner());
             }
             InitializeComponent();
 
             logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
-			//test.Text = LiveWell.Helpers.Settings.GeneralSettings;
         }
 
         void OnResidentButtonClicked(object sender, EventArgs args)
