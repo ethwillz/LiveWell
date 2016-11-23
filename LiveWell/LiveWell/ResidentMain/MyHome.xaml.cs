@@ -50,13 +50,29 @@ namespace LiveWell
             List<QuickViewNotif> notifs = new List<QuickViewNotif>();
             for(int i = 0; i < notifications.Count; i++)
             {
-                if(notifications[i].type == "groceries")
+                if (notifications[i].type == "payRoom")
                 {
-                    notifs.Add(new QuickViewNotif(notifications[i].firstName + " " + notifications[i].lastName + " bought '" + notifications[i].details + "' and you owe $" + notifications[i].amount + ".", "Groceries"));
+                    notifs.Add(new QuickViewNotif(notifications[i].sender + " paid '" + notifications[i].description + "' for" + notifications[i].amount + ".", "Roommate paid"));
                 }
-                if(notifications[i].type == "fine")
+                if (notifications[i].type == "payBuilding")
                 {
-                    notifs.Add(new QuickViewNotif("Your room was fined $" + notifications[i].amount + " for '" + notifications[i].details + "'.", "Fine"));
+                    notifs.Add(new QuickViewNotif("You paid '" + notifications[i].amount + " to owner", "Payment to building"));
+                }
+                if (notifications[i].type == "maintenanceScheduled")
+                {
+                    notifs.Add(new QuickViewNotif(notifications[i].description, "Maintenance Scheduled"));
+                }
+                if (notifications[i].type == "fine")
+                {
+                    notifs.Add(new QuickViewNotif("Your room was fined $" + notifications[i].amount + " for '" + notifications[i].description + "'.", "Fine"));
+                }
+                if (notifications[i].type == "update")
+                {
+                    notifs.Add(new QuickViewNotif(notifications[i].description, "Update"));
+                }
+                if (notifications[i].type == "bought")
+                {
+                    notifs.Add(new QuickViewNotif(notifications[i].sender + " bought '" + notifications[i].description + "' and you owe $" + notifications[i].amount + ".", "Debt incurrence"));
                 }
             }
 

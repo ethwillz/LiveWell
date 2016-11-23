@@ -26,7 +26,8 @@ namespace LiveWell
             List<QuickViewNotif> all = new List<QuickViewNotif>();
             for (int i = 0; i < notifications.Count; i++)
             {
-                all.Add(new QuickViewNotif("Maintenance scheduled for " + notifications[i].details, notifications[i].type));
+                if (notifications[i].type.Equals("maintenance"))
+                all.Add(new QuickViewNotif("Maintenance scheduled for " + notifications[i].description, notifications[i].type));
             }
 
         }

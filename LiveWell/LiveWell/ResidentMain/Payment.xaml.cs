@@ -37,17 +37,21 @@ namespace LiveWell
             List<PayRecord> pay = new List<PayRecord>();
             for (int i = 0; i < notifications.Count; i++)
             {
-                if (notifications[i].type == "groceries")
+                if (notifications[i].type == "payRoom")
                 {
-                    pay.Add(new PayRecord(notifications[i].firstName + " " + notifications[i].lastName + " bought '" + notifications[i].details + "' and you owe $" + notifications[i].amount + ".", "Groceries"));
+                    pay.Add(new PayRecord(notifications[i].sender + " paid '" + notifications[i].description + "' for" + notifications[i].amount + ".", "Roommate paid"));
+                }
+                if (notifications[i].type == "payBuilding")
+                {
+                    pay.Add(new PayRecord("You paid '" + notifications[i].amount + " to owner", "Payment to building"));
                 }
                 if (notifications[i].type == "fine")
                 {
-                    pay.Add(new PayRecord("Your room was fined $" + notifications[i].amount + " for '" + notifications[i].details + "'.", "Fine"));
+                    pay.Add(new PayRecord("Your room was fined $" + notifications[i].amount + " for '" + notifications[i].description + "'.", "Fine"));
                 }
-                if (notifications[i].type == "payment" && notifications[i].firstName == null)
+                if (notifications[i].type == "bought")
                 {
-                    pay.Add(new PayRecord("You paid " + notifications[i].firstName + " " + notifications[i].lastName + " " + notifications[i].amount + " for '" + notifications[i].details + "'.", "Payment"));
+                    pay.Add(new PayRecord(notifications[i].sender + " bought '" + notifications[i].description + "' and you owe $" + notifications[i].amount + ".", "Debt incurrence"));
                 }
             }
 

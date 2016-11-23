@@ -9,24 +9,22 @@ namespace LiveWell
         //Notification object which stores all necessary data returned by the HTTP request
         public class NotificationHandler
         {
-            public NotificationHandler(String notificationID, String residentID, String type, String amount, String firstName, String lastName, String details)
+            public NotificationHandler(String notificationID, String type, String sender, String recipient, String description, String amount)
             {
                 this.notificationID = notificationID;
-                this.residentID = residentID;
                 this.type = type;
+                this.sender = sender;
+                this.recipient = recipient;
+                this.description = description;
                 this.amount = amount;
-                this.firstName = firstName;
-                this.lastName = lastName;
-                this.details = details;
             }
 
             public String notificationID { get; set; }
-            public String residentID { get; set; }
             public String type { get; set; }
+            public String sender { get; set; }
+            public String recipient { get; set; }
+            public String description { get; set; }
             public String amount { get; set; }
-            public String firstName { get; set; }
-            public String lastName { get; set; }
-            public String details { get; set; }
         }
 
         public class Address
@@ -163,10 +161,10 @@ namespace LiveWell
 
         public class MaintenanceRecord
         {
-            public MaintenanceRecord(String maintenanceID, String roomID, String residentID, String employeeID, String summary, String description, String date)
+            public MaintenanceRecord(String maintenanceID, String number, String residentID, String employeeID, String summary, String description, String date)
             {
                 this.maintenanceID = maintenanceID;
-                this.roomID = roomID;
+                this.number = number;
                 this.residentID = residentID;
                 this.employeeID = employeeID;
                 this.summary = summary;
@@ -175,7 +173,7 @@ namespace LiveWell
             }
 
             public String maintenanceID { get; set; }
-            public String roomID { get; set; }
+            public String number { get; set; }
             public String residentID { get; set; }
             public String employeeID { get; set; }
             public String summary { get; set; }

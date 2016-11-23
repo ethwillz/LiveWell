@@ -3960,6 +3960,9 @@ namespace LiveWell.Droid
 			// aapt resource value: 0x7f0b0173
 			public const int MainTheme_Base = 2131427699;
 			
+			// aapt resource value: 0x7f0b0176
+			public const int MyTextAppearance_Material_Button = 2131427702;
+			
 			// aapt resource value: 0x7f0b0032
 			public const int Platform_AppCompat = 2131427378;
 			

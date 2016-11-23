@@ -12,7 +12,17 @@
 		$residentID = $_GET['residentID'];
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("SELECT notificationID, tblNotification.residentID, type, amount, firstName, lastName, details FROM tblNotification INNER JOIN tblResident ON tblNotification.sender = tblResident.residentID WHERE tblNotification.residentID = $residentID LIMIT 50")){
+		if(!$result = $db->query("SELECT * FROM tblResident INNER JOIN tblRoom ON tblResident.roomID = tblRoom.roomID WHERE residentID = $residentID")){
+			die('There was an error running the query [' . $db->error . ']');
+		}
+		$residentInfo = array();
+		$residentInfo = $result->fetch_assoc();
+		
+		//Sets value of $result to SQL query and returns an error otherwise
+		if(!$result = $db->query("SELECT * FROM tblNotification 
+WHERE (recipient = residentInfo[0].residentID AND type = 'payRoom' OR type = 'bought')
+OR (recipient = residentInfo[0].buildingID AND type = 'payBuilding' OR type = 'update')
+OR (recipient = residentInfo[0].roomID AND type = 'fine' OR type = 'maintenanceScheduled')")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
 		

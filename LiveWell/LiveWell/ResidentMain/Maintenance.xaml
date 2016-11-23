@@ -3,12 +3,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LiveWell.Maintenance">
   <StackLayout Orientation="Vertical" BackgroundColor="White">
-    <Label Text="Submit new maintenance request" FontSize="20" HorizontalOptions="Center"/>
-    <Label Text="Summary of issue" FontSize="15"/>
-    <Editor x:Name="summary" HeightRequest="100"/>
-    <Label Text="Explanation" FontSize="15"/>
-    <Editor x:Name="explanation" HeightRequest="320"/>
-    <Button Clicked="submitClick" Text="Submit request"/>
+    
+    <Label Text="Summary of issue" FontSize="15">
+      <Label.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Label.FontFamily>
+    </Label>
+    
+    <Editor x:Name="summary" HeightRequest="100">
+      <Editor.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Editor.FontFamily>
+    </Editor>
+
+    <Label Text="Explanation" FontSize="15">
+      <Label.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Label.FontFamily>
+    </Label>
+    
+    <Editor x:Name="explanation" HeightRequest="250">
+      <Editor.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Editor.FontFamily>
+    </Editor>
+    
+    <Button Clicked="submitClick" Text="Submit request" BackgroundColor="#8F1616" TextColor="White">
+      <Button.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Button.FontFamily>
+    </Button>
+    
   </StackLayout>
   
 </ContentPage>

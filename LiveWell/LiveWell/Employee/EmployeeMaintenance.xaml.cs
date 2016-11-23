@@ -26,7 +26,7 @@ namespace LiveWell
             List<Request> allRequests = new List<Request>();
             for (int i = 0; i < requests.Count; i++)
             {
-                allRequests.Add(new Request(requests[i].summary, requests[i].roomID));
+                allRequests.Add(new Request(requests[i].summary, requests[i].number));
             }
             requestList.ItemsSource = allRequests;
         }
@@ -34,7 +34,7 @@ namespace LiveWell
         public void onTap(Object sender, EventArgs e)
         {
             var index = (requestList.ItemsSource as List<Request>).IndexOf(((ListView)sender).SelectedItem as Request);
-            Navigation.PushModalAsync(new MaintenanceDetails(requests[index].maintenanceID, requests[index].date, requests[index].summary, requests[index].description, requests[index].roomID, employee[0].address));
+            Navigation.PushModalAsync(new MaintenanceDetails(requests[index].maintenanceID, requests[index].date, requests[index].summary, requests[index].description, requests[index].number, employee[0].address));
             ((ListView)sender).SelectedItem = null;
         }
     }

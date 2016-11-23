@@ -9,6 +9,6 @@
   <local:GroceryLists Title="Lists"/>
   <local:MyHome Title="Chat"/>
   <local:Payment Title="Pay"/>
-  <local:More Title="More"/>
+  <local:Maintenance Title="Repair"/>
   
 </TabbedPage>
