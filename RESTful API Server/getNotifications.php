@@ -12,17 +12,19 @@
 		$residentID = $_GET['residentID'];
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("SELECT * FROM tblResident INNER JOIN tblRoom ON tblResident.roomID = tblRoom.roomID WHERE residentID = $residentID")){
+		if(!$initialinfo = $db->query("SELECT * FROM tblResident INNER JOIN tblRoom ON tblResident.roomID = tblRoom.roomID WHERE residentID = $residentID")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
-		$residentInfo = array();
-		$residentInfo = $result->fetch_assoc();
+
+		while($column = $initialinfo->fetch_assoc()){
+				$buildingID = $column['buildingID'];
+				$roomID = $column['roomID'];
+		}
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("SELECT * FROM tblNotification 
-WHERE (recipient = residentInfo[0].residentID AND type = 'payRoom' OR type = 'bought')
-OR (recipient = residentInfo[0].buildingID AND type = 'payBuilding' OR type = 'update')
-OR (recipient = residentInfo[0].roomID AND type = 'fine' OR type = 'maintenanceScheduled')")){
+		if(!$result = $db->query("SELECT * FROM tblNotification WHERE (recipient = $residentID AND type = 'payRoom' OR type = 'bought')
+OR (recipient = $buildingID AND type = 'payBuilding' OR type = 'update')
+OR (recipient = $roomID AND type = 'fine' OR type = 'maintenanceScheduled')")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
 		

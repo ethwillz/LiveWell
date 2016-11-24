@@ -12,18 +12,30 @@
 		$residentID = $_GET['residentID'];
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("SELECT notificationID, tblNotification.residentID, type, amount, firstName, lastName, details FROM tblNotification INNER JOIN tblResident ON tblNotification.sender = tblResident.residentID WHERE tblNotification.residentID = $residentID AND type='groceries' OR type='fine' OR type='payment' LIMIT 50")){
+		if(!$initialinfo = $db->query("SELECT * FROM tblResident INNER JOIN tblRoom ON tblResident.roomID = tblRoom.roomID WHERE residentID = $residentID")){
+			die('There was an error running the query [' . $db->error . ']');
+		}
+
+		while($column = $initialinfo->fetch_assoc()){
+				$buildingID = $column['buildingID'];
+				$roomID = $column['roomID'];
+		}
+		
+		//Sets value of $result to SQL query and returns an error otherwise
+		if(!$result = $db->query("SELECT * FROM tblNotification WHERE (recipient = $residentID AND type = 'payRoom' OR type = 'bought')
+OR (recipient = $buildingID AND type = 'payBuilding')
+OR (recipient = $roomID AND type = 'fine')")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
 		
-		//Goes through all rows returned by query and sets the payment array to the data
-		$payment = array();
+		//Goes through all rows returned by query and sets the notification array to the data
+		$notification = array();
 		while($row = $result->fetch_assoc()){
-				$payment[] = $row;
+				$notification[] = $row;
 		}
 		
 		//Encodes the array to json and returns it as an HTTP response
-		echo json_encode($payment);
+		echo json_encode($notification);
 		
 		//Closes the SQL connection
 		$result->close();
