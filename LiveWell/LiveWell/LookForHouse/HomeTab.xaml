@@ -4,7 +4,6 @@
 		<ScrollView>
 			<StackLayout>
 				<Label />
-				<Label Text="Ames" TextColor="#000" FontSize="30" HorizontalOptions="Center" />
 				<Label x:Name="title" Text="Explore Apartments" TextColor="#000" FontSize="30" HorizontalOptions="Center" />
 				<ListView x:Name="quickview" ItemTapped="onTap">
 					<ListView.ItemTemplate>
@@ -17,7 +16,9 @@
 											<Label TextColor="Black" Text="{Binding Path = AccommodationType}" />
 											<Label TextColor="Black" Text="{Binding Path = AccommodationAddress}" />
 										</StackLayout>
-										<Label Text="  LIKE  " FontSize="Large" TextColor="White" BackgroundColor="#E91E63" />
+										<Image Source="redheart.png" WidthRequest="50"/>
+<!--									<Label Text="  LIKE  " FontSize="Large" TextColor="White" BackgroundColor="#E91E63" />-->
+
 									</StackLayout>
 								</StackLayout>
 							</ViewCell>
