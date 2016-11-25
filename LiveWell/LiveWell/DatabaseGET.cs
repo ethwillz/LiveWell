@@ -18,7 +18,7 @@ namespace LiveWell
             List<ConnectHelpers.NotificationHandler> notifications;
             if (type == 0)
             {
-                client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/");
+                client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getNotifications.php");
 
                 //Runs GET HTTP request to server and gets data back in JSON format
                 HttpResponseMessage gotNotifications = await client.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getNotifications.php?residentID=" + ID));
@@ -29,7 +29,7 @@ namespace LiveWell
             }
             else
             {
-                client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/");
+                client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getNotifications.php");
 
                 //Runs GET HTTP request to server and gets data back in JSON format
                 HttpResponseMessage gotNotifications = await client.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getNotifications.php?employeeID=" + ID));
