@@ -4,7 +4,7 @@
 
 		<StackLayout>
         <Label/>
-        <Label Text="Discovery Settings" FontSize="50" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <Label Text="Discovery Settings" FontSize="50" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="#8F1616"/>
 
         <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
         <Label Text="Location: My Current Location" FontSize="Large"/>
@@ -49,7 +49,7 @@
 
         <Button Text="Search!" VerticalOptions="CenterAndExpand"
         HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"
-        Clicked="OnSearchButtonClicked"/>
+        Clicked="OnSearchButtonClicked" BackgroundColor="#8F1616" TextColor="White"/>
         </StackLayout>
 	</ContentPage.Content>
 </ContentPage>
