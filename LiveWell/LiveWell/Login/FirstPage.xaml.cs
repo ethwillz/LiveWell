@@ -10,11 +10,11 @@ namespace LiveWell
 		public FirstPage()
 		{
 			String loggedInAs = LiveWell.Helpers.Settings.GeneralSettings;
-			//if (loggedInAs != "")
-			//{
-			//	CurrentUser.type = loggedInAs[0];
-			//	CurrentUser.ID = Convert.ToInt32(loggedInAs.Substring(1));
-			//}
+			if (loggedInAs != "")
+			{
+				CurrentUser.type = loggedInAs[0];
+				CurrentUser.ID = Convert.ToInt32(loggedInAs.Substring(1));
+			}
 
             if(CurrentUser.type == 'R')
             {

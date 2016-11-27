@@ -44,7 +44,7 @@ namespace LiveWell
 
 		    for (int i = 0; i < addresses.Count; i++)
 		    {
-				list.Add(new QuickViewImage(addresses[i].imageUrl, addresses[i].address, addresses[i].accommodationType,addresses[i].buildingID));
+				list.Add(new QuickViewImage(addresses[i].imageUrl, addresses[i].address, addresses[i].accommodationType,addresses[i].buildingID, addresses[i].price, addresses[i].numRooms));
 				System.Diagnostics.Debug.WriteLine(addresses[i].buildingID);
 
 		    }

@@ -81,15 +81,8 @@ namespace LiveWell
 
 				if (distance < maxDistance)
 				{
-					list.Add(new QuickViewImage(addresses[i].imageUrl, addresses[i].address, addresses[i].accommodationType, addresses[i].buildingID));
+					list.Add(new QuickViewImage(addresses[i].imageUrl, addresses[i].address, addresses[i].accommodationType, addresses[i].buildingID, addresses[i].price, addresses[i].numRooms));
 				}
-
-				//System.Diagnostics.Debug.WriteLine(accommodationLatitude);
-				//System.Diagnostics.Debug.WriteLine(accommodationLongitude);
-				//System.Diagnostics.Debug.WriteLine(userPositionLatitude);
-				//System.Diagnostics.Debug.WriteLine(userPositionLongitude);
-				//System.Diagnostics.Debug.WriteLine(distance);
-
 			}
 			quickview.ItemsSource = list;
 			quickview.RowHeight = 400;
@@ -115,17 +108,20 @@ namespace LiveWell
 
 	public class QuickViewImage
 	{
-		public QuickViewImage(String AccommodationImageUrl, String AccommodationAddress, String AccommodationType, int buildingID)
+		public QuickViewImage(String AccommodationImageUrl, String AccommodationAddress, String AccommodationType, int buildingID, String AccommodationPrice, String AccommodationNumRooms)
 		{
 			this.AccommodationImageUrl = AccommodationImageUrl;
-			this.AccommodationAddress = AccommodationAddress;
-			this.AccommodationType = AccommodationType;
+			this.AccommodationAddress = "Address: " + AccommodationAddress;
 			this.buildingID = buildingID;
+			this.AccommodationInfo = AccommodationType + ": $" +AccommodationPrice+ "/month, " + AccommodationNumRooms+" Rooms";
 		}
 
 		public String AccommodationImageUrl { get; set; }
 		public String AccommodationAddress { get; set; }
 		public String AccommodationType { get; set; }
+		public String AccommodationInfo { get; set; }
+		public String AccommodationPrice { get; set; }
+		public String AccommodationNumRooms { get; set; }
 		public int buildingID { get; set; }
 
 	}

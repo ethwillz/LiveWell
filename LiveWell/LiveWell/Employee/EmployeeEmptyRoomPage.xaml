@@ -2,34 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.EmployeeEmptyRoomPage">
 	<ContentPage.Content>
 		<StackLayout>
-		<Label 
-        Text="Empty Room"
-        Font="Large"
-        HorizontalOptions="Center"
-        VerticalOptions="Start"
-		FontAttributes="Bold"/>
-			<StackLayout Orientation = "Horizontal">
-				<Entry Placeholder="What are you looking for" 
-					VerticalOptions="FillAndExpand" 
-					HorizontalOptions="FillAndExpand" />
-				<Button Text="Search"
-					HorizontalOptions="FillAndExpand" 
-					VerticalOptions="CenterAndExpand" />
-			</StackLayout>
-		<Label 
-        Text="Empty Room:"
-        Font="Large"
-        HorizontalOptions="StartAndExpand"
-        VerticalOptions="StartAndExpand"
-		FontAttributes="Bold"/>
-		<Editor
-		FontSize="Large" />
-		<Button Text="Post"
-					HorizontalOptions="EndAndExpand" 
-					VerticalOptions="Start" />
-		<Button Text="View Other Empty Room"
-					HorizontalOptions="CenterAndExpand" 
-					VerticalOptions="Start" />
+		<Label/>
+		<Label Text="Post Empty Room" FontSize="50" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="#8F1616"/>
+
+       <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+       <Label Text="Accommodation Type" FontSize="Large"/>
+       <Picker x:Name="accommodationType" Title="Select" SelectedIndex="{Binding Industry}">
+        <Picker.Items>
+            <x:String>Apartment</x:String> 
+            <x:String>Dormitory</x:String>
+            <x:String>Fraternity</x:String>
+        </Picker.Items>
+        </Picker> 
+        </StackLayout>
+
+		<StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+        <Label BindingContext="{x:Reference price}"
+           Text="{Binding Value, StringFormat='Price: ${0:F0} per month'}"
+           FontSize="Large"
+           HorizontalOptions="Center"/>        
+        <Slider x:Name="price"
+            Maximum="1200"
+            Value = "500" />
+        </StackLayout>
+                
+        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+         <Label Text="Number Of Rooms" FontSize="Large"/>
+        <StackLayout Orientation = "Horizontal">
+			<Entry x:Name="numRooms" Placeholder="Enter numbers"/>
+            <Label Text=" Rooms" FontSize="Large"/>        
+        </StackLayout>
+        </StackLayout>
+
+   		<Button Text="Post"
+					HorizontalOptions="FillAndExpand" Margin="10,10,10,10"
+					VerticalOptions="Start" BackgroundColor="#8F1616" TextColor="White"/>
 	</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

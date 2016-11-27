@@ -37,6 +37,8 @@ namespace LiveWell
 
 			public String accommodationType { get; set; }
 			public String address { get; set; }
+			public String price { get; set; }
+			public String numRooms { get; set; }
 			public String imageUrl { get; set; }
 			public int buildingID { get; set; }
 			public double latitude { get; set; }
