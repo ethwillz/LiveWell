@@ -16,7 +16,7 @@ namespace LiveWell
 
             logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
 
-            populateList();
+            //populateList();
         }
 
         async void populateList()
