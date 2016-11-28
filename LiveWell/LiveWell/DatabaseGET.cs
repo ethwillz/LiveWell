@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 using static LiveWell.ConnectHelpers;
@@ -13,12 +14,15 @@ namespace LiveWell
         //Instantiates new httpclient object with base address for http requests
         HttpClient client = new HttpClient(new NativeMessageHandler());
 
-        public async Task<List<ConnectHelpers.NotificationHandler>> getNotifications(int type, int ID)
+        public async Task<List<ConnectHelpers.NotificationHandler>> getNotifications(char type, int ID)
         {
             List<ConnectHelpers.NotificationHandler> notifications;
-            if (type == 0)
+            if (type == 'R')
             {
                 client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getNotifications.php");
+
+                Debug.WriteLine(CurrentUser.ID);
+                Debug.WriteLine(CurrentUser.type);
 
                 //Runs GET HTTP request to server and gets data back in JSON format
                 HttpResponseMessage gotNotifications = await client.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getNotifications.php?residentID=" + ID));
@@ -94,7 +98,6 @@ namespace LiveWell
         public async Task<List<ConnectHelpers.NotificationHandler>> getPayments(int residentID)
         {
            client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/getPayments.php");
-
             //Runs GET HTTP request to server and gets data back in JSON format
             HttpResponseMessage gotNotifications = await client.GetAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/getPayments.php?residentID=" + residentID));
             String data = await gotNotifications.Content.ReadAsStringAsync();

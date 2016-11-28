@@ -12,7 +12,15 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Button x:Name="add" Text="Add New List" BackgroundColor="#8F1616" TextColor="White" Clicked="newList"/>
+    <Button x:Name="add" Text="Add New List" BackgroundColor="#8F1616" TextColor="White" Clicked="newList">
+      <Button.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Button.FontFamily>
+    </Button>
   </StackLayout>
 
 </ContentPage>

@@ -35,15 +35,26 @@ namespace LiveWell
 
             //Payment history of the current user
             List<PayRecord> pay = new List<PayRecord>();
+            String first = "";
+            String last = "";
             for (int i = 0; i < notifications.Count; i++)
             {
                 if (notifications[i].type == "payRoom")
                 {
-                    pay.Add(new PayRecord(notifications[i].sender + " paid '" + notifications[i].description + "' for" + notifications[i].amount + ".", "Roommate paid"));
+                    List<ResidentInfo> name = await conn.getResidentInfo(Convert.ToInt32(notifications[i].sender));
+                    for (int j = 0; j < name.Count; j++)
+                    {
+                        if (name[j].residentID.Equals(notifications[i].sender))
+                        {
+                            first = name[j].firstName;
+                            last = name[j].lastName;
+                        }
+                    }
+                    pay.Add(new PayRecord(first + " " + last + " paid $" + notifications[i].amount + " for '" + notifications[i].description + "'", "Roommate paid"));
                 }
                 if (notifications[i].type == "payBuilding")
                 {
-                    pay.Add(new PayRecord("You paid '" + notifications[i].amount + " to owner", "Payment to building"));
+                    pay.Add(new PayRecord("You paid $" + notifications[i].amount + " to owner", "Payment to building"));
                 }
                 if (notifications[i].type == "fine")
                 {
@@ -51,7 +62,16 @@ namespace LiveWell
                 }
                 if (notifications[i].type == "bought")
                 {
-                    pay.Add(new PayRecord(notifications[i].sender + " bought '" + notifications[i].description + "' and you owe $" + notifications[i].amount + ".", "Debt incurrence"));
+                    List<ResidentInfo> name = await conn.getResidentInfo(Convert.ToInt32(notifications[i].sender));
+                    for (int j = 0; j < name.Count; j++)
+                    {
+                        if (name[j].residentID.Equals(notifications[i].sender))
+                        {
+                            first = name[j].firstName;
+                            last = name[j].lastName;
+                        }
+                    }
+                    pay.Add(new PayRecord(first + " " + last + " bought '" + notifications[i].description + "' and you owe $" + notifications[i].amount + ".", "Debt incurrence"));
                 }
             }
 

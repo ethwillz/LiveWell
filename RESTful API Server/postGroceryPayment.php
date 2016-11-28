@@ -4,7 +4,7 @@
 	//Set up for connection to database
 	$db = new mysqli('mysql.cs.iastate.edu', 'dbu309la04', 'YTGUxudv7py', 'db309la04');
 	
-	$hub = new NotificationHub("AIzaSyDtFwZO35AOSu0eJcfBmdkHS86zFlZwwnk", "LA-04-LiveWell"); 
+	//$hub = new NotificationHub("AIzaSyDtFwZO35AOSu0eJcfBmdkHS86zFlZwwnk", "LA-04-LiveWell"); 
 	
 	//Attempts to connect to database which returns an error if unsuccessful
 	if($db->connect_errno > 0 ){
@@ -20,35 +20,47 @@
 		$listID = $input['listID'];
 		$listName = mysqli_real_escape_string($db, $input['listName']);
 		
+		//If there's one roommate on the list insert a notification to the first roommate
 		if(count($roommates) == 1){
 			//Sets value of $result to SQL query and returns an error otherwise
-			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[0], 'groceries', $sender, $listName, 0)")){
+			if(!$result = $db->query("INSERT INTO tblNotification ('type', sender, recipient, description, amount) 
+				VALUES ('payRoom', $sender, $roommates[0], '$listName', '$amount')")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
 		}
 		
+		//If there's two roommates on the list add a notification about a payment for both roommates
 		if(count($roommates) == 2){
 			//Sets value of $result to SQL query and returns an error otherwise
-			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[0], 'groceries', $sender, $listName, 0)")){
+			if(!$result = $db->query("INSERT INTO tblNotification (type, sender, recipient, description, amount) 
+				VALUES ('payRoom', $sender, $roommates[0], '$listName', '$amount')")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
+			
 			//Sets value of $result to SQL query and returns an error otherwise
-			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[1], 'groceries', $sender, $listName, 0)")){
+			if(!$result = $db->query("INSERT INTO tblNotification (type, sender, recipient, description, amount) 
+				VALUES ('payRoom', $sender, $roommates[1], '$listName', '$amount')")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
 		}
 		
+		//If there's three roommates on the list give notifications to the three roommates
 		if(count($roommates) == 3){
 			//Sets value of $result to SQL query and returns an error otherwise
-			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[0], 'groceries', $sender, $listName, 0)")){
+			if(!$result = $db->query("INSERT INTO tblNotification (type, sender, recipient, description, amount) 
+				VALUES ('payRoom', $sender, $roommates[0], '$listName', '$amount')")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
+			
 			//Sets value of $result to SQL query and returns an error otherwise
-			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[1], 'groceries', $sender, $listName, 0)")){
+			if(!$result = $db->query("INSERT INTO tblNotification (type, sender, recipient, description, amount) 
+				VALUES ('payRoom', $sender, $roommates[1], '$listName', '$amount')")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
+			
 			//Sets value of $result to SQL query and returns an error otherwise
-			if(!$result = $db->query("INSERT INTO tblNotification (residentID, type, amount, sender, details, recipient) VALUES ($roommates[2], 'groceries', $sender, $listName, 0)")){
+			if(!$result = $db->query("INSERT INTO tblNotification (type, sender, recipient, description, amount) 
+				VALUES ('payRoom', $sender, $roommates[2], '$listName', '$amount')")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
 		}
@@ -59,6 +71,7 @@
 		$hub->sendNotification($notification, null);
 		*/
 		
+		echo count($roommates);
 		
 		//Sets value of $result to SQL query and returns an error otherwise
 		if(!$result = $db->query("DELETE FROM tblList WHERE listID = $listID")){

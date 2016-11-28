@@ -3,19 +3,76 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LiveWell.MyHome">
   <StackLayout Orientation="Vertical" BackgroundColor="White">
+    
     <Image x:Name="logo"/>
-    <Label x:Name ="address" Text="" HorizontalOptions="Center" FontSize="20" TextColor="#8F1616"/>
-    <Label x:Name ="room" Text="" HorizontalOptions="Center" FontSize="18" TextColor="#8F1616"/>
-    <Label x:Name ="residents" Text="" HorizontalOptions="Center" FontSize="12" TextColor="#8F1616"/>
-    <Label Text="Quick View" HorizontalOptions="Center" FontSize="18" TextColor="#8F1616"/>
+    
+    <Label x:Name ="address" Text="" HorizontalOptions="Center" FontSize="20" TextColor="#8F1616">
+      <Label.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Label.FontFamily>
+    </Label>
+
+    <Label x:Name ="room" Text="" HorizontalOptions="Center" FontSize="18" TextColor="#8F1616">
+      <Label.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Label.FontFamily>
+    </Label>
+
+    <Label x:Name ="residents" Text="" HorizontalOptions="Center" FontSize="12" TextColor="#8F1616">
+      <Label.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Label.FontFamily>
+    </Label>
+
+    <Label Text="Quick View" HorizontalOptions="Center" FontSize="18" TextColor="#8F1616">
+      <Label.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Label.FontFamily>
+    </Label>
+    
     <ListView x:Name="quickview">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell TextColor="#8F1616" DetailColor="#8F1616" Text="{Binding Path = Summary}" Detail="{Binding Path = Details}"/>
+          <TextCell TextColor="#8F1616" DetailColor="#8F1616" Text="{Binding Path = Summary}" Detail="{Binding Path = Details}">
+          </TextCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Label x:Name ="balance" Text="Balance: $72.68" HorizontalOptions="Center" FontSize="18" TextColor="#8F1616"/>
-    <Button x:Name ="pay" Text="Pay" Clicked="payment" BackgroundColor="#8F1616" TextColor="White"/>
+    
+    <Label x:Name ="balance" Text="Balance: $72.68" HorizontalOptions="Center" FontSize="18" TextColor="#8F1616">
+      <Label.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Label.FontFamily>
+    </Label>
+
+    <Button x:Name ="pay" Text="Pay" Clicked="payment" BackgroundColor="#8F1616" TextColor="White">
+      <Button.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Button.FontFamily>
+    </Button>
   </StackLayout>
 </ContentPage>
