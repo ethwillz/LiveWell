@@ -9,5 +9,7 @@
   <local:EmployeeHistoryPage Title="History" Icon=""/>
   <local:EmployeeMaintenance Title="Repair" Icon=""/>
   <local:EmployeeEmptyRoomPage Title="Empty" Icon=""/>
+  <local:EmployeeMorePage Title="More" Icon=""/>
+
   </TabbedPage.Children>
 </TabbedPage>

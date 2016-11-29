@@ -143,6 +143,12 @@
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Employee\EmployeeMorePage.xaml.cs">
+      <DependentUpon>EmployeeMorePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LookForHouse\TestTab.xaml.cs">
+      <DependentUpon>TestTab.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -213,6 +219,12 @@
     <Reference Include="Plugin.Settings">
       <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.1.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.Media.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugin.Media.2.6.1\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\..\packages\Xam.Plugin.Media.2.6.1\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -226,6 +238,12 @@
     <EmbeddedResource Include="Login\PasswordResetPage.xaml" />
     <EmbeddedResource Include="Login\LoginPage.xaml" />
     <EmbeddedResource Include="Login\FirstPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeeMorePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LookForHouse\TestTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
