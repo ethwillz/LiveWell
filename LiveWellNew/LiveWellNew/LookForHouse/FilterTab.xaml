@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWellNew.FilterTab">
+	<ContentPage.Content>
+
+		<StackLayout>
+        <Label/>
+        <Label Text="Discovery Settings" FontSize="50" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="#8F1616"/>
+
+        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+        <Label Text="Location: My Current Location" FontSize="Large"/>
+        <Label BindingContext="{x:Reference distance}"
+           Text="{Binding Value, StringFormat='Maximum Distance: {0:F0} km'}"
+           FontSize="Large"
+           HorizontalOptions="Center"/>        
+        <Slider x:Name="distance"
+            Maximum="10"
+            Value = "2" />
+        </StackLayout>
+
+       <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+       <Label Text="Accommodation Type" FontSize="Large"/>
+       <Picker x:Name="accommodationType" Title="Select" SelectedIndex="{Binding Industry}">
+        <Picker.Items>
+            <x:String>Apartment</x:String> 
+            <x:String>Dormitory</x:String>
+            <x:String>Fraternity</x:String>
+        </Picker.Items>
+        </Picker> 
+        </StackLayout>
+
+		<StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+        <Label BindingContext="{x:Reference price}"
+           Text="{Binding Value, StringFormat='Maximum Price: ${0:F0} per month'}"
+           FontSize="Large"
+           HorizontalOptions="Center"/>        
+        <Slider x:Name="price"
+            Maximum="1200"
+            Value = "500" />
+        </StackLayout>
+                
+        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+         <Label Text="Minimum # Of Rooms" FontSize="Large"/>
+        <StackLayout Orientation = "Horizontal">
+            <Label BindingContext="{x:Reference numRooms}" 
+                    Text="{Binding Value, StringFormat='{0:F0} Rooms'}" FontSize="Large"/>        
+            <Stepper x:Name="numRooms" Value = "2" Minimum = "1" Maximum = "10"/>
+        </StackLayout>
+        </StackLayout>
+
+        <Button Text="Search!" VerticalOptions="CenterAndExpand"
+        HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="Large"
+        Clicked="OnSearchButtonClicked" BackgroundColor="#8F1616" TextColor="White"/>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

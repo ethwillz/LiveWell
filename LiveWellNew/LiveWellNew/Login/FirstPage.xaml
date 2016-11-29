@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="LiveWellNew.FirstPage">
+	<ContentPage.Content>
+    <StackLayout BackgroundColor="White">
+      <Image x:Name="logo"/>
+      <Button x:Name="btntest" Text="Login as resident" VerticalOptions="CenterAndExpand"
+        	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="25"
+			    Clicked="OnResidentButtonClicked" BackgroundColor="#8F1616" TextColor="White">
+        <Button.FontFamily>
+          <OnPlatform x:TypeArguments="x:String">
+            <OnPlatform.iOS></OnPlatform.iOS>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+          </OnPlatform>
+        </Button.FontFamily>
+      </Button>
+
+      <Button Text="Login as employee" VerticalOptions="CenterAndExpand"
+        	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="25"
+			    Clicked="OnEmployeeButtonClicked" BackgroundColor="#8F1616" TextColor="White">
+        <Button.FontFamily>
+          <OnPlatform x:TypeArguments="x:String">
+            <OnPlatform.iOS></OnPlatform.iOS>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+          </OnPlatform>
+        </Button.FontFamily>
+      </Button>
+
+      <Button Text="Login as owner" VerticalOptions="CenterAndExpand"
+        	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="25"
+			    Clicked="OnOwnerButtonClicked" BackgroundColor="#8F1616" TextColor="White">
+        <Button.FontFamily>
+          <OnPlatform x:TypeArguments="x:String">
+            <OnPlatform.iOS></OnPlatform.iOS>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+          </OnPlatform>
+        </Button.FontFamily>
+      </Button>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
