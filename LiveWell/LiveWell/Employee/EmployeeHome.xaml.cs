@@ -16,7 +16,7 @@ namespace LiveWell
 
             logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
 
-            //populateList();
+            populateList();
         }
 
         async void populateList()
@@ -24,12 +24,16 @@ namespace LiveWell
             DatabaseGET conn = new DatabaseGET();
             List<ConnectHelpers.NotificationHandler> notifications = await conn.getNotifications(CurrentUser.type, CurrentUser.ID);
             List<QuickViewNotif> all = new List<QuickViewNotif>();
-            for (int i = 0; i < notifications.Count; i++)
+            for (int i = notifications.Count - 1; i >= 0; i--)
             {
                 if (notifications[i].type.Equals("maintenance"))
-                all.Add(new QuickViewNotif("Maintenance scheduled for " + notifications[i].description, notifications[i].type));
+                    all.Add(new QuickViewNotif("Maintenance request for " + notifications[i].description, "Maintenance request"));
+                if (notifications[i].type.Equals("updateEmployee"))
+                    all.Add(new QuickViewNotif(notifications[i].description, "Update"));
             }
 
+            quickview.ItemsSource = all;
+            quickview.RowHeight = 60;
         }
     }
 }

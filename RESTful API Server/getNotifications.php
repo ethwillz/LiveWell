@@ -45,9 +45,18 @@ OR (recipient = $roomID AND type = 'fine' OR type = 'maintenanceScheduled')")){
 	//If statement checks that HTTP request URI contains residentID parameter
 	if(isset($_GET["employeeID"])){
 		$employeeID = $_GET['employeeID'];
+
+        //Sets value of $result to SQL query and returns an error otherwise
+        if(!$initialinfo = $db->query("SELECT * FROM tblEmployee WHERE employeeID = $employeeID")){
+            die('There was an error running the query [' . $db->error . ']');
+        }
+
+        while($column = $initialinfo->fetch_assoc()){
+            $buildingID = $column['buildingID'];
+        }
 		
 		//Sets value of $result to SQL query and returns an error otherwise
-		if(!$result = $db->query("SELECT notificationID, tblNotification.employeeID, type, amount, firstName, lastName, details FROM tblNotification INNER JOIN tblResident ON tblNotification.sender = tblResident.residentID WHERE employeeID = $employeeID LIMIT 50")){
+		if(!$result = $db->query("SELECT * FROM tblNotification WHERE recipient = $buildingID AND (type='maintenance' OR type='updateEmployee')")){
 			die('There was an error running the query [' . $db->error . ']');
 		}
 		
