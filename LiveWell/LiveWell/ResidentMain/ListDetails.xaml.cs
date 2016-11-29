@@ -75,19 +75,19 @@ namespace LiveWell
                 DatabaseGET conn = new DatabaseGET();
                 List<ListInformation> list = await conn.getLists(listID);
                 List<String> roommateIDs = new List<string>();
-                if(list[0].residentID1 != null && !list[0].residentID1.Equals(CurrentUser.ID))
+                if(list[0].residentID1 != null && !list[0].residentID1.Equals(CurrentUser.ID + ""))
                 {
                     roommateIDs.Add(list[0].residentID1);
                 }
-                if (list[0].residentID2 != null && !list[0].residentID2.Equals(CurrentUser.ID))
+                if (list[0].residentID2 != null && !list[0].residentID2.Equals(CurrentUser.ID + ""))
                 {
                     roommateIDs.Add(list[0].residentID2);
                 }
-                if (list[0].residentID3 != null && !list[0].residentID3.Equals(CurrentUser.ID))
+                if (list[0].residentID3 != null && !list[0].residentID3.Equals(CurrentUser.ID + ""))
                 {
                     roommateIDs.Add(list[0].residentID3);
                 }
-                if (list[0].residentID4 != null && !list[0].residentID4.Equals(CurrentUser.ID))
+                if (list[0].residentID4 != null && !list[0].residentID4.Equals(CurrentUser.ID + ""))
                 {
                     roommateIDs.Add(list[0].residentID4);
                 }
@@ -97,6 +97,8 @@ namespace LiveWell
                 await conn2.chargeAllAndNotify(purchaseAmount, CurrentUser.ID + "", roommateIDs, listID, listName.Text);
                 //NotificationHandler notifications = new NotificationHandler();
                 //notifications.send(amount, "1", roommateIDs, listID, listName.Text);
+                await DisplayAlert("Success", "Purchase recorded and roommate(s) notified", "OK");
+                await Navigation.PushModalAsync(new Resident());
             }
         }
 

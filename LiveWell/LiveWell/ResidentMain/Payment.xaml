@@ -5,28 +5,100 @@
   <StackLayout Orientation="Vertical" BackgroundColor="White">
     
     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+      
       <StackLayout Orientation="Vertical">
-        <Label Text="Building bill" FontSize="20"/>
-        <Label x:Name="buildingBill" Text="$692.37" FontSize="20"/>
+        
+        <Label Text="Building bill" FontSize="20" TextColor="#8F1616">
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <OnPlatform.iOS></OnPlatform.iOS>
+              <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+              <OnPlatform.WinPhone></OnPlatform.WinPhone>
+            </OnPlatform>
+          </Label.FontFamily>
+        </Label>
+        
+        <Label x:Name="buildingBill" Text="$692.37" FontSize="20" TextColor="#8F1616">
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <OnPlatform.iOS></OnPlatform.iOS>
+              <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+              <OnPlatform.WinPhone></OnPlatform.WinPhone>
+            </OnPlatform>
+          </Label.FontFamily>
+        </Label>
+        
       </StackLayout>
-      <Button Text="Pay" Clicked="payBuilding" BackgroundColor="#8F1616" TextColor="White" />
+      
+      <Button Text="Pay" Clicked="payBuilding" BackgroundColor="#8F1616" TextColor="White">
+        <Button.FontFamily>
+          <OnPlatform x:TypeArguments="x:String">
+            <OnPlatform.iOS></OnPlatform.iOS>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+          </OnPlatform>
+        </Button.FontFamily>
+      </Button>
+      
     </StackLayout>
     
     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+      
       <StackLayout Orientation="Vertical">
-        <Label Text="Room bill" FontSize="20"/>
-        <Label x:Name="roomBill" Text="$72.35" FontSize="20"/>
+        
+        <Label Text="Room bill" FontSize="20" TextColor="#8F1616">
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <OnPlatform.iOS></OnPlatform.iOS>
+              <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+              <OnPlatform.WinPhone></OnPlatform.WinPhone>
+            </OnPlatform>
+          </Label.FontFamily>
+        </Label>
+
+        <Label x:Name="roomBill" Text="$72.35" FontSize="20" TextColor="#8F1616">
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <OnPlatform.iOS></OnPlatform.iOS>
+              <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+              <OnPlatform.WinPhone></OnPlatform.WinPhone>
+            </OnPlatform>
+          </Label.FontFamily>
+        </Label>
+        
       </StackLayout>
-      <Button Text="Pay" Clicked="payRoom" BackgroundColor="#8F1616" TextColor="White"/>
+
+      <Button Text="Pay" Clicked="payRoom" BackgroundColor="#8F1616" TextColor="White">
+        <Button.FontFamily>
+          <OnPlatform x:TypeArguments="x:String">
+            <OnPlatform.iOS></OnPlatform.iOS>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+          </OnPlatform>
+        </Button.FontFamily>
+      </Button>
+      
     </StackLayout>
+
+
+    <Label Text="History" FontSize="20" TextColor="#8F1616">
+      <Label.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Label.FontFamily>
+    </Label>
     
-    <Label Text="History" FontSize="20"/>
     <ListView x:Name="payHistory">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell TextColor="Black" Text="{Binding Path = Summary}" Detail="{Binding Path = Details}"/>
+          <TextCell Text="{Binding Path = Summary}" Detail="{Binding Path = Details}" DetailColor="#8F1616" TextColor="#8F1616"/>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+    
   </StackLayout>
+  
 </ContentPage>

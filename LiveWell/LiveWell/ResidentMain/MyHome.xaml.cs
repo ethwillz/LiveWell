@@ -48,15 +48,26 @@ namespace LiveWell
 
             //Creates list of notifications for use in UI
             List<QuickViewNotif> notifs = new List<QuickViewNotif>();
-            for(int i = 0; i < notifications.Count; i++)
+            String first = "";
+            String last = "";
+            for(int i = notifications.Count-1; i >= 0; i--)
             {
                 if (notifications[i].type == "payRoom")
                 {
-                    notifs.Add(new QuickViewNotif(notifications[i].sender + " paid '" + notifications[i].description + "' for" + notifications[i].amount + ".", "Roommate paid"));
+                    List<ResidentInfo> name = await conn.getResidentInfo(Convert.ToInt32(notifications[i].sender));
+                    for(int j = 0; j < name.Count; j++)
+                    {
+                        if (name[j].residentID.Equals(notifications[i].sender))
+                        {
+                            first = name[j].firstName;
+                            last = name[j].lastName;
+                        }
+                    }
+                    notifs.Add(new QuickViewNotif(first + " " + last + " paid $" + notifications[i].amount + " for '" + notifications[i].description+ "'", "Roommate paid"));
                 }
                 if (notifications[i].type == "payBuilding")
                 {
-                    notifs.Add(new QuickViewNotif("You paid '" + notifications[i].amount + " to owner", "Payment to building"));
+                    notifs.Add(new QuickViewNotif("You paid $" + notifications[i].amount + " to owner", "Payment to building"));
                 }
                 if (notifications[i].type == "maintenanceScheduled")
                 {
@@ -72,7 +83,16 @@ namespace LiveWell
                 }
                 if (notifications[i].type == "bought")
                 {
-                    notifs.Add(new QuickViewNotif(notifications[i].sender + " bought '" + notifications[i].description + "' and you owe $" + notifications[i].amount + ".", "Debt incurrence"));
+                    List<ResidentInfo> name = await conn.getResidentInfo(Convert.ToInt32(notifications[i].sender));
+                    for (int j = 0; j < name.Count; j++)
+                    {
+                        if (name[j].residentID.Equals(notifications[i].sender))
+                        {
+                            first = name[j].firstName;
+                            last = name[j].lastName;
+                        }
+                    }
+                    notifs.Add(new QuickViewNotif(first + " " + last + " bought '" + notifications[i].description + "' and you owe $" + notifications[i].amount, "Debt incurrence"));
                 }
             }
 
