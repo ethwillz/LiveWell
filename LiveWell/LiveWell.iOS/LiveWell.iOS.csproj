@@ -53,7 +53,7 @@
     <CodesignKey>iPhone Developer: keisuke_0607@yahoo.co.jp (65355UQ2T2)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>a79c1d83-a243-47aa-9ca0-422eeda8cf06</CodesignProvision>
+    <CodesignProvision>453063d2-15c0-4ab7-ae3d-bf762dba388d</CodesignProvision>
     <MtouchFloat32>true</MtouchFloat32>
     <MtouchExtraArgs></MtouchExtraArgs>
     <MtouchFastDev>false</MtouchFastDev>
@@ -186,6 +186,12 @@
     </Reference>
     <Reference Include="Plugin.Settings">
       <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.1.0\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugin.Media.2.6.1\lib\Xamarin.iOS10\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\..\packages\Xam.Plugin.Media.2.6.1\lib\Xamarin.iOS10\Plugin.Media.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

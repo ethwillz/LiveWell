@@ -9,5 +9,7 @@
 		<mypages:FavoriteTab Title="Favorite" Icon=""/>
 	    <mypages:FilterTab Title="Filter" Icon=""/>
 		<mypages:MoreTab Title="More" Icon=""/>
+		<mypages:TestTab Title="Test" Icon=""/>
+
     </TabbedPage.Children>
 </TabbedPage>

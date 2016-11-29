@@ -1,19 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+
 using Xamarin.Forms;
 
 namespace LiveWell
 {
-	public partial class MoreTab : ContentPage
+	public partial class EmployeeMorePage : ContentPage
 	{
-		public MoreTab()
+		public EmployeeMorePage()
 		{
 			InitializeComponent();
 		}
 
-		public void OnMainButtonClicked(object sender, EventArgs args)
-		{
-			Navigation.PushModalAsync(new Resident());
-		}
 		public void OnLogOutButtonClicked(object sender, EventArgs args)
 		{
 			LiveWell.Helpers.Settings.GeneralSettings = "";
