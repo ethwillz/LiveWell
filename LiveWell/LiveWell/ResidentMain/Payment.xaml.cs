@@ -37,7 +37,7 @@ namespace LiveWell
             List<PayRecord> pay = new List<PayRecord>();
             String first = "";
             String last = "";
-            for (int i = 0; i < notifications.Count; i++)
+            for (int i = notifications.Count - 1; i >= 0; i--)
             {
                 if (notifications[i].type == "payRoom")
                 {
@@ -88,7 +88,7 @@ namespace LiveWell
             if (action.Equals("Credit Card"))
             {
                 new ResidentMain.HandlePayment().creditCard();
-                await u.updateBalances(false, true, "1");
+                await u.updateBalances(false, true, CurrentUser.ID + "");
             }
         }
 
@@ -99,7 +99,7 @@ namespace LiveWell
             if (action.Equals("Credit Card"))
             {
                 new ResidentMain.HandlePayment().creditCard();
-                await u.updateBalances(true, false, "1");
+                await u.updateBalances(true, false, CurrentUser.ID + "");
             }
         }
 

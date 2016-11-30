@@ -128,5 +128,21 @@ namespace LiveWell
             //Runs GET HTTP request to server and gets data back in JSON format
             HttpResponseMessage gotNotifications = await getNotifications.PostAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/postGroceryPayment.php"), content);
         }
+
+        public async Task postFine(String buildingID, String description, String unit, String amount)
+        {
+            //Instantiates new httpclient object with base address for http requests
+            var client = new HttpClient(new NativeMessageHandler());
+            client.BaseAddress = new Uri("http://proj-309-la-04.cs.iastate.edu/postFine.php");
+
+            ConnectHelpers.Fine payment = new ConnectHelpers.Fine(buildingID, description, unit, amount);
+            string contentJson = JsonConvert.SerializeObject(payment);
+            var content = new StringContent(contentJson, Encoding.UTF8, "application/json");
+
+            Debug.WriteLine(contentJson);
+
+            //Runs GET HTTP request to server and gets data back in JSON format
+            HttpResponseMessage gotNotifications = await client.PostAsync(new Uri("http://proj-309-la-04.cs.iastate.edu/postFine.php"), content);
+        }
     }
 }

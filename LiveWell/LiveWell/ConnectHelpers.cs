@@ -308,5 +308,21 @@ namespace LiveWell
             public String listName { get; set; }
         }
 
+        public class Fine
+        {
+            public Fine(String buildingID, String description, String room, String amount)
+            {
+                this.buildingID = buildingID;
+                this.description = description;
+                this.room = room;
+                this.amount = amount;
+            }
+
+            public String buildingID { get; set; }
+            public String description { get; set; }
+            public String room { get; set; }
+            public String amount { get; set; }
+        }
+
     }
 }
