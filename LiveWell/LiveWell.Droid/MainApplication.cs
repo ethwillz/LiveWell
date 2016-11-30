@@ -20,6 +20,7 @@ namespace LiveWell.Droid
         {
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
+            System.Security.Cryptography.AesCryptoServiceProvider b = new System.Security.Cryptography.AesCryptoServiceProvider();
             //A great place to initialize Xamarin.Insights and Dependency Services!
         }
 

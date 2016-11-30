@@ -7,13 +7,13 @@
       <Button Text="Login as resident" VerticalOptions="CenterAndExpand"
         	HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" BorderWidth="1" FontSize="25"
 			    Clicked="OnResidentButtonClicked" BackgroundColor="#8F1616" TextColor="White">
-    <!--    <Button.FontFamily>
+        <Button.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
             <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
             <OnPlatform.WinPhone></OnPlatform.WinPhone>
           </OnPlatform>
-        </Button.FontFamily>-->
+        </Button.FontFamily>
       </Button>
 
       <Button Text="Login as employee" VerticalOptions="CenterAndExpand"

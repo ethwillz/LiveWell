@@ -109,7 +109,7 @@ namespace LiveWell
             if (action.Equals("Credit Card"))
             {
                 new ResidentMain.HandlePayment().creditCard();
-                await u.updateBalances(true, true, "1");
+                //await u.updateBalances(true, true, "1");
             }
         }
 
