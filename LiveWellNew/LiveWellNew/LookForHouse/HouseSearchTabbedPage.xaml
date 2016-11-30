@@ -4,8 +4,8 @@
 		x:Class="LiveWellNew.HouseSearchTabbedPage"
         xmlns:mypages="clr-namespace:LiveWellNew;assembly=LiveWellNew">
     <TabbedPage.Children>
+		<mypages:HomeTab Title="Home"/>
         <mypages:FilterTab Title="Filter"/>
-		<mypages:AnotherTab Title="Another"/>
 		<!--<mypages:MapTab Title="Map" Icon=""/>
 		<mypages:FavoriteTab Title="Favorite" Icon=""/>
 	    <mypages:FilterTab Title="Filter" Icon=""/>
