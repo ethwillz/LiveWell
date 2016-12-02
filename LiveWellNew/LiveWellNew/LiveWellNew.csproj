@@ -91,6 +91,21 @@
     <EmbeddedResource Include="OwnerMain\PropertyList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="OwnerMain\Important.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnerMain\AddProperty.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnerMain\OwnerMore.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnerMain\RoomInfo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResidentMain\Chat.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -164,6 +179,21 @@
     <Compile Include="OwnerMain\PropertyList.xaml.cs">
       <DependentUpon>PropertyList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OwnerMain\Important.xaml.cs">
+      <DependentUpon>Important.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerMain\AddProperty.xaml.cs">
+      <DependentUpon>AddProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerMain\OwnerMore.xaml.cs">
+      <DependentUpon>OwnerMore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerMain\RoomInfo.xaml.cs">
+      <DependentUpon>RoomInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentMain\Chat.xaml.cs">
+      <DependentUpon>Chat.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient">
@@ -209,6 +239,7 @@
     <Folder Include="LookForHouse\" />
     <Folder Include="Employee\" />
     <Folder Include="OwnerMain\" />
+    <Folder Include="ResidentMain\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

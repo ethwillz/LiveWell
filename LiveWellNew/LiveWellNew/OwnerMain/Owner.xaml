@@ -7,8 +7,8 @@
   
   <local:OwnerHome Title="Home"/>
   <local:PropertyList Title="Properties"/>
-  <!--<local:Chat Title="Chat"/>
+  <local:Chat Title="Chat"/>
   <local:Important Title="Important"/>
-  <local:OwnerMore Title="More"/>-->
+  <local:OwnerMore Title="More"/>
   
 </TabbedPage>
