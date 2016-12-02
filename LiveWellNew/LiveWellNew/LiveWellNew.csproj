@@ -79,6 +79,18 @@
     <EmbeddedResource Include="Employee\MaintenanceDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="OwnerMain\Owner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnerMain\OwnerHome.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnerMain\PropertyInfo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnerMain\PropertyList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -140,6 +152,18 @@
     <Compile Include="Employee\MaintenanceDetails.xaml.cs">
       <DependentUpon>MaintenanceDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OwnerMain\Owner.xaml.cs">
+      <DependentUpon>Owner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerMain\OwnerHome.xaml.cs">
+      <DependentUpon>OwnerHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerMain\PropertyInfo.xaml.cs">
+      <DependentUpon>PropertyInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerMain\PropertyList.xaml.cs">
+      <DependentUpon>PropertyList.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient">
@@ -184,6 +208,7 @@
     <Folder Include="Helpers\" />
     <Folder Include="LookForHouse\" />
     <Folder Include="Employee\" />
+    <Folder Include="OwnerMain\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

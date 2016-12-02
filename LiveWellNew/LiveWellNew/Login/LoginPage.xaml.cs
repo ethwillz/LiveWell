@@ -44,13 +44,13 @@ namespace LiveWellNew
 					//LiveWellNew.Helpers.Settings.GeneralSettings = "" + CurrentUser.type + CurrentUser.ID;
 					await Navigation.PushModalAsync(new EmployeeMain());
 				}
-				//else if (userType.Text == "Owner")
-				//{
-				//	CurrentUser.ID = Convert.ToInt32(personalInfo[0].ownerID);
-				//	CurrentUser.type = 'O';
-				//	LiveWellNew.Helpers.Settings.GeneralSettings = "" + CurrentUser.type + CurrentUser.ID;
-				//	await Navigation.PushModalAsync(new Owner());
-				//}
+				else if (userType.Text == "Owner")
+				{
+					CurrentUser.ID = Convert.ToInt32(personalInfo[0].ownerID);
+					CurrentUser.type = 'O';
+					//LiveWellNew.Helpers.Settings.GeneralSettings = "" + CurrentUser.type + CurrentUser.ID;
+					await Navigation.PushModalAsync(new Owner());
+				}
 			}
 
 			else {
