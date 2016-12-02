@@ -64,6 +64,21 @@
     <EmbeddedResource Include="Employee\EmployeeHome.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeeEmptyRoomPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeeMorePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeeMaintenance.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeeHistoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\MaintenanceDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -109,6 +124,21 @@
     </Compile>
     <Compile Include="Employee\EmployeeHome.xaml.cs">
       <DependentUpon>EmployeeHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeEmptyRoomPage.xaml.cs">
+      <DependentUpon>EmployeeEmptyRoomPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeMorePage.xaml.cs">
+      <DependentUpon>EmployeeMorePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeMaintenance.xaml.cs">
+      <DependentUpon>EmployeeMaintenance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeHistoryPage.xaml.cs">
+      <DependentUpon>EmployeeHistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\MaintenanceDetails.xaml.cs">
+      <DependentUpon>MaintenanceDetails.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -6,11 +6,10 @@
             BarBackgroundColor="#8F1616">
   <TabbedPage.Children>
  <local:EmployeeHome Title="Home"/>
-		<!--
-  <local:EmployeeHistoryPage Title="History" Icon=""/>
-  <local:EmployeeMaintenance Title="Repair" Icon=""/>
-  <local:EmployeeEmptyRoomPage Title="Empty" Icon=""/>
-  <local:EmployeeMorePage Title="More" Icon=""/>-->
+  <local:EmployeeHistoryPage Title="History"/>
+  <local:EmployeeMaintenance Title="Repair"/>
+  <local:EmployeeEmptyRoomPage Title="Empty"/>
+  <local:EmployeeMorePage Title="More"/>
 
   </TabbedPage.Children>
 </TabbedPage>
