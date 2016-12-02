@@ -1,5 +1,21 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWellNew.SignupPage">
 	<ContentPage.Content>
+		<StackLayout>
+		<Label Text="Welcome to Live Well!" VerticalOptions="Start" HorizontalOptions="Center" Font="Large" FontAttributes="Bold" />
+		<Label x:Name="userType" Text="Sign Up" VerticalOptions="Fill" HorizontalOptions="Center" />
+		<Label Text="First name" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" Font="Large" FontAttributes="Bold" />
+		<Entry x:Name="firstName" Placeholder="Enter first name" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" />
+		<Label Text="Last name" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" Font="Large" FontAttributes="Bold" />
+		<Entry x:Name="lastName" Placeholder="Enter Last name" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" />
+		<Label Text="Email Address" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" Font="Large" FontAttributes="Bold" />
+		<Entry x:Name="email" Placeholder="Enter email address" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" />
+		<Label Text="Password" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" Font="Large" FontAttributes="Bold" />
+		<Entry x:Name="password" Placeholder="Enter password" VerticalOptions="Fill" HorizontalOptions="StartAndExpand" IsPassword="true" />
+		<StackLayout Orientation="Horizontal">
+			<Button Text="Go back" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Clicked="BackButtonClicked" TextColor="#fff" BackgroundColor="#8F1616"/>
+			<Button Text="Create" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Clicked="CreateButtonClicked" TextColor="#fff" BackgroundColor="#8F1616"/>
+		</StackLayout>
+	</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

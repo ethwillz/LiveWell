@@ -20,7 +20,7 @@ namespace LiveWellNew
 
 		void CreateButtonClicked(object sender, EventArgs args)
 		{
-			//Navigation.PushModalAsync(new SignupPage(userType.Text));
+			Navigation.PushModalAsync(new SignupPage(userType.Text));
 		}
 
 		async void LoginButtonClicked(object sender, EventArgs args)
