@@ -10,6 +10,7 @@ namespace LiveWellNew
 		public FirstPage()
 		{
 			InitializeComponent();
+			logo.Source = ImageSource.FromResource("LiveWellNew.LiveWellFullLogo.png");
 		}
 
 		void OnResidentButtonClicked(object sender, EventArgs args)
