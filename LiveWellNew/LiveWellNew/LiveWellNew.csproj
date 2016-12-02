@@ -58,6 +58,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LiveWellFullLogo.png" />
     <EmbeddedResource Include="LiveWellLogo.png" />
+    <EmbeddedResource Include="Employee\EmployeeMain.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeeHome.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -97,6 +103,12 @@
     </Compile>
     <Compile Include="LookForHouse\MoreTab.xaml.cs">
       <DependentUpon>MoreTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeMain.xaml.cs">
+      <DependentUpon>EmployeeMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeHome.xaml.cs">
+      <DependentUpon>EmployeeHome.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +153,7 @@
     <Folder Include="Login\" />
     <Folder Include="Helpers\" />
     <Folder Include="LookForHouse\" />
+    <Folder Include="Employee\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

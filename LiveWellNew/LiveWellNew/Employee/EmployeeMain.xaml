@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LiveWellNew;assembly=LiveWellNew"
+             x:Class="LiveWellNew.EmployeeMain"
+            BarBackgroundColor="#8F1616">
+  <TabbedPage.Children>
+ <local:EmployeeHome Title="Home"/>
+		<!--
+  <local:EmployeeHistoryPage Title="History" Icon=""/>
+  <local:EmployeeMaintenance Title="Repair" Icon=""/>
+  <local:EmployeeEmptyRoomPage Title="Empty" Icon=""/>
+  <local:EmployeeMorePage Title="More" Icon=""/>-->
+
+  </TabbedPage.Children>
+</TabbedPage>
