@@ -21,7 +21,7 @@ namespace LiveWellNew
 		{
 			geoCoder = new Geocoder();
 			InitializeComponent();
-			userLocation();
+			//userLocation();
 
 			FilterTab filter = new FilterTab();
 			MessagingCenter.Subscribe<FilterTab, String[]>(this, "filterData", (sender, arg) =>
