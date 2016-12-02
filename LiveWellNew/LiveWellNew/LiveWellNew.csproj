@@ -44,9 +44,6 @@
     <EmbeddedResource Include="LookForHouse\FilterTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="LookForHouse\AnotherTab.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="LookForHouse\HomeTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -54,6 +51,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\SignupPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LookForHouse\MoreTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -84,9 +84,6 @@
     <Compile Include="LookForHouse\FilterTab.xaml.cs">
       <DependentUpon>FilterTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LookForHouse\AnotherTab.xaml.cs">
-      <DependentUpon>AnotherTab.xaml</DependentUpon>
-    </Compile>
     <Compile Include="LookForHouse\HomeTab.xaml.cs">
       <DependentUpon>HomeTab.xaml</DependentUpon>
     </Compile>
@@ -95,6 +92,9 @@
     </Compile>
     <Compile Include="Login\SignupPage.xaml.cs">
       <DependentUpon>SignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LookForHouse\MoreTab.xaml.cs">
+      <DependentUpon>MoreTab.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

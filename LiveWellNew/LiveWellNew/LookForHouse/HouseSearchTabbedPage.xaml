@@ -7,7 +7,7 @@
 		<mypages:HomeTab Title="Home"/>
 		<mypages:FavoriteTab Title="Favorite"/>
         <mypages:FilterTab Title="Filter"/>
-		
+		<mypages:MoreTab Title="More"/>
 		<!--<mypages:MapTab Title="Map" Icon=""/>
 		<mypages:FavoriteTab Title="Favorite" Icon=""/>
 	    <mypages:FilterTab Title="Filter" Icon=""/>
