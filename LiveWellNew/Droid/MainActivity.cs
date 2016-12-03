@@ -10,7 +10,7 @@ using Android.OS;
 
 namespace LiveWellNew.Droid
 {
-	[Activity(Label = "LiveWellNew.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity(Label = "LiveWellNew", Icon = "@drawable/livewelllogo", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 		protected override void OnCreate(Bundle bundle)
@@ -21,6 +21,7 @@ namespace LiveWellNew.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+			global::Xamarin.FormsMaps.Init(this, bundle);
 
 			LoadApplication(new App());
 		}

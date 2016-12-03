@@ -10,7 +10,7 @@
         <Button.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
-            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.Android></OnPlatform.Android>
             <OnPlatform.WinPhone></OnPlatform.WinPhone>
           </OnPlatform>
         </Button.FontFamily>
@@ -22,7 +22,7 @@
         <Button.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
-            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.Android></OnPlatform.Android>
             <OnPlatform.WinPhone></OnPlatform.WinPhone>
           </OnPlatform>
         </Button.FontFamily>
@@ -34,7 +34,7 @@
         <Button.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
-            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.Android></OnPlatform.Android>
             <OnPlatform.WinPhone></OnPlatform.WinPhone>
           </OnPlatform>
         </Button.FontFamily>

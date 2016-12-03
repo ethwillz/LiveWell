@@ -6,9 +6,10 @@ namespace LiveWellNew
 	{
 		public App()
 		{
-			InitializeComponent();
-
-			MainPage = new FirstPage();
+			var main = new NavigationPage(new FirstPage());
+			main.BarBackgroundColor = Color.White;
+			main.BarTextColor = Color.Black;
+			MainPage = main;
 		}
 
 		protected override void OnStart()
