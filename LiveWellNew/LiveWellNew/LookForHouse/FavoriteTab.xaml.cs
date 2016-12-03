@@ -16,8 +16,8 @@ namespace LiveWellNew
 
 		public FavoriteTab()
 		{
+				OnAppearing();
 				InitializeComponent();
-				populateList();
 		}
 
 		async void onTap(object sender, ItemTappedEventArgs e)
@@ -49,6 +49,12 @@ namespace LiveWellNew
 			quickview.ItemsSource = list;
 			quickview.RowHeight = 400;
 			title.Text = "Favorite " + list.Count + " Accommodations";
+		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			populateList();
 		}
 
 	}
