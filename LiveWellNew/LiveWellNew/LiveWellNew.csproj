@@ -106,6 +106,9 @@
     <EmbeddedResource Include="ResidentMain\Chat.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="LookForHouse\TestTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -193,6 +196,9 @@
     </Compile>
     <Compile Include="ResidentMain\Chat.xaml.cs">
       <DependentUpon>Chat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LookForHouse\TestTab.xaml.cs">
+      <DependentUpon>TestTab.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

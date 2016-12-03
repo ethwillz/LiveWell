@@ -16,8 +16,8 @@
 											<Label Margin="5,0,0,0" TextColor="Black" Text="{Binding Path = AccommodationInfo}" />
 											<Label Margin="5,0,0,0" TextColor="Black" Text="{Binding Path = AccommodationAddress}" />
 										</StackLayout>
-<!--										<Image Source="redheart.png" WidthRequest="50" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
--->									</StackLayout>
+										<Image Source="redheart.png" WidthRequest="50" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+									</StackLayout>
 								</StackLayout>
 							</ViewCell>
 						</DataTemplate>
