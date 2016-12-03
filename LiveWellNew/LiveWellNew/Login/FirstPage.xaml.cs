@@ -13,18 +13,17 @@ namespace LiveWellNew
 			logo.Source = ImageSource.FromResource("LiveWellNew.LiveWellFullLogo.png");
 		}
 
-		async void OnResidentButtonClicked(object sender, EventArgs args)
+		void OnResidentButtonClicked(object sender, EventArgs args)
 		{
-			Debug.WriteLine("Resident clicked");
-			await Navigation.PushModalAsync(new LoginPage("Resident"));
+			Navigation.PushModalAsync(new LoginPage("Resident"));
 		}
-		async void OnEmployeeButtonClicked(object sender, EventArgs args)
+		void OnEmployeeButtonClicked(object sender, EventArgs args)
 		{
-			await Navigation.PushModalAsync(new LoginPage("Employee"));
+			Navigation.PushModalAsync(new LoginPage("Employee"));
 		}
-		async void OnOwnerButtonClicked(object sender, EventArgs args)
+		void OnOwnerButtonClicked(object sender, EventArgs args)
 		{
-			await Navigation.PushModalAsync(new LoginPage("Owner"));
+			Navigation.PushModalAsync(new LoginPage("Owner"));
 		}
 	}
 }

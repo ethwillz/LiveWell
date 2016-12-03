@@ -13,8 +13,8 @@
         <Label.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
-<!--            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
--->            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
           </OnPlatform>
         </Label.FontFamily>
       </Label>
@@ -27,8 +27,8 @@
         <Label.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
-<!--            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
--->            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
           </OnPlatform>
         </Label.FontFamily>
       </Label>
@@ -42,8 +42,8 @@
         <Label.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
-<!--            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
--->            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
           </OnPlatform>
         </Label.FontFamily>
       </Label>
@@ -54,8 +54,8 @@
         <Entry.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
-<!--            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
--->            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
           </OnPlatform>
         </Entry.FontFamily>
       </Entry>
@@ -68,8 +68,8 @@
         <Label.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
-<!--            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
--->            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
           </OnPlatform>
         </Label.FontFamily>
       </Label>
@@ -81,8 +81,8 @@
         <Entry.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
-<!--            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
--->            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
           </OnPlatform>
         </Entry.FontFamily>
       </Entry>
@@ -98,8 +98,8 @@
         <Button.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
-<!--            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
--->            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
           </OnPlatform>
         </Button.FontFamily>
       </Button>
@@ -113,8 +113,8 @@
         <Button.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
-<!--            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
--->            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+            <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
           </OnPlatform>
         </Button.FontFamily>
       </Button>
