@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using static LiveWellNew.ConnectHelpers;
-
+using Plugin.Geolocator;
+using Plugin.Geolocator.Abstractions;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
-
+using Xamarin.Forms.Maps;
 
 namespace LiveWellNew
 {
@@ -14,8 +16,8 @@ namespace LiveWellNew
 
 		public FavoriteTab()
 		{
-			OnAppearing();
-			InitializeComponent();
+				InitializeComponent();
+				populateList();
 		}
 
 		async void onTap(object sender, ItemTappedEventArgs e)
@@ -38,26 +40,16 @@ namespace LiveWellNew
 			DatabaseGET conn = new DatabaseGET();
 			addresses = await conn.getFavorite();
 
-
 			list = new List<QuickViewImage>();
-			quickview.ItemsSource = list;
 
 			for (int i = 0; i < addresses.Count; i++)
 			{
 				list.Add(new QuickViewImage(addresses[i].imageUrl, addresses[i].address, addresses[i].accommodationType, addresses[i].buildingID, addresses[i].price, addresses[i].numRooms));
-				System.Diagnostics.Debug.WriteLine(addresses[i].buildingID);
-
 			}
 			quickview.ItemsSource = list;
 			quickview.RowHeight = 400;
-			title.Text = "Favorite " + addresses.Count + " Accommodations";
+			title.Text = "Favorite " + list.Count + " Accommodations";
 		}
 
-		/*Refreshing this page after favorite button is clicked from HomeTab*/
-		protected override void OnAppearing()
-		{
-			base.OnAppearing();
-			populateList();
-		}
 	}
 }
