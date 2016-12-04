@@ -140,6 +140,8 @@
     <AndroidResource Include="Resources\drawable\close_red.png" />
     <AndroidResource Include="Resources\drawable\redheart.png" />
     <AndroidResource Include="Resources\drawable\livewelllogo.png" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\drawable\Splash.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\JosefinSans-Regular.ttf" />
