@@ -115,6 +115,12 @@
     <EmbeddedResource Include="Login\PasswordResetPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResidentMain\Resident.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResidentMain\MyHome.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -214,6 +220,12 @@
       <DependentUpon>PasswordResetPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="ResidentMain\Resident.xaml.cs">
+      <DependentUpon>Resident.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentMain\MyHome.xaml.cs">
+      <DependentUpon>MyHome.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient">

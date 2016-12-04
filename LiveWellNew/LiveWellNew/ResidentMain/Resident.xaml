@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LiveWellNew;assembly=LiveWellNew"
+             x:Class="LiveWellNew.Resident"
+            BarBackgroundColor="#8F1616">
+  
+  <local:MyHome Title="Home" Icon="monkeyicon.png"/>
+  <!--<local:GroceryLists Title="Lists" Icon="monkeyicon.png"/>-->
+  <local:MyHome Title="Chat" Icon="monkeyicon.png"/>
+  <!--<local:Payment Title="Pay" Icon="monkeyicon.png"/>
+  <local:Maintenance Title="Repair" Icon="monkeyicon.png"/>-->
+  
+</TabbedPage>

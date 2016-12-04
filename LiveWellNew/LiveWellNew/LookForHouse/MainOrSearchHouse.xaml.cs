@@ -31,7 +31,7 @@ namespace LiveWellNew
 
 		public void OnMainButtonClicked(object sender, EventArgs args)
 		{
-			//Navigation.PushModalAsync(new Resident());
+			Navigation.PushModalAsync(new Resident());
 		}
 		public void OnSearchButtonClicked(object sender, EventArgs args)
 		{

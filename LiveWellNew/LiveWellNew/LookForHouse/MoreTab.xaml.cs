@@ -12,7 +12,7 @@ namespace LiveWellNew
 
 		public void OnMainButtonClicked(object sender, EventArgs args)
 		{
-			//Navigation.PushModalAsync(new Resident());
+			Navigation.PushModalAsync(new Resident());
 		}
 		public void OnLogOutButtonClicked(object sender, EventArgs args)
 		{
