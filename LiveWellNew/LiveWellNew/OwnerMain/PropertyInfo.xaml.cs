@@ -23,7 +23,7 @@ namespace LiveWellNew
 		void onTap(object sender, ItemTappedEventArgs e)
 		{
 			((ListView)sender).SelectedItem = null;
-			//Navigation.PushModalAsync(new RoomInfo());
+			Navigation.PushModalAsync(new RoomInfo());
 		}
 
 
