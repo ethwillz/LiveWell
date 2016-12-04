@@ -142,6 +142,7 @@
     <AndroidResource Include="Resources\drawable\livewelllogo.png" />
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\drawable\Splash.xml" />
+    <AndroidResource Include="Resources\drawable\monkeyicon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\JosefinSans-Regular.ttf" />
