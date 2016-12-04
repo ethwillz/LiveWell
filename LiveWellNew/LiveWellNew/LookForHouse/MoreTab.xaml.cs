@@ -16,7 +16,7 @@ namespace LiveWellNew
 		}
 		public void OnLogOutButtonClicked(object sender, EventArgs args)
 		{
-			//LiveWell.Helpers.Settings.GeneralSettings = "";
+			LiveWellNew.Helpers.Settings.GeneralSettings = "";
 			CurrentUser.type = 'N';
 			Navigation.PushModalAsync(new FirstPage());
 		}
