@@ -132,7 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="Resources\tabicons\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -151,7 +150,12 @@
     <BundleResource Include="Resources\close_red.png" />
     <BundleResource Include="Resources\redheart.png" />
     <BundleResource Include="Resources\icon.png" />
-    <BundleResource Include="Resources\tabicons\monkeyicon.png" />
+    <BundleResource Include="Resources\monkeyicon.png" />
+    <BundleResource Include="Resources\moreIcon.png" />
+    <BundleResource Include="Resources\filterIcon.png" />
+    <BundleResource Include="Resources\scheduleIcon.png" />
+    <BundleResource Include="Resources\todayIcon.png" />
+    <BundleResource Include="Resources\settingsIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

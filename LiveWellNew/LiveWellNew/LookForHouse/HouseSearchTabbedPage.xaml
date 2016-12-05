@@ -5,9 +5,9 @@
         xmlns:mypages="clr-namespace:LiveWellNew;assembly=LiveWellNew">
     <TabbedPage.Children>
 		<mypages:HomeTab Title="Home" Icon="monkeyicon.png"/>
-		<mypages:MapTab Title="Map" Icon="monkeyicon.png"/>
+		<mypages:MapTab Title="Map" Icon="todayIcon.png"/>
 		<mypages:FavoriteTab Title="Favorite" Icon="monkeyicon.png"/>
-        <mypages:FilterTab Title="Filter" Icon="monkeyicon.png"/>
-		<mypages:MoreTab Title="More" Icon="monkeyicon.png"/>
+        <mypages:FilterTab Title="Filter" Icon="scheduleIcon.png"/>
+		<mypages:MoreTab Title="More" Icon="settingsIcon.png"/>
     </TabbedPage.Children>
 </TabbedPage>
