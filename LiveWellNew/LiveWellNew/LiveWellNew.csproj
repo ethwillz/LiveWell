@@ -133,6 +133,12 @@
     <EmbeddedResource Include="ResidentMain\AddProduct.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResidentMain\Maintenance.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResidentMain\More.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -249,6 +255,12 @@
     </Compile>
     <Compile Include="ResidentMain\AddProduct.xaml.cs">
       <DependentUpon>AddProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentMain\Maintenance.xaml.cs">
+      <DependentUpon>Maintenance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentMain\More.xaml.cs">
+      <DependentUpon>More.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
