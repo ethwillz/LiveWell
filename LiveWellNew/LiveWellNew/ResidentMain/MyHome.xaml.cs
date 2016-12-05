@@ -103,14 +103,14 @@ namespace LiveWellNew
 
 		async void payment(Object sender, EventArgs e)
 		{
-		//	DatabaseUPDATE u = new DatabaseUPDATE();
-		//	var action = await DisplayActionSheet("Submit payment", "Cancel", null, "Credit Card");
-		//	//Handles payment through credit card
-		//	if (action.Equals("Credit Card"))
-		//	{
-		//		new ResidentMain.HandlePayment().creditCard();
-		//		await u.updateBalances(true, true, "1");
-		//	}
+			DatabaseUPDATE u = new DatabaseUPDATE();
+			var action = await DisplayActionSheet("Submit payment", "Cancel", null, "Credit Card");
+			//Handles payment through credit card
+			if (action.Equals("Credit Card"))
+			{
+				//new ResidentMain.HandlePayment().creditCard();
+				//await u.updateBalances(true, true, "1");
+			}
 		}
 
 		protected override bool OnBackButtonPressed()

@@ -5,9 +5,9 @@
              x:Class="LiveWellNew.Resident"
             BarBackgroundColor="#8F1616">
   
-  <local:MyHome Title="Home" Icon="monkeyicon.png"/>
+  <local:MyHome Title="Home"/>
   <!--<local:GroceryLists Title="Lists" Icon="monkeyicon.png"/>-->
-  <local:MyHome Title="Chat" Icon="monkeyicon.png"/>
+  <local:MyHome Title="Chat"/>
   <!--<local:Payment Title="Pay" Icon="monkeyicon.png"/>
   <local:Maintenance Title="Repair" Icon="monkeyicon.png"/>-->
   
