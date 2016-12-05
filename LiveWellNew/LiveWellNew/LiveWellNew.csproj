@@ -121,6 +121,18 @@
     <EmbeddedResource Include="ResidentMain\MyHome.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResidentMain\AddList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResidentMain\GroceryLists.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResidentMain\ListDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResidentMain\AddProduct.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -225,6 +237,18 @@
     </Compile>
     <Compile Include="ResidentMain\MyHome.xaml.cs">
       <DependentUpon>MyHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentMain\AddList.xaml.cs">
+      <DependentUpon>AddList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentMain\GroceryLists.xaml.cs">
+      <DependentUpon>GroceryLists.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentMain\ListDetails.xaml.cs">
+      <DependentUpon>ListDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentMain\AddProduct.xaml.cs">
+      <DependentUpon>AddProduct.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
