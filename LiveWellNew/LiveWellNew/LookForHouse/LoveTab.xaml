@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWellNew.LoveTab">
+	<ContentPage.Content>
+		<ScrollView>
+		<StackLayout>
+		<Label/>
+		<Label x:Name="title" Text="Favorite 35 apartments" TextColor="#000" FontSize="30" HorizontalOptions="Center"/>
+
+		<ListView x:Name="quickview" ItemTapped="onTap">
+      	<ListView.ItemTemplate>
+		 <DataTemplate>
+		 <ViewCell>
+		<StackLayout Spacing="1">	
+          <Image Aspect="AspectFill" HeightRequest="350" Source="{Binding Path = AccommodationImageUrl}"/>
+          <StackLayout Orientation = "Horizontal">
+			<StackLayout>
+			<Label Margin="5,0,0,0" TextColor="Black" Text= "{Binding Path = AccommodationInfo}"/>
+			<Label Margin="5,0,0,0" TextColor="Black" Text="{Binding Path = AccommodationAddress}"/>
+			</StackLayout>
+			<Image Source="close_red.png" WidthRequest="50" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+		</StackLayout>
+		</StackLayout>
+		</ViewCell>
+       	 </DataTemplate>
+      	</ListView.ItemTemplate>
+   	    </ListView>
+
+		</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

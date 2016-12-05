@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWellNew.EmployeeHistoryPage">
+		<StackLayout>
+     <Button Text="Maintenance" BackgroundColor="#8F1616" TextColor="White"/>
+     <Button Text="Fines" BackgroundColor="#8F1616" TextColor="White"/>
+     <Button Text="Messages" BackgroundColor="#8F1616" TextColor="White"/>
+     <Button Text="Residents" BackgroundColor="#8F1616" TextColor="White"/>
+	</StackLayout>
+</ContentPage>

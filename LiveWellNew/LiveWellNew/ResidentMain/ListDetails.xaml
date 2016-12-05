@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LiveWellNew;assembly=LiveWellNew"
+             x:Class="LiveWellNew.ListDetails">
+  <StackLayout Orientation="Vertical" BackgroundColor="White">
+    <Label x:Name="listName" TextColor="Black" Text="List's name" FontSize="20"/>
+    <Label x:Name="users" TextColor="Black" Text="Users who have list" FontSize="17"/>
+    <ListView x:Name = "products">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ImageCell x:Name="productCell" ImageSource="{Binding Path = ProductImageUrl}" Text="{Binding Path = ProductName}" TextColor="Black"/>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Button Clicked="addClick" Text="Add" BackgroundColor="#8F1616" TextColor="White"/>
+    <Entry x:Name="amount" Placeholder="List Amount"/>
+    <Button x:Name="bought" Clicked="boughtClick" Text="I bought this" BackgroundColor="#8F1616" TextColor="White"/>
+  </StackLayout>
+</ContentPage>

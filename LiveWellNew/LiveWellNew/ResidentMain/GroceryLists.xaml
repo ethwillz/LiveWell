@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LiveWellNew;assembly=LiveWellNew"
+             x:Class="LiveWellNew.GroceryLists">
+
+  <StackLayout Orientation="Vertical" BackgroundColor="White">
+    <ListView x:Name="allLists" ItemTapped="onTap">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell x:Name="listCell" TextColor="Black" Text="{Binding Path = ListName}" Detail="{Binding Path = Users}"/>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Button x:Name="add" Text="Add New List" BackgroundColor="#8F1616" TextColor="White" Clicked="newList">
+      <Button.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>JosefinSans-Regular.ttf#JosefinSans-Regular</OnPlatform.Android>
+          <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+      </Button.FontFamily>
+    </Button>
+  </StackLayout>
+
+</ContentPage>

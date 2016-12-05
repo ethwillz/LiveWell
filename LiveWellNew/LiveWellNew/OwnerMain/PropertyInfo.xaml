@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LiveWellNew;assembly=LiveWellNew"
+			 x:Class="LiveWellNew.PropertyInfo">
+<StackLayout Orientation="Vertical">
+    <Label x:Name="listName" TextColor="Black" Text="Property" FontSize="20"/>
+    <Label x:Name="users" TextColor="Black" Text="Rooms" FontSize="17"/>
+    <ListView x:Name = "rooms" ItemTapped = "onTap">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ImageCell x:Name="productCell" Text="{Binding Path = RoomNumber}" TextColor="Black" Detail = "{Binding Path = Residents}"/>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

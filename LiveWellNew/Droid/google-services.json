@@ -1,0 +1,42 @@
+﻿{
+  "project_info": {
+    "project_number": "957665312616",
+    "firebase_url": "https://livewell-78cf1.firebaseio.com",
+    "project_id": "livewell-78cf1",
+    "storage_bucket": "livewell-78cf1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957665312616:android:609581cd347b60fc",
+        "android_client_info": {
+          "package_name": "com.LiveWell.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957665312616-i4g7jrmpf6n1l1dcl527csg7g4e7k3ra.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM70s9OhY1FAyTEdGiFS9MfJpmRtUPwuA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
