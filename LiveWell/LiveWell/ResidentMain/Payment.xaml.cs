@@ -87,7 +87,7 @@ namespace LiveWell
             //Handles payment through credit card
             if (action.Equals("Credit Card"))
             {
-                new ResidentMain.HandlePayment().creditCard();
+                new ResidentMain.HandlePayment().CreditCard();
                 await u.updateBalances(false, true, CurrentUser.ID + "");
             }
         }
@@ -98,7 +98,7 @@ namespace LiveWell
             //Handles payment through credit card
             if (action.Equals("Credit Card"))
             {
-                new ResidentMain.HandlePayment().creditCard();
+                new ResidentMain.HandlePayment().CreditCard();
                 await u.updateBalances(true, false, CurrentUser.ID + "");
             }
         }

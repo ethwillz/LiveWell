@@ -12,43 +12,22 @@ namespace LiveWell.ResidentMain
 {
     class HandlePayment
     {
-        public void bankAccount()
-        {
-
-        }
-
         //Creates json object with all credit card information which is then sent to the HTTP server
-        public void creditCard()
+        public async void CreditCard()
         {
             FundingInstrument[] fu = new FundingInstrument[1];
             fu[0] = new FundingInstrument(new CreditCard("4032032534003485", "visa", "9", "2021", "123", "Ethan", "Williams"));
-            PayDetails payDetails = new PayDetails();
+            PayDetails payDetails = new PayDetails
+            {
+                intent = "sale",
+                payer = new Payer("credit_card", fu)
+            };
 
-            payDetails.intent = "sale";
-            payDetails.payer = new Payer("credit_card", fu);
             Transactions[] transactions = new Transactions[1];
             transactions[0] = new Transactions(new Amount("72.34", "USD"), "Payment for rent");
             payDetails.transactions = transactions;
 
-            RunAsyncPayment(payDetails);
-        }
-
-        public void payPal()
-        {
-            /*
-            PayDetails payDetails = new PayDetails();
-            payDetails.intent = "sale";
-            payDetails.payer = new Payer("paypal");
-            Transactions[] transactions = new Transactions[1];
-            transactions[0] = new Transactions(new Amount("72.34", "USD"), "Payment for rent");
-            payDetails.transactions = transactions;
-
-            RunAsyncPayment(payDetails);
-            */
-        }
-        public void venmo()
-        {
-
+            await RunAsyncPayment(payDetails);
         }
 
         //Runs payment through service using json input and returns success or not
@@ -59,7 +38,7 @@ namespace LiveWell.ResidentMain
             getToken.BaseAddress = new Uri("https://api.sandbox.paypal.com/v1/oauth2/token");
             getToken.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             getToken.DefaultRequestHeaders.AcceptLanguage.Add(new StringWithQualityHeaderValue("en_US"));
-            getToken.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "QVpPME41R0pWWkRFMFVidDQxN1FxZGVHMjJpRUZGaE8tdU1qaEpjU1BLSzZxVWZvUTJ5RzVMQ3p3LUpuc1owd2FEVDNvMmlBR2xVQ3p2b2g6RUtMaHQwZHVoZzRqSDc4bmRHSEh5QWtqYjB5dDQ1N0dndWhUTGtNUXRKb3FMSkJmNGFxZG9nR1c1M2hSZGJ1YXM4VENycU94cFlTUHBWRXY=");
+            getToken.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("authorization", "Basic QVpPME41R0pWWkRFMFVidDQxN1FxZGVHMjJpRUZGaE8tdU1qaEpjU1BLSzZxVWZvUTJ5RzVMQ3p3LUpuc1owd2FEVDNvMmlBR2xVQ3p2b2g6RUtMaHQwZHVoZzRqSDc4bmRHSEh5QWtqYjB5dDQ1N0dndWhUTGtNUXRKb3FMSkJmNGFxZG9nR1c1M2hSZGJ1YXM4VENycU94cFlTUHBWRXY=");
 
             //Runs http request and obtains authorization token
             var tokenContent = new FormUrlEncodedContent(new[]

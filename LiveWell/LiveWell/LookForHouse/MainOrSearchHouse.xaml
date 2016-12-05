@@ -2,7 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LiveWell.MainOrSearchHouse">
 	<ContentPage.Content>
 		<StackLayout BackgroundColor="White">
-      <Label x:Name="title" Text="" TextColor="#000" FontSize="30" HorizontalOptions="Center">
+
+      <Image x:Name="logo"/>
+
+      <Label x:Name="title" Text="" TextColor="#000" FontSize="30" HorizontalOptions="Center" Margin="30">
         <Label.FontFamily>
           <OnPlatform x:TypeArguments="x:String">
             <OnPlatform.iOS></OnPlatform.iOS>
@@ -11,8 +14,6 @@
           </OnPlatform>
         </Label.FontFamily>
       </Label>
-      
-      <Image Source="LiveWell.LiveWellFullLogo.png"/>
       
       <Button Text="Have a house" VerticalOptions="CenterAndExpand"
               HorizontalOptions="Center" WidthRequest="250" BorderWidth="1" FontSize="Large"

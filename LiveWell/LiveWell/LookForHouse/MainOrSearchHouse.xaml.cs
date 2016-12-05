@@ -12,6 +12,8 @@ namespace LiveWell
 		{
 			InitializeComponent();
 
+            logo.Source = ImageSource.FromResource("LiveWell.LiveWellFullLogo.png");
+
             getFirstName();
 		}
 

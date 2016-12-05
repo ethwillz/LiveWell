@@ -108,14 +108,9 @@ namespace LiveWell
             //Handles payment through credit card
             if (action.Equals("Credit Card"))
             {
-                new ResidentMain.HandlePayment().creditCard();
+                new ResidentMain.HandlePayment().CreditCard();
                 //await u.updateBalances(true, true, "1");
             }
-        }
-
-        protected override bool OnBackButtonPressed()
-        {
-            return true;
         }
     }
 

@@ -94,9 +94,10 @@ namespace LiveWell.ResidentMain
 
     public class AccessResponse
     {
-        public AccessResponse(String scope, String access_token, String token_type, String app_id, String expires_in)
+        public AccessResponse(String scope, String nonce, String access_token, String token_type, String app_id, String expires_in)
         {
             this.scope = scope;
+            this.nonce = nonce;
             this.access_token = access_token;
             this.token_type = token_type;
             this.app_id = app_id;
@@ -104,6 +105,7 @@ namespace LiveWell.ResidentMain
         }
 
         public String scope { get; set; }
+        public String nonce { get; set; }
         public String access_token { get; set; }
         public String token_type { get; set; }
         public String app_id { get; set; }
