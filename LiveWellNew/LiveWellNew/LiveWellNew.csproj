@@ -268,6 +268,8 @@
     <Compile Include="ResidentMain\Payment.xaml.cs">
       <DependentUpon>Payment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ResidentMain\PaymentHelpers.cs" />
+    <Compile Include="ResidentMain\HandlePayment.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient">
